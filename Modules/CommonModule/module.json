@@ -1,0 +1,16 @@
+{
+    "name": "CommonModule",
+    "alias": "commonmodule",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\CommonModule\\Providers\\CommonModuleServiceProvider"
+    ],
+    "aliases": {
+        "LanguageHelper": "Modules\\commonModule\\Facades\\LanguageFacade"
+    },
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/VideoModule",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\VideoModule\\Providers\\VideoModule"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\VideoModule\\": ""
+        }
+    }
+}

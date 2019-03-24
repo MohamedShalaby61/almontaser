@@ -1,0 +1,28 @@
+{
+    "name": "nwidart/commonmodule",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\CommonModule\\Providers\\CommonModuleServiceProvider"
+            ],
+            "aliases":{
+
+            }
+        }
+    },
+    "autoload": {
+        "files": [
+            "Modules/CommonModule/Helper/helpers.php"
+        ],
+        "psr-4": {
+            "Modules\\CommonModule\\": ""
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "name": "VideoModule",
+    "alias": "VideoModule",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\VideoModule\\Providers\\VideoModuleServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/portfoliomodule",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\PortfolioModule\\Providers\\PortfolioModuleServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\PortfolioModule\\": ""
+        }
+    }
+}
