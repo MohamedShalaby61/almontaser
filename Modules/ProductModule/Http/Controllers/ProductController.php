@@ -23,9 +23,11 @@ class ProductController extends Controller
         ProductPhotoRepository $productPicRepo
     )
     {
+
         $this->productRepo = $productRepo;
         $this->categoryRepo = $categoryRepo;
         $this->productPicRepo = $productPicRepo;
+       // $this->serviceCategRepo = $serviceCategRepo;
     }
 
     /**

@@ -21,6 +21,7 @@ Route::group(['prefix' => 'admin-panel', 'middleware' => ['auth:admin']], functi
             Route::resource('partners', 'PartnersController')->only(['create', 'store', 'index']);
             Route::resource('testimonials', 'TestimonialController')->only(['create', 'store', 'index']);
             Route::resource('team', 'TeamController')->only(['create', 'store', 'index']);
+            Route::resource('acheive', 'AcheiveController')->only(['create', 'store', 'index']);
             Route::resource('contact_us', 'ContactusController')->only(['create', 'store', 'index']);
 
             Route::get('contact_us/datatable', 'ContactusController@dataTables');
@@ -29,6 +30,7 @@ Route::group(['prefix' => 'admin-panel', 'middleware' => ['auth:admin']], functi
             Route::resource('subscripe', 'SubscripeController')->only('index');
             Route::resource('page', 'PageController')->only(['create', 'store', 'index', 'show']);
             Route::resource('hours', 'WorkHoursController')->only(['create', 'store', 'index']);
+            Route::resource('acheive', 'AcheiveController')->only(['create', 'store', 'index','show']);
             Route::resource('booking', 'BookingController')->only(['create', 'show', 'store', 'index']);
         });
 
@@ -43,6 +45,7 @@ Route::group(['prefix' => 'admin-panel', 'middleware' => ['auth:admin']], functi
             Route::resource('page', 'PageController')->only(['edit', 'update']);
             Route::resource('hours', 'WorkHoursController')->only(['edit', 'update']);
             Route::resource('booking', 'BookingController')->only(['edit', 'update']);
+            Route::resource('acheive', 'AcheiveController')->only(['edit', 'update']);
         });
 
         # Only SuperAdmin.
@@ -55,6 +58,8 @@ Route::group(['prefix' => 'admin-panel', 'middleware' => ['auth:admin']], functi
             Route::resource('subscripe', 'SubscripeController')->only(['destroy']);
             Route::resource('page', 'PageController')->only(['destroy']);
             Route::resource('hours', 'WorkHoursController')->only(['destroy']);
+            Route::resource('acheive', 'AcheiveController')->only(['destroy']);
+            
             Route::get('booking/delete/{id}', 'BookingController@destroy');
         });
     });

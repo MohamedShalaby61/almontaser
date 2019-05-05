@@ -18,7 +18,7 @@ class ConfigController extends Controller
      * @return Response
      */
     public function index()
-    {
+    { 
         $config_categs = ConfigCategory::with(['configs'])->get();
 
         return view('config::configs.index', ['config_categs' => $config_categs]);

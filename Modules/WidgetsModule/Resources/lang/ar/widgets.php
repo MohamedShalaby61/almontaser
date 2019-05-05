@@ -53,4 +53,7 @@ return array(
   'day' => 'اليوم',
   'from' => 'من',
   'to' => 'الى',
+  'acheivepagetitle'=>'الانجازات',
+  'number'=>'الرقم',
+  'icon'=>' الايكون',
 );

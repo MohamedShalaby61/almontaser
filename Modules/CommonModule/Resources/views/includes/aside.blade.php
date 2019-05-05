@@ -126,6 +126,13 @@
                                         class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.slider')}}</a>
                         </li>
                 @endif
+
+                @if(in_array('slider_app',$activeApps))
+                <!-- acheive -->
+                    <li><a href="{{ url('admin-panel/widgets/acheive') }}"><i
+                                    class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.acheive')}}</a>
+                    </li>
+            @endif
                 @if(in_array('bookings_app',$activeApps))
 
                     <!-- Booking -->

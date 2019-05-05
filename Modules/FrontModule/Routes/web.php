@@ -10,7 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('locale/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+});
 
-Route::prefix('frontmodule')->group(function() {
-    Route::get('/', 'FrontModuleController@index');
+Route::prefix('front_panel')->group(function() {
+    Route::get('locale/{locale}', function ($locale){
+        Session::put('locale', $locale);
+        return redirect()->back();
+    });
+   
+//Route::get('home/locale/{locale}','ProductFrontController@language');
+    Route::get('/home', 'ProductFrontController@index');
+    Route::post('/home','ProductFrontController@store');
+  
+
 });

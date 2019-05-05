@@ -53,4 +53,8 @@ return array(
   'day' => 'Day',
   'from' => 'From',
   'to' => 'To',
+  #acheive
+  'acheivepagetitle'=>'acheivepagetitle',
+  'number'=>'number',
+  'icon'=>'icon',
 );
