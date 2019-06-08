@@ -17,7 +17,7 @@ class SliderRepository
   {
     $slider = Slider::where('id', $id)->first();
 
-    return $slider;
+    return $slider; 
   }
 
   public function findAll()

@@ -60,6 +60,14 @@ class ConfigModuleDatabaseSeeder extends Seeder
             'value' => 'logo.png',
             'category_id' => 1
         ]);
+        $config::insert([
+            'var' => 'about_index',
+            'display_name' => 'about_index',
+            'type' => 3,
+            'value' => 'فيردى هى شركه مساهمه مصريه متخصصه فى انتاج وتوزيع الاسمده المتخصصه والكيماويات وبالتالى نضمن استمرار تحسين جوده وحلول مبتكره بالاضافه الى ذلك اننا نهتم بالصناعه المصريه ونضمن خدمتنا الفنيه ونعطى شراكه واعده لتحقيق الازدهار الانسانى للحفاظ على ثقه عملائنا حيث ان الجوده هيا المعيار الاول ولذلك يتم التحقق من جميع المنتجات فى كل مستوى والتاكد من تحقيق مقياس التميز المطلوب لتحقيق التميز فى قطاع الاعمال',
+            'category_id' => 1
+        ]);
+
 
          //////////////////////////////////////////////////////////////////////////////////////
         ///  SEO  ///////////////////////////////////////////////////////////////////////
@@ -167,6 +175,20 @@ class ConfigModuleDatabaseSeeder extends Seeder
             'display_name' => 'Bottom Ad 728*90',
             'type' => 3,
             'value' => '  ',
+            'category_id' => 5
+        ]);
+        $config::insert([
+            'var' => 'g+_link',
+            'display_name' => 'google+_link',
+            'type' => 4,
+            'value' => ' https://www.googleplus.com/ ',
+            'category_id' => 5
+        ]);
+        $config::insert([
+            'var' => 'be_link',
+            'display_name' => 'be_link',
+            'type' => 4,
+            'value' => ' https://www.behance.com/ ',
             'category_id' => 5
         ]);
 

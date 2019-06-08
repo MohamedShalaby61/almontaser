@@ -36,7 +36,8 @@ return array(
     'hours' => "Work Hours",
     'photo' => "Photo Album",
     'photocateg' => "Categories",
-    'apps' => 'Manage Apps'
+    'apps' => 'Manage Apps',
+    'acheive'=>'Acheive'
 
 
 );

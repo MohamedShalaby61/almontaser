@@ -19,7 +19,7 @@ class SlidersController extends Controller
     {
         $this->sliderRepo = $sliderRepo;
     }
-
+ 
     /**
      * Display a listing of the resource.
      * @return Response

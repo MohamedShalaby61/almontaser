@@ -10,3 +10,4 @@ class PageTranslation extends Model
     public $timestamps = false;
     protected $table = 'page_translations';
 }
+ 

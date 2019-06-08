@@ -10,13 +10,15 @@ namespace Modules\ConfigModule\Repository;
 
 
 use Modules\ConfigModule\Entities\Config;
+use Modules\ConfigModule\Entities\ConfigCategory;
 
 class ConfigRepository
 {
 
 
     static function findAll()
-    {
+    { 
+       
         $configArr = [];
 
         $all = Config::all();
@@ -27,4 +29,6 @@ class ConfigRepository
 
         return $configArr;
     }
+  
+
 }
