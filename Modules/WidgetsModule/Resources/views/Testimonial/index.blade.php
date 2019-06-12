@@ -48,7 +48,7 @@
 
                                 <td>
                                     @if ($item->photo)
-                                        <img src="{{asset('public/images/testimonials/' . $item->photo)}}" width="100" height="70">
+                                        <img src="{{asset('images/testimonials/' . $item->photo)}}" width="100" height="70">
                                     @else
                                         <p>No Photo</p>
                                     @endif
@@ -103,7 +103,8 @@
                 'searching'   : true,
                 'ordering'    : true,
                 'info'        : true,
-                'autoWidth'   : false
+                'autoWidth'   : false,
+                'language': {!! yajra_lang() !!}
             });
         })
 

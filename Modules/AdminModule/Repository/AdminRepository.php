@@ -40,6 +40,8 @@ class AdminRepository
         $data['email']=$adminData['email'];
         if($adminData['password'] && $adminData['password'] !=null ){
             $data['password']=bcrypt($adminData['password']);
+        }else{
+            $data['password']=$admin->password;
         }
         $admin = $admin->update($data);
         return $admin;

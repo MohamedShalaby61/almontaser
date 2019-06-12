@@ -55,7 +55,7 @@ class AcheiveController extends Controller
         {
             $image = $request->file('icon');
             $imageName = $this->upload($image, 'acheives');
-            $achieveData['icon'] = $imageName;
+            $acheiveData['icon'] = $imageName;
         }
 
         $this->acheiveRepo->save($acheiveData);

@@ -65,7 +65,7 @@
             <label class="control-label col-sm-2" > {{ trans('adminmodule::admin.password') }} :</label>
             <div class="col-sm-6">
               <input type="password"  class="form-control"
-                     placeholder="Enter Password" name="password"  required>
+                     placeholder="@lang('adminmodule::admin.pass_message')" name="password" >
             </div>
           </div>
 

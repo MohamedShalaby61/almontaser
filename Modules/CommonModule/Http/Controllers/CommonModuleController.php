@@ -92,6 +92,7 @@ class CommonModuleController extends Controller
         Apps::where('title', 'workhours')->update(  ['active'   =>    $request->get("workhours_Activate")]);
         Apps::where('title', 'contactus')->update(  ['active'   =>    $request->get("contactus_Activate")]);
         Apps::where('title', 'bookings')->update(   ['active'   =>    $request->get("bookings_Activate")]);
+        Apps::where('title', 'why_us')->update(   ['active'   =>    $request->get("why_us_Activate")]);
 
         return redirect()->to('/admin-panel');
     }

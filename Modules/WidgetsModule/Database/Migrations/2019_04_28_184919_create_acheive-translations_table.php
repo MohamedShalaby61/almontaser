@@ -13,12 +13,14 @@ class CreateAcheiveTranslationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('acheive-translation', function (Blueprint $table) {
+        Schema::create('acheive_translation', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('number');
-           
             $table->string('title');
-            $table->timestamps();
+            $table->integer('acheive_id')->unsigned();
+            $table->string('locale')->index();
+            $table->unique(['acheive_id', 'locale']);
+            $table->foreign('acheive_id')->references('id')->on('acheive')->onDelete('cascade');
         });
     }
 

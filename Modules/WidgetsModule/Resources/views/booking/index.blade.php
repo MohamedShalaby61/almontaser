@@ -74,7 +74,8 @@
                 { data: 'phone', name: 'phone' },
                 { data: 'message', name: 'message' },
                 { data: 'operations', name: 'operations' },
-            ]
+            ],
+            'language': {!! yajra_lang() !!}
         });
     })
 

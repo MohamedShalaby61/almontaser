@@ -1,77 +1,65 @@
 <!DOCTYPE html>
 <html>
+    
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>تسجيل الدخول</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-    <link rel="stylesheet" href="{{asset('assets/admin')}}/bower_components/bootstrap/dist/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('assets/admin')}}/bower_components/font-awesome/css/font-awesome.min.css">
-
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('assets/admin')}}/dist/css/AdminLTE.min.css">
-    <link rel="stylesheet" href="{{asset('assets/admin')}}/dist/css/custom.css">
-
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
-    <!-- Google Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+      <!-- meta data -->
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url('assets/admin')}}/static/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="{{url('assets/admin')}}/static/css/font-awesome.css">
+    <link rel="stylesheet" href="{{url('assets/admin')}}/static/css/style.css">
+    <link rel="stylesheet" href="{{url('assets/admin')}}/static/css/hover-min.css">
+    <link rel="stylesheet" href="{{url('assets/admin')}}/static/css/styleArabic.css">
 </head>
 <body class="hold-transition login-page">
-<div class="login-box">
-    <div class="login-logo">
-        <a href=""><b> Admin Login </b></a>
-    </div>
-    <!-- /.login-logo -->
-    <div class="login-box-body">
-        <p class="login-box-msg">تسجيل الدخول</p>
-
-        <form method="post" action="{{ url('admin-panel/login') }}">
-            {!! csrf_field() !!}
-            <div class="form-group has-feedback">
-                <input type="email" name="email" class="form-control" placeholder="Email">
-                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
-            </div>
-            <div class="form-group has-feedback">
-                <input type="password"  name="password" class="form-control" placeholder="Password">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            </div>
-            <div class="row">
-                <div class="col-xs-8">
-
+    <header>اسم الشركة</header>
+<div class="container" >
+        <div class="d-flex justify-content-center">
+            <div class="user_card">
+                <div class="d-flex justify-content-center">
+                    <div class="brand_logo_container">
+                      <!--logo text or image-->
+                              <p class="text-logo">ايس ادمن</p>
+                              <!--    <img src="https://cdn.freebiesupply.com/logos/large/2x/pinterest-circle-logo-png-transparent.png" class="brand_logo" alt="Logo">-->
+                    </div>
                 </div>
-                <!-- /.col -->
-                <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">تسجيل الدخول</button>
+                <div class="d-flex justify-content-center form_container">
+                    <form method="post" action="{{ url('admin-panel/login') }}">
+                        @csrf
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            </div>
+                            <input type="text" name="email" class="form-control input_user" value="" placeholder="البريد الالكتروني">
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="fa fa-key"></i></span>
+                            </div>
+                            <input type="password" name="password"  class="form-control input_pass" value="" placeholder="كلمة المرور">
+                        </div>
+                        
+                        </div>
+                        <div class="d-flex justify-content-center mt-3 mb--3 login_container">
+                            <button name="button" class="btn login_btn ">تسجيل الدخول</button>
+                        </div>
+                        </form>
+                @if (count($errors) > 0)
+                  @foreach ($errors->all() as $item)
+                    <div class="error">
+                   <i class="fa fa-times-circle" aria-hidden="true"></i><span>{{$item}}</span>
                 </div>
-                <!-- /.col -->
+                  @endforeach
+                @endif
+                
             </div>
-        </form>
-
-        <!-- /.social-auth-links -->
-
-        <!--  <a href="#">I forgot my password</a><br>
-         <a href="register.html" class="text-center">Register a new membership</a>
-      -->
+        </div>
     </div>
-    <!-- /.login-box-body -->
-</div>
 <!-- /.login-box -->
 
-<!-- jQuery 3 -->
-<script src="{{ asset('assets/admin') }}/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="{{ asset('assets/admin') }}/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-
+    <footer>© جميع الحقوق محفوظة </footer>
+    
+    <script src="{{url('assets/admin')}}/static/js/bootstrap.min.js"></script>
+    <script src="{{url('assets/admin')}}/static/js/jquery-3.3.1.min.js"></script>
 </body>
 </html>

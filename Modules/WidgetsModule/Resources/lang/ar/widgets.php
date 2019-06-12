@@ -3,6 +3,8 @@
 return array(
   # Widgets Essentials
   'homepage' => 'الرئيسية',
+  'why_us' => 'لماذا نحن',
+  'description' => 'الوصف',
   'submit' => 'حفظ',
   'cancel' => 'الغاء',
   'operations' => 'العمليات',

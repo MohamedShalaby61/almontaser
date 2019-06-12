@@ -77,7 +77,8 @@
                 { data: 'portfolio_category', name: 'portfolio_category.title' },
                 { data: 'operation', name: 'operation', orderable: false, searchable: false}
 
-            ]
+            ],
+            'language': {!! yajra_lang() !!}
         });
     })
 

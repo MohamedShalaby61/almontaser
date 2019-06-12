@@ -79,7 +79,8 @@
                 { data: 'photo', name: 'photo' },
                 { data: 'operation', name: 'delete', orderable: false, searchable: false}
 
-            ]
+            ],
+            'language': {!! yajra_lang() !!}
         });
     })
 

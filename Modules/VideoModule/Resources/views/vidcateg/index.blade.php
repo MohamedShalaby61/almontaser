@@ -86,7 +86,8 @@
             'searching'   : true,
             'ordering'    : true,
             'info'        : true,
-            'autoWidth'   : false
+            'autoWidth'   : false,
+            'language': {!! yajra_lang() !!}
         });
     })
 

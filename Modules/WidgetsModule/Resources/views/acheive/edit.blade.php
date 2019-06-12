@@ -55,6 +55,14 @@
                 </div>
 
                 <div class="form-group">
+                  {{-- content --}}
+                  <label class="control-label col-sm-2" for="title">{{__('widgetsmodule::widgets.content')}} ({{$lang->display_lang}}):</label>
+                  <div class="col-sm-8">
+                    <textarea id="editor{{$lang->id}}" name="{{$lang->lang}}[content]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ ValueOf($page, $lang, 'content') }}</textarea>
+                  </div>
+                </div>
+
+                <div class="form-group">
                   {{-- number --}}
                   <label class="control-label col-sm-2" for="number">{{__('widgetsmodule::widgets.number')}} ({{$lang->display_lang}}):</label>
                   <div class="col-sm-8">

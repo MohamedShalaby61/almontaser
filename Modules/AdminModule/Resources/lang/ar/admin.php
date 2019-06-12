@@ -30,5 +30,6 @@ return array(
   'servicescategory'=>'اقسام الخدمات',
   'controll keybroad'=>'لوحه التحكم',
   'home'=>'الرئسيه',
+  'pass_message'=>'اتركه فارغا ان لم ترد تغييره',
   
 );

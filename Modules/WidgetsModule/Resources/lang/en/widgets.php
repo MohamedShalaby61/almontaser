@@ -3,6 +3,8 @@
 return array(
   # Widgets Essentials
   'homepage' => 'Home Page',
+  'why_us' => 'Why Us',
+  'description' => 'Description',
   'submit' => 'Submit',
   'cancel' => 'Cancel',
   'operations' => 'Operations',

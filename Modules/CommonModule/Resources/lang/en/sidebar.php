@@ -2,6 +2,7 @@
 
 return array(
     'home' => 'Home',
+    'why_us' => 'Why Us',
     'category' => 'Category',
     'car' => 'Cars',
     'config' => 'Settings',

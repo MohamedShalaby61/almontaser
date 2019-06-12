@@ -159,6 +159,12 @@
                         <li><a href="{{ url('admin-panel/widgets/team') }}"><i
                                         class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.team')}}</a></li>
                 @endif
+                @if(in_array('why_us_app',$activeApps))
+
+                    <!-- Team -->
+                        <li><a href="{{ url('admin-panel/widgets/why_us') }}"><i
+                                        class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.why_us')}}</a></li>
+                @endif
                 @if(in_array('contactus_app',$activeApps))
 
                     <!-- contact -->

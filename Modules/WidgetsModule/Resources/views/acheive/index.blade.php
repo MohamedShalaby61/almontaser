@@ -32,6 +32,7 @@
                             <tr>
                                 <th>{{__('widgetsmodule::widgets.number')}}</th>
                                 <th>{{__('widgetsmodule::widgets.title')}}</th>
+                                <th>{{__('widgetsmodule::widgets.content')}}</th>
                                 <th>{{__('widgetsmodule::widgets.icon')}}</th>
                                 <th>{{__('widgetsmodule::widgets.operation')}}</th>
                             </tr>
@@ -43,9 +44,11 @@
 
                                 <td> {{$item->title}} </td>
 
+                                <td> {{$item->content}} </td>
+
                                 <td>
                                     @if ($item->icon)
-                                        <img src="{{asset('public/images/acheives/' . $item->icon)}}" width="100" height="70">
+                                        <img src="{{asset('images/acheives/' . $item->icon)}}" width="100" height="70">
                                     @else
                                         <p>No Photo</p>
                                     @endif
@@ -96,7 +99,8 @@
         'searching'   : true,
         'ordering'    : true,
         'info'        : true,
-        'autoWidth'   : false
+        'autoWidth'   : false,
+        'language': {!! yajra_lang() !!}
         });
     })
 

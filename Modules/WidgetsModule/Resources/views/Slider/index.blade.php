@@ -45,7 +45,7 @@
 
                                 <td>
                                     @if ($item->photo)
-                                        <img src="{{asset('public/images/sliders/' . $item->photo)}}" width="100" height="70">
+                                        <img src="{{asset('images/sliders/' . $item->photo)}}" width="100" height="70">
                                     @else
                                         <p>No Photo</p>
                                     @endif

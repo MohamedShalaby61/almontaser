@@ -31,5 +31,6 @@ return array(
   'servicescategory'=>'Servicescategory',
   'controll keybroad'=>'Controll keybroad',
   'home'=>'Home',
+  'pass_message'=>'blank it if you dont change it',
   
 );

@@ -64,7 +64,7 @@ class PortfolioController extends Controller
             })
             ->addColumn('photo', function($row) {
                 if($row->photo){
-                    return '<img width="100" height="100" src='. asset("public/images/service/" . $row->photo).'/>';
+                    return '<img width="100" height="100" src='. asset("images/project/" . $row->photo).'/>';
                 } else {
                     return '<strong> No Photo </strong>';
                 }

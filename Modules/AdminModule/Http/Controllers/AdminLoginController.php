@@ -10,7 +10,11 @@ class AdminLoginController extends Controller
 {
     function showLoginForm()
     {
-        return view('adminmodule::admin_login.login');
+        if (auth()->guard('admin')->check()) {
+            return redirect()->intended('/admin-panel/');
+        }else{
+            return view('adminmodule::admin_login.login');
+        }
     }
 
     function doAdminLogin(Request $request)
@@ -21,13 +25,13 @@ class AdminLoginController extends Controller
             'password' => 'required|min:4'
         ]);
 
+        $rememberme = request()->has('rememberme') ? 1 : 0;
+        if (auth()->guard('admin')->attempt(['email' => $request->email, 'password' => $request->password],$rememberme)) {
 
-        if (auth()->guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
-
-            return redirect()->intended('/admin-panel/dashboard');
+            return redirect()->intended('/admin-panel/');
         }
 
-        return redirect()->back()->withErrors(['error' => 'Email or password are wrong.']);
+        return redirect()->back()->withErrors(['error' => 'البريد الالكتروني او كلمة المرور غير صحيحة']);
     }
 
     function adminLogout()

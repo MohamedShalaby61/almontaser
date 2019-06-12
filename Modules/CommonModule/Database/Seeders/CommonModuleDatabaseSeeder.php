@@ -105,6 +105,11 @@ class CommonModuleDatabaseSeeder extends Seeder
             'title' => 'bookings',
             'active' => 1
         ]);
+        Apps::create([
+            'key' => 'why_us_app',
+            'title' => 'why_us',
+            'active' => 1
+        ]);
 
     }
 }

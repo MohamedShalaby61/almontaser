@@ -134,7 +134,8 @@
                     { data: 'parent', name: 'parent.title' },
                     { data: 'operation', name: 'operation', orderable: false, searchable: false}
 
-                ]
+                ],
+                'language': {!! yajra_lang() !!}
             });
         })
 

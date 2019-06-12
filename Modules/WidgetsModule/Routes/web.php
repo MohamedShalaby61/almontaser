@@ -23,6 +23,7 @@ Route::group(['prefix' => 'admin-panel', 'middleware' => ['auth:admin']], functi
             Route::resource('team', 'TeamController')->only(['create', 'store', 'index']);
             Route::resource('acheive', 'AcheiveController')->only(['create', 'store', 'index']);
             Route::resource('contact_us', 'ContactusController')->only(['create', 'store', 'index']);
+            Route::resource('why_us', 'WhyUsController')->only(['create', 'store', 'index']);
 
             Route::get('contact_us/datatable', 'ContactusController@dataTables');
             Route::get('booking/datatable', 'BookingController@dataTables');
@@ -46,6 +47,7 @@ Route::group(['prefix' => 'admin-panel', 'middleware' => ['auth:admin']], functi
             Route::resource('hours', 'WorkHoursController')->only(['edit', 'update']);
             Route::resource('booking', 'BookingController')->only(['edit', 'update']);
             Route::resource('acheive', 'AcheiveController')->only(['edit', 'update']);
+            Route::resource('why_us', 'WhyUsController')->only(['edit', 'update']);
         });
 
         # Only SuperAdmin.
@@ -59,7 +61,7 @@ Route::group(['prefix' => 'admin-panel', 'middleware' => ['auth:admin']], functi
             Route::resource('page', 'PageController')->only(['destroy']);
             Route::resource('hours', 'WorkHoursController')->only(['destroy']);
             Route::resource('acheive', 'AcheiveController')->only(['destroy']);
-            
+            Route::resource('why_us', 'WhyUsController')->only(['destroy']);
             Route::get('booking/delete/{id}', 'BookingController@destroy');
         });
     });
