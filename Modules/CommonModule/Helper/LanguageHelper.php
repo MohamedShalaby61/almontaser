@@ -18,17 +18,18 @@ class LanguageHelper
 
     return $lang;
   }
+  
+  public function getLangCode()
+  {
+      $lang = Language::where('active', '=', 1)->get();
+      $result = [];
+      foreach ($lang as $item) {
+          $result[]=$item->lang;
+      }
 
-    public function getLangCode()
-    {
-        $lang = Language::where('active', '=', 1)->get();
-        $result = [];
-        foreach ($lang as $item) {
-            $result[]=$item->lang;
-        }
-
-        return $result;
-    }
+      return $result;
+  }
+    
 
   /**
    * Retrieve all langs from DB.

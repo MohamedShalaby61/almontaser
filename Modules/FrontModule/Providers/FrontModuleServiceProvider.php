@@ -33,6 +33,13 @@ class FrontModuleServiceProvider extends ServiceProvider
             });
         }
 
+            $lang_aside = SharedDataHelper::aside_lang();
+
+            View::composer('*', function ($view2) use ($lang_aside) {
+                $view2->with('lang_aside', $lang_aside);
+            });
+        
+
 
         $this->registerTranslations();
         $this->registerConfig();

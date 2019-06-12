@@ -38,8 +38,9 @@ return array(
     'photo' => "البوم الصور ",
     'photocateg' => "الاقسام",
     'apps' => 'أدارة التطبيقات',
-    'acheive'=>' الانجازات'
-
+    'acheive'=>' الانجازات',
+    'ar'=>'Arabic',
+    'en'=>'English',
 
 );
 

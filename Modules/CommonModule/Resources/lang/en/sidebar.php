@@ -38,7 +38,8 @@ return array(
     'photo' => "Photo Album",
     'photocateg' => "Categories",
     'apps' => 'Manage Apps',
-    'acheive'=>'Acheive'
-
+    'acheive'=>'Acheive',
+    'ar'=>'Arabic',
+    'en'=>'English',
 
 );

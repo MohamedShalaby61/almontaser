@@ -53,8 +53,7 @@
                             <!-- /.box-body -->
                            <div class="box-footer">
                                <a href="{{url('/admin-panel')}}" type="button" class="btn btn-default">{{trans('commonmodule::main.cancel')}} &nbsp; <i class="fa fa-remove"
-                                                                                                                               aria-hidden="true"></i></a>
-                               <button type="submit" class="btn btn-primary pull-right">{{trans('commonmodule::main.submit')}}
+                                                                                                                               aria<button type="submit" class="btn btn-primary pull-right">{{trans('commonmodule::main.submit')}}
                                                            &nbsp; <i class="fa fa-save"></i></button>
                            </div>
                            <!-- /.box-footer -->

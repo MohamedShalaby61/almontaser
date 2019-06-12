@@ -28,6 +28,13 @@ class SharedDataHelper
         return $configArr;
     }
 
+    public  static  function  aside_lang(){
+
+        $all = ['ar','en'];
+        
+        return $all;
+    }
+
 
 
 

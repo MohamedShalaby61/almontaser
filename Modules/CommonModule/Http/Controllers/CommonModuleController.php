@@ -51,6 +51,11 @@ class CommonModuleController extends Controller
         Session::put('applocale', $lang);
         return redirect()->back();
     }
+    public function set_lang($lang)
+    {
+        Session::put('aside_lang', $lang);
+        return redirect()->back();
+    }
 
     /**
      * Activate Languages From DB.

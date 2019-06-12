@@ -8,11 +8,12 @@ use Illuminate\Routing\Controller;
 use Modules\CommonModule\Helper\UploaderHelper;
 use Modules\ConfigModule\Entities\Config;
 use Modules\ConfigModule\Entities\ConfigCategory;
+use View;
 
 class ConfigController extends Controller
 {
     use UploaderHelper;
-
+    
     /**
      * Display a listing of the resource.
      * @return Response

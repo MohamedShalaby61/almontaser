@@ -2,5 +2,6 @@
 
 return array(
   'home' => 'الرئيسية',
-  'language' => 'اللغة'
+  'language' => 'اللغة',
+  'aside_language' => 'لغة القائمة',
 );
