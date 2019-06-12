@@ -70,6 +70,8 @@
                         <textarea id="editor{{$lang->id}}" name="{{$lang->lang}}[description]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                       </div>
                     </div>
+
+
                   </div>
                   @endforeach
                 </div>
@@ -99,7 +101,16 @@
                 </select>
               </div>
             </div>
-
+              <div class="form-group">
+                  {{-- Feature --}}
+                  <label class="control-label col-sm-2">{{ __('servicemodule::service.is_featured') }}</label>
+                  <div class="col-sm-8">
+                      <select name="feature" class="form-control">
+                          <option value="1">{{ __('servicemodule::service.feature') }}</option>
+                          <option selected value="0">{{ __('servicemodule::service.not_feature') }}</option>
+                      </select>
+                  </div>
+              </div>
             <div class="form-group">
               <div class="box-header">
                 <pre><h4>SEO Columns : </h4></pre>

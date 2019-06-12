@@ -15,6 +15,7 @@ class CreateService extends Migration
     {
         Schema::create('service', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('feature');
             $table->string('photo')->nullable();
             $table->integer('service_category_id')->unsigned()->nullable();
             $table->foreign('service_category_id')->references('id')->on('service_category')->onDelete('set null');

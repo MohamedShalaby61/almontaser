@@ -103,7 +103,16 @@
             </select>
           </div>
         </div>
-
+          <div class="form-group">
+              {{-- Feature --}}
+              <label class="control-label col-sm-2">{{ __('servicemodule::service.is_featured') }}</label>
+              <div class="col-sm-8">
+                  <select name="feature" class="form-control">
+                      <option {{ $service->feature == 1 ? 'selected' : '' }} value="1">{{ __('servicemodule::service.feature') }}</option>
+                      <option {{ $service->feature == 0 ? 'selected' : '' }} value="0">{{ __('servicemodule::service.not_feature') }}</option>
+                  </select>
+              </div>
+          </div>
         <div class="form-group">
           <div class="box-header">
             <pre><h4>SEO Columns : </h4></pre>

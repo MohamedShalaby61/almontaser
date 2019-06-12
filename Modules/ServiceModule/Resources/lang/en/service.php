@@ -26,4 +26,7 @@ return array(
   'mt' => 'Meta Title',
   'md' => 'Meta Description',
   'tag' => 'Tags',
+  'is_featured' => 'Featured Service',
+  'feature' => 'YES',
+  'not_feature'=>'NO',
 );
