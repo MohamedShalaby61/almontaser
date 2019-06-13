@@ -20,6 +20,14 @@
 @endsection
 
 @section('content')
+@if ($categories->count() == 0)
+    <section class="content">
+        <br/>
+        <h3 class="alert alert-danger">{{__('portfoliomodule::portfolio.fill')}}</h3>
+        <br/>
+        <a href="{{url('admin-panel/product-categories')}}" class="btn btn-warning"><i class="fa fa-plus" aria-hidden="true"></i> {{__('portfoliomodule::portfolio.fillnow')}}</a>
+    </section>
+@else
 <section class="content">
   <!-- Horizontal Form -->
   <div class="box box-info">
@@ -198,6 +206,7 @@
     </form>
   </div>
 </section>
+    @endif
 @endsection
 
 @section('javascript')

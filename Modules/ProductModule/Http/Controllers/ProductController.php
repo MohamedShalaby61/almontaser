@@ -48,8 +48,8 @@ class ProductController extends Controller
     public function create()
     {
         $categories = $this->categoryRepo->findAllParent();
-
-        return view('productmodule::product.create', ['categories' => $categories]);
+        $cats = $this->categoryRepo->findAll();
+        return view('productmodule::product.create', ['categories' => $categories,'cats'=>$cats]);
     }
 
     /**
