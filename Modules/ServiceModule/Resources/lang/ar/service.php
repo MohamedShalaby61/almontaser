@@ -29,4 +29,6 @@ return array(
   'is_featured' => 'خدمة مميزة',
   'feature' => 'مميزة',
    'not_feature'=>'غير مميزة',
+   'yes'=>'نعم',
+   'no'=>'لا',
 );

@@ -29,4 +29,6 @@ return array(
   'is_featured' => 'Featured Service',
   'feature' => 'YES',
   'not_feature'=>'NO',
+   'yes'=>'Yes',
+   'No'=>'No',
 );

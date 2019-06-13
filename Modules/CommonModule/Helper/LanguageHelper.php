@@ -14,14 +14,30 @@ class LanguageHelper
    */
   public function getLang()
   {
-    $lang = Language::where('active', '=', 1)->get();
+    $lang = Language::where('active', '=', 1)->where('lang_type','=',0)->get();
 
     return $lang;
   }
-  
-  public function getLangCode()
+    public function getStaticLang()
+    {
+        $lang = Language::where('active', '=', 1)->where('lang_type','=',1)->get();
+
+        return $lang;
+    }
+
+    public function getLangCode()
+    {
+        $lang = Language::where('active', '=', 1)->where('lang_type','=',0)->get();
+        $result = [];
+        foreach ($lang as $item) {
+            $result[]=$item->lang;
+        }
+
+        return $result;
+    }
+  public function getStaticLangCode()
   {
-      $lang = Language::where('active', '=', 1)->get();
+      $lang = Language::where('active', '=', 1)->where('lang_type','=',1)->get();
       $result = [];
       foreach ($lang as $item) {
           $result[]=$item->lang;

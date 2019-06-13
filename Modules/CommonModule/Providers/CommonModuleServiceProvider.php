@@ -29,14 +29,18 @@ class CommonModuleServiceProvider extends ServiceProvider
         if(Schema::hasTable('languages')) {
             $activeLang = \LanguageHelper::getLang();
             $activeLangCode = \LanguageHelper::getLangCode();
+            $activeStaticLang = \LanguageHelper::getStaticLang();
+            $activeStaticLangCode = \LanguageHelper::getStaticLangCode();
 
             if(Schema::hasTable('apps')) {
                 $activeApps=AppsHelper::getActiveApps();
             }
 
-            View::composer('*', function ($view) use ($activeLang,$activeLangCode,$activeApps) {
+            View::composer('*', function ($view) use ($activeLang,$activeLangCode,$activeStaticLang,$activeStaticLangCode,$activeApps) {
                 $view->with('activeLang', $activeLang);
                 $view->with('activeLangCode', $activeLangCode);
+                $view->with('activeStaticLang', $activeStaticLang);
+                $view->with('activeStaticLangCode', $activeStaticLangCode);
                 $view->with('activeApps', $activeApps);
 
             });

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWhyUsTable extends Migration
+class AddLangTypeToLanguages extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateWhyUsTable extends Migration
      */
     public function up()
     {
-        Schema::create('why_us', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('photo')->nullable();
-            $table->timestamps();
+        Schema::table('languages', function (Blueprint $table) {
+            $table->tinyInteger('lang_type');
         });
     }
 
@@ -27,6 +25,8 @@ class CreateWhyUsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('why_us');
+        Schema::table('languages', function (Blueprint $table) {
+            $table->dropColumn('lang_type');
+        });
     }
 }

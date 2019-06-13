@@ -25,22 +25,26 @@
                     <a href="{{url('admin-panel/servicemodule/service/create')}}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp; {{__('servicemodule::service.addnew')}}</a>
                 </div>
                 <!-- /.box-header -->
-                <div class="box-body">
-                    <table id="myTable" class="table table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>{{__('servicemodule::service.id')}}</th>
-                                <th>{{__('servicemodule::service.title')}}</th>
-                                <th>{{__('servicemodule::service.category')}}</th>
-                                <th>{{__('servicemodule::service.photo')}}</th>
-                                <th>{{__('servicemodule::service.operation')}}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    @csrf
+                    <div class="box-body">
+                        <table id="myTable" class="table table-bordered table-hover">
+                            <thead>
 
-                        </tbody>
-                    </table>
-                </div>
+                                <tr>
+                                    <th>{{__('servicemodule::service.id')}}</th>
+                                    <th>{{__('servicemodule::service.title')}}</th>
+                                    <th>{{__('servicemodule::service.category')}}</th>
+                                    <th>{{__('servicemodule::service.photo')}}</th>
+                                    <th>{{__('servicemodule::service.is_featured')}}</th>
+                                    <th>{{__('servicemodule::service.operation')}}</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                    </div>
+
                 <!-- /.box-body -->
             </div>
             <!-- /.box -->
@@ -78,12 +82,13 @@
                 { data: 'title', name: 'title' },
                 { data: 'service_category', name: 'service_category' },
                 { data: 'photo', name: 'photo' },
+                { data: 'feature', name: 'feature' },
                 { data: 'operation', name: 'delete', orderable: false, searchable: false}
 
             ],
             'language': {!! yajra_lang() !!}
         });
-    })
+    });
 
 </script>
 

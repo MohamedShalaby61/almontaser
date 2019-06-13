@@ -26,21 +26,21 @@
                         <span class="hidden-xs">{{__('main.language')}}</span>
                     </a>
                     <ul class="dropdown-menu">
-                        @foreach ($activeLang as $lang)
+                        @foreach ($activeStaticLang as $lang)
                             <li> <a href="{{url('admin-panel/commonmodule/set', [$lang->lang])}}">{{ $lang->display_lang }}</a> </li>
                         @endforeach
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="hidden-xs">{{__('main.aside_language')}}</span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        @for ($i =0;$i < count($lang_aside);$i++)
-                            <li> <a href="{{url('admin-panel/commonmodule/set_lang', [$lang_aside[$i]])}}">{{ __('commonmodule::sidebar.'.$lang_aside[$i]) }}</a> </li>
-                        @endfor
-                    </ul>
-                </li>
+{{--                <li class="dropdown">--}}
+{{--                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">--}}
+{{--                        <span class="hidden-xs">{{__('main.aside_language')}}</span>--}}
+{{--                    </a>--}}
+{{--                    <ul class="dropdown-menu">--}}
+{{--                        @for ($i =0;$i < count($lang_aside);$i++)--}}
+{{--                            <li> <a href="{{url('admin-panel/commonmodule/set_lang', [$lang_aside[$i]])}}">{{ __('commonmodule::sidebar.'.$lang_aside[$i]) }}</a> </li>--}}
+{{--                        @endfor--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
             </ul>
 
             <ul class="nav navbar-nav">
