@@ -23,6 +23,7 @@
                     <h3 class="box-title">{{__('servicemodule::service.servicetitle')}}</h3>
                     {{-- Add New --}}
                     <a href="{{url('admin-panel/servicemodule/service/create')}}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp; {{__('servicemodule::service.addnew')}}</a>
+
                 </div>
                 <!-- /.box-header -->
                     @csrf
@@ -82,13 +83,49 @@
                 { data: 'title', name: 'title' },
                 { data: 'service_category', name: 'service_category' },
                 { data: 'photo', name: 'photo' },
-                { data: 'feature', name: 'feature' },
+                { data: 'feature', name: 'feature' , orderable: false, searchable: false},
                 { data: 'operation', name: 'delete', orderable: false, searchable: false}
 
             ],
             'language': {!! yajra_lang() !!}
         });
+
+
     });
+
+</script>
+
+<script>
+
+
+    $(document).on('click','.FeatBtn',function(e){
+
+        var id = $(this).parent().find('.id').attr('value');
+        var token = $('.token').attr('value');
+        var feature = $(this).attr('value');
+        var loc = $(this).parent().find('.FeatBtn');
+        e.preventDefault();
+        $.ajax({
+            type:'post',
+            url:'{{ route('change_feature') }}',
+            data:{id:id,_token:token,feature:feature},
+            success:function (data) {
+                swal("{{__('commonmodule::swal.good')}}", "{{__('commonmodule::swal.edited')}}", "success", { button: "{{__('commonmodule::swal.btn')}}", });
+                if (data == 0){
+                    loc.replaceWith('<button value='+data+' class="btn btn-danger FeatBtn">{{__('servicemodule::service.no')}}</button>');
+                }else{
+                    loc.replaceWith('<button value='+data+' class="btn btn-success FeatBtn">{{__('servicemodule::service.yes')}}</button>');
+                }
+            },
+            error:function () {
+                alert('error');
+            }
+        });
+
+    });
+
+
+
 
 </script>
 

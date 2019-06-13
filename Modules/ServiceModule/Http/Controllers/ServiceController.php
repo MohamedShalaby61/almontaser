@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use Modules\CommonModule\Helper\UploaderHelper;
+use Modules\ServiceModule\Entities\ServiceMod\Service;
 use Modules\ServiceModule\Repository\ServiceRepository;
 use Modules\ServiceModule\Repository\ServiceCategoryRepository;
 use Yajra\DataTables\DataTables;
@@ -23,11 +24,6 @@ class ServiceController extends Controller
         $this->serviceCategRepo = $serviceCategRepo;
 
     }
-
-    /**
-     * Display a listing of the resource.
-     * @return Response
-     */
     public function index()
     {
         $services = $this->serviceRepo->findAll();
@@ -50,6 +46,7 @@ class ServiceController extends Controller
             ->addColumn('service_category', function($row) {
                 return  $row->service_category->title;
             })
+            ->addColumn('feature','servicemodule::ServiceMod.btn.feature')
 
 
             ->addColumn('operation', function($row) {
@@ -68,26 +65,17 @@ class ServiceController extends Controller
                 }
             })
 
-            ->rawColumns(['operation' => 'operation', 'photo' => 'photo'])
+            ->rawColumns(['operation' => 'operation', 'photo' => 'photo','feature'=>'feature'])
 
             ->make(true);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * @return Response
-     */
     public function create()
     {
         $serviceCategs = $this->serviceCategRepo->findAll();
         return view('servicemodule::ServiceMod.create', ['categs' => $serviceCategs]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     * @param  Request $request
-     * @return Response
-     */
     public function store(Request $request)
     {
         $serviceData = $request->except('_token', 'photo');
@@ -104,10 +92,6 @@ class ServiceController extends Controller
         return redirect('admin-panel/servicemodule/service/')->with('success', 'success');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     * @return Response
-     */
     public function edit($id)
     {
         $service = $this->serviceRepo->find($id);
@@ -116,11 +100,6 @@ class ServiceController extends Controller
         return view('servicemodule::ServiceMod.edit', ['service' => $service, 'categs' => $categs]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     * @param  Request $request
-     * @return Response
-     */
     public function update(Request $request, $id)
     {
         $activeLangCode = \LanguageHelper::getLangCode();
@@ -149,15 +128,22 @@ class ServiceController extends Controller
         return redirect('admin-panel/servicemodule/service')->with('updated', 'updated');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     * @return Response
-     */
     public function destroy($id)
     {
         $service = $this->serviceRepo->find($id);
         $this->serviceRepo->delete($service);
 
         return redirect()->back();
+    }
+
+    public function change_feature(Request $request)
+    {
+        $service = Service::find($request->id);
+        if ($request->feature == 1){
+            $service->update(['feature'=>0]);
+        }else if($request->feature == 0){
+            $service->update(['feature'=>1]);
+        }
+        return $service->feature;
     }
 }

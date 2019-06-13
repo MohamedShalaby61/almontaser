@@ -20,6 +20,7 @@ Route::group(['prefix' => 'admin-panel', 'middleware' => ['auth:admin']], functi
         Route::group(['middleware' => ['role:superadmin|admin|writer|owner']], function () {
             Route::resource('service', 'ServiceController')->only(['create', 'store', 'index']);
             Route::resource('category', 'ServiceCategoryController')->only(['create', 'store', 'index']);
+            Route::post('change/feature', 'ServiceController@change_feature')->name('change_feature');
             Route::get('category/datatable','ServiceCategoryController@dataTables');
             Route::get('category/delete/{id}','ServiceCategoryController@destroy');
 
