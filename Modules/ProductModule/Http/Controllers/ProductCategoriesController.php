@@ -64,7 +64,7 @@ class ProductCategoriesController extends Controller
             })
             ->addColumn('photo', function($row) {
                 if($row->photo){
-                    return '<img width="100" height="100" src='. asset("images/category/" . $row->photo).'/>';
+                    return '<img width="100" height="100" src='. asset("public/images/category/" . $row->photo).'/>';
                 } else {
                     return '<strong> No Photo </strong>';
                 }
