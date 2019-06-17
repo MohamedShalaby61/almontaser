@@ -21,9 +21,11 @@ class Language
         if (Session::has('applocale')) {
             App::setLocale(Session::get('applocale'));
         }
-        if (!Session::has('aside_lang')) {
-            Session::put('aside_lang','ar');
-        }
+//        if ($request->segments(1)){
+//            App::setLocale($request->segments(1));
+//        }
+//        $request->segments(1) == 'ar' ? App()->setLocale('ar'):App()->setLocale('ar');
+        //dd($request->segments(1));
         return $next($request);
     }
 }

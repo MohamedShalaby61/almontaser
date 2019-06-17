@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'name' => 'FrontModule'
+    'name' => 'FrontModule',
+    'prefix'=> 'ar',
 ];

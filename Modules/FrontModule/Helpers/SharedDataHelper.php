@@ -7,6 +7,7 @@ namespace Modules\FrontModule\Helpers;
 use Modules\BlogModule\Entities\Blog;
 use Illuminate\Support\Facades\Schema;
 use Modules\ConfigModule\Entities\Config;
+use Modules\WidgetsModule\Entities\WorkHours;
 use Modules\FrontModule\Helpers\arabicdate;
 use Modules\BlogModule\Entities\BlogCategory;
 use Modules\VideoModule\Entities\VideoCateg;
@@ -27,15 +28,16 @@ class SharedDataHelper
         }
         return $configArr;
     }
+    public  static  function  getWorkHour(){
+        $WorkArr = [];
 
-    public  static  function  aside_lang(){
-
-        $all = ['ar','en'];
-        
+        $all = WorkHours::all()->first();
+        foreach ($all as $item) {
+            $WorkArr[$item] = $item;
+        }
         return $all;
     }
 
-
-
+   
 
 }

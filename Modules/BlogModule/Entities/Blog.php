@@ -21,4 +21,8 @@ class Blog extends Model
         return $this->belongsToMany(BlogCategory::class,'blog_category','blog_id','blog_category_id')->withTimestamps();
     }
 
+    public function admin()
+    {
+        return $this->hasOne('Modules\AdminModule\Entities\Admin','id','created_by');
+    }
 }

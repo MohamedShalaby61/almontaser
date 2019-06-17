@@ -2,12 +2,10 @@
 
 namespace Modules\FrontModule\Providers;
 
-use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Database\Eloquent\Factory;
 use Modules\FrontModule\Helpers\SharedDataHelper;
 use View;
-
 class FrontModuleServiceProvider extends ServiceProvider
 {
     /**
@@ -24,28 +22,26 @@ class FrontModuleServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
-        if(Schema::hasTable('configs')) {
-            $config = SharedDataHelper::getConfig();
+        if(\Schema::hasTable('configs')) {
+                $config = SharedDataHelper::getConfig();
 
             View::composer('*', function ($view) use ($config) {
                 $view->with('config', $config);
+        });
+        if(\Schema::hasTable('work_hours')) {
+            $work_hour = SharedDataHelper::getWorkHour();
+
+            View::composer('*', function ($view) use ($work_hour) {
+                $view->with('work_hour', $work_hour);
             });
         }
-
-            $lang_aside = SharedDataHelper::aside_lang();
-
-            View::composer('*', function ($view2) use ($lang_aside) {
-                $view2->with('lang_aside', $lang_aside);
-            });
-        
-
-
         $this->registerTranslations();
         $this->registerConfig();
         $this->registerViews();
         $this->registerFactories();
         $this->loadMigrationsFrom(__DIR__ . '/../Database/Migrations');
+        }
+
     }
 
     /**

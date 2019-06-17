@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,20 +9,26 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('locale/{locale}', function ($locale){
-    Session::put('locale', $locale);
-    return redirect()->back();
-});
 
-Route::prefix('front_panel')->group(function() {
-    Route::get('locale/{locale}', function ($locale){
+	Route::get('locale/{locale}', function ($locale){
         Session::put('locale', $locale);
-        return redirect()->back();
+        return redirect()->route('index_front');
+    
     });
-   
-//Route::get('home/locale/{locale}','ProductFrontController@language');
-    Route::get('/home', 'ProductFrontController@index');
-    Route::post('/home','ProductFrontController@store');
-  
+
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function() {
+
+    Route::get('/', 'FrontModuleController@index')->name('index_front');
+    Route::post('/send/question','FrontModuleController@send_message')->name('send_message');
+    Route::post('/send/contact','FrontModuleController@send_contact_us')->name('send_contact_us');
+    Route::get('/about/us','FrontModuleController@about_us')->name('about_us');
+    Route::get('/question/us','FrontModuleController@question')->name('question');
+    Route::get('/contact/us','FrontModuleController@contact')->name('contact');
+    Route::get('/services','FrontModuleController@services')->name('services');
+    Route::get('/blogs','FrontModuleController@blogs')->name('blogs');
+    Route::get('/categories/{id}','FrontModuleController@categories')->name('categories');
+    Route::get('/blogs/{title}','FrontModuleController@single_blog')->name('single_blog');
+    Route::get('/services/{title}','FrontModuleController@single_service')->name('single_service');
 
 });
+
