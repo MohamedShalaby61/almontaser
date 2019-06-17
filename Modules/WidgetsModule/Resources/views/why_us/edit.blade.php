@@ -151,7 +151,7 @@
       </div>
       <!-- /.box-body -->
       <div class="box-footer">
-        <a href="{{url('/admin-panel/widgets/page')}}" type="button" class="btn btn-default">{{__('widgetsmodule::widgets.cancel')}} &nbsp; <i class="fa fa-remove" aria-hidden="true"></i> </a>
+        <a href="{{url('/admin-panel/widgets/why_us')}}" type="button" class="btn btn-default">{{__('widgetsmodule::widgets.cancel')}} &nbsp; <i class="fa fa-remove" aria-hidden="true"></i> </a>
         <button type="submit" class="btn btn-primary pull-right">{{__('widgetsmodule::widgets.submit')}} &nbsp; <i class="fa fa-save"></i></button>
       </div>
       <!-- /.box-footer -->

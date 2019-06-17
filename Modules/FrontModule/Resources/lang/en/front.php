@@ -64,4 +64,5 @@ return [
     'con_read' => 'continue reading',
     'categories' => 'Categories',
     'recent_posts' => 'Recent Posts',
+    'success_words' => 'Your Message Sent Successfully !',
 ];

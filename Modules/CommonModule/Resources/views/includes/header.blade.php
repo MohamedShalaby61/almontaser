@@ -27,7 +27,7 @@
                     </a>
                     <ul class="dropdown-menu">
                         @foreach ($activeStaticLang as $lang)
-                            <li> <a href="{{url('admin-panel/commonmodule/set', [$lang->lang])}}">{{ $lang->display_lang }}</a> </li>
+                            <li> <a href="{{url('/locale', [$lang->lang])}}">{{ $lang->display_lang }}</a> </li>
                         @endforeach
                     </ul>
                 </li>

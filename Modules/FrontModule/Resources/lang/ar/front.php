@@ -63,4 +63,5 @@ return [
     'con_read' => 'تابع القراءة',
     'categories' => 'الاقسام',
     'recent_posts' => 'احدث التدوينات',
+    'success_words' => 'تم ارسال رسالتك بنجاح',
 ];

@@ -96,8 +96,8 @@
                     <div class="text">
                         <p>@lang('frontmodule::front.question_message') {{$config['phone']}}. @lang('frontmodule::front.contact') {{ $work_hour->day }} {{ $work_hour->from }} – {{ $work_hour->to }}</p>
                     </div>
-                    <form name="appointment-form" id="send_form" action="#">
-                        <input id="_token" name="_token" type="hidden" value="{{ csrf_token() }}">
+                    <form name="appointment-form" action="{{ route('send_contact_us') }}" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-xl-6 col-lg-6">
                                 <div class="input-box">   
@@ -125,52 +125,18 @@
                                 <div class="button-box">
                                     <button class="btn-one customer_btn" type="submit">@lang('frontmodule::front.send')</button>
                                 </div>
-                                <div class="modal"><!-- Place at bottom of page --></div>
+                                <div class="modal"></div>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-                
         </div>
     </div>    
 </section>
 <!--End Appointment Area-->
 @include('commonmodule::includes.swal')
 @endsection
-@push('js')
-    <script>
-        $('.customer_btn').on('click',function (e) {
-            e.preventDefault();
-            var name = $('#name').val();
-            var phone = $('#phone').val();
-            var email = $('#email').val();
-            var message = $('#message').val();
-            var _token = $('#_token').val();
-            $.ajax({
-                'method':'post',
-                'data':{_token:_token,name:name,phone:phone,email:email,message:message},
-                'url':'{{ route("send_contact_us") }}',
-                success:function (data) {
-                    $('#send_form').trigger("reset");
-                    swal("{{__('commonmodule::swal.good')}}", "{{__('commonmodule::swal.send')}}", "success", { button: "{{__('commonmodule::swal.btn')}}", });
-
-                },
-                //error: function(XMLHttpRequest, textStatus, errorThrown){
-                //    alert("Status: " + textStatus); alert("Error: " + errorThrown); 
-                //}
-            });
-            $body = $("body");
-
-            $(document).on({
-                ajaxStart: function() { $body.addClass("loading");    },
-                 ajaxStop: function() { $body.removeClass("loading"); }    
-            });
-
-            
-        })
-    </script>
-@endpush
 @push('css')
     <style>
         .modal {

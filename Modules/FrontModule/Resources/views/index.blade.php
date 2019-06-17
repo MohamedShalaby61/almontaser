@@ -22,48 +22,22 @@
             <h1>@lang('frontmodule::front.website_words')</h1>
         </div>
         <div class="row">
-            <!--Start Single Welcome Box-->
-            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                <div class="single-welcome-box text-center">
-                    <div class="icon-holder">
-                        <img src="{{url('assets/front')}}/images/icon/icon-1.png" alt="Icon">
+            @if($asks->count() > 0)
+            @foreach($asks as $ask)
+                <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                <div class="single-welcome-box text-center" style="height:447px;">
+                    <div  class="icon-holder">
+                        <img style="height: 180px;width: 270px" src="{{url('')}}/images/why_us/{{ $ask->photo }}" alt="Icon">
                     </div>
                     <div class="text-holder">
-                        <h3>Advanced Dentistry</h3>
-                        <p>Denouncing pleasure & praising pain was born and wewill give you a complete account of the system.</p>
-                        <a class="btn-one" href="#">Services</a>
+                        <h3>{{ $ask->title }}</h3>
+                        {!! $ask->description !!}
+                        <a class="btn-one" href="#">{{ __('frontmodule::front.more') }}</a>
                     </div>    
                 </div>   
             </div>
-            <!--End Single Welcome Box-->
-            <!--Start Single Welcome Box-->
-            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                <div class="single-welcome-box text-center">
-                    <div class="icon-holder">
-                        <img src="{{url('assets/front')}}/images/icon/icon-2.png" alt="Icon">
-                    </div>
-                    <div class="text-holder">
-                        <h3>Quality Equipment</h3>
-                        <p>Know how pursue pleasure rationally encounter consequences that extremely anyone loves pursues.</p>
-                        <a class="btn-one" href="#">Buy Now</a>
-                    </div>    
-                </div>   
-            </div>
-            <!--End Single Welcome Box-->
-            <!--Start Single Welcome Box-->
-            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
-                <div class="single-welcome-box text-center">
-                    <div class="icon-holder">
-                        <img src="{{url('assets/front')}}/images/icon/icon-3.png" alt="Icon">
-                    </div>
-                    <div class="text-holder">
-                        <h3>Comfortable Clinic</h3>
-                        <p>To take a trivial example, which us ever undertakes laborious physical exercise, to obtain some advantage.</p>
-                        <a class="btn-one" href="#">Prices</a>
-                    </div>    
-                </div>   
-            </div>
-            <!--End Single Welcome Box-->
+            @endforeach
+            @endif
         </div>
     </div>
 </section>
@@ -422,7 +396,7 @@
                             Awesome Image">
                             @endif
                             <div class="categorie-button">
-                                <a class="btn-one" href="#">{{$blog->categories->first()->title}}</a>
+                                <a class="btn-one" href="{{ route('categories',$blog->categories->first()->id) }}">{{$blog->categories->first()->title}}</a>
                             </div>
                         </div>
                         <div class="text-holder">
@@ -435,12 +409,12 @@
                                     <li><a href="#">{{$blog->created_at->diffForHumans()}}</a></li>
                                 </ul>    
                             </div>
-                            <h3 class="blog-title"><a href="blog-single.html">{{$blog->title}}</a></h3> 
+                            <h3 class="blog-title"><a href="{{ route('single_blog',str_replace(' ','-',$blog->title)) }}">{{$blog->title}}</a></h3>
                             <div class="text-box">
                                 <p>{!! substr($blog->description,0,150) !!}</p>
                             </div>
                             <div class="readmore-button">
-                                <a class="btn-two" href="#"><span class="flaticon-next"></span>@lang('frontmodule::front.read_more')</a>
+                                <a class="btn-two" href="{{ route('single_blog',str_replace(' ','-',$blog->title)) }}"><span class="flaticon-next"></span>@lang('frontmodule::front.read_more')</a>
                             </div>  
                         </div>
                     </div>

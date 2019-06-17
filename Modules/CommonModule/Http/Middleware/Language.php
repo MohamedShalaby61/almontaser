@@ -24,7 +24,7 @@ class Language
 //        if ($request->segments(1)){
 //            App::setLocale($request->segments(1));
 //        }
-//        $request->segments(1) == 'ar' ? App()->setLocale('ar'):App()->setLocale('ar');
+        //$request->segments(1) == 'ar' ? App()->setLocale('ar'):App()->setLocale('en');
         //dd($request->segments(1));
         return $next($request);
     }

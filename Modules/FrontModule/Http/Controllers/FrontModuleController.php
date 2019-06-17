@@ -8,6 +8,7 @@ use Illuminate\Routing\Controller;
 use Modules\FrontModule\Repository\FrontRepository;
 use Modules\WidgetsModule\Entities\Contactus;
 use Modules\WidgetsModule\Entities\Booking;
+use Modules\WidgetsModule\Entities\WhyUs;
 
 class FrontModuleController extends Controller
 {
@@ -20,6 +21,7 @@ class FrontModuleController extends Controller
     }
     public function index()
     {
+        $asks = WhyUs::all();
         $sliders = $this->frontRepository->SliderAll();
         $doctor = $this->frontRepository->findDoctor();
         $doctors = $this->frontRepository->findAllDoctor();
@@ -27,7 +29,7 @@ class FrontModuleController extends Controller
         $reviews = $this->frontRepository->findTestimonials();
         $blogs = $this->frontRepository->findLimitBlogs(3);
         $services = $this->frontRepository->findAllServices();
-        return view('frontmodule::index',compact('sliders','doctor','features','doctors','reviews','blogs','services'));
+        return view('frontmodule::index',compact('asks','sliders','doctor','features','doctors','reviews','blogs','services'));
     }
 
     /**
@@ -83,10 +85,13 @@ class FrontModuleController extends Controller
     }
     public function send_contact_us(Request $request)
     {
-        //dd($request->all());
-        $data = $request->validate(['name','email','phone','message']);
+        $sliders = $this->frontRepository->SliderAll();
+        $services = $this->frontRepository->findLimitServices();
+        $categories = $this->frontRepository->findCategories();
+        $blogs = $this->frontRepository->findAllBlog();
+        $request->validate(['name','email','phone','message']);
         Contactus::create($request->all());
-        return back()->with('success', 'success');
+        return view('frontmodule::pages.success',compact('sliders','services','blogs'))->with('success', 'success');
     }
     public function single_service($title){
         $service = $this->frontRepository->findServiceByTitle($title);

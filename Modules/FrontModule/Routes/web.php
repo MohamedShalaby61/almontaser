@@ -12,8 +12,7 @@
 
 	Route::get('locale/{locale}', function ($locale){
         Session::put('locale', $locale);
-        return redirect()->route('index_front');
-    
+        return back();
     });
 
 Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function() {
