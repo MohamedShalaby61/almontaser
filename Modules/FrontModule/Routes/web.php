@@ -15,8 +15,13 @@
         return back();
     });
 
-Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function() {
-
+Route::group(
+    [
+        'prefix' => LaravelLocalization::setLocale(),
+        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
+    ],
+    function()
+    {
     Route::get('/', 'FrontModuleController@index')->name('index_front');
     Route::post('/send/question','FrontModuleController@send_message')->name('send_message');
     Route::post('/send/contact','FrontModuleController@send_contact_us')->name('send_contact_us');

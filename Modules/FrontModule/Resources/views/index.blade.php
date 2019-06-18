@@ -96,10 +96,10 @@
                                 <span class="timer" data-from="1" data-to="{{ $acheives->skip(2)->first()->number }}" data-speed="5000" data-refresh-interval="50">{{ $acheives->skip(2)->first()->number }}</span>
                             </h1>
                             <div class="title">
-                                <h3>{{ $acheives->skip(1)->first()->title }}</h3>
+                                <h3>{{ $acheives->skip(2)->first()->title }}</h3>
                             </div>
                             <div class="text">
-                                <p>{!! $acheives->skip(1)->first()->content !!}</p>
+                                <p>{!! $acheives->skip(2)->first()->content !!}</p>
                             </div>
                         </div>
                     </li>
