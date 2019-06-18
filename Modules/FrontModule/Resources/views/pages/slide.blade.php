@@ -239,7 +239,7 @@
                                          style="z-index: 7; white-space: nowrap;">
                                         <div class="slide-content">
                                             <div class="text">
-                                               {!! $sliders->skip(1)->first()->title !!}
+                                               {!! $sliders->skip(1)->first()->description !!}
                                             </div>
                                         </div>
                                     </div>

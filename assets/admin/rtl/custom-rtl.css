@@ -1,0 +1,42 @@
+.skin-blue-light .sidebar-menu>li:hover>a, .skin-blue-light .sidebar-menu>li.active>a {
+    color: #000;
+    background: #f4f4f5;
+    border-right: 3px solid #337ab7;
+}
+
+.navbar-nav>.user-menu .user-image {
+    margin-left: 10px !important;
+}
+
+.nav-tabs-custom {
+    margin-bottom: 20px;
+    background: #ecf0f5;
+    box-shadow: 0 1px 2px 2px rgba(0,0,0,0.1) !important;
+    border-radius: 3px;
+}
+
+body {
+    unicode-bidi: embed;
+    font-family: 'DroidArabicKufiRegular' !important;
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 , b {
+    font-family: 'DroidArabicKufiRegular' !important;
+}
+
+.form-control {
+    height: 36px;
+    padding: 4px 12px;
+}
+/*datatable*/
+
+div.dataTables_wrapper div.dataTables_paginate {
+    text-align: left !important;
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+    text-align: left !important;
+}

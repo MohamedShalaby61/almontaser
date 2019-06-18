@@ -44,17 +44,17 @@ class AcheiveRepository
     Acheive::destroy($acheive->id);
   }
 
-  public function update($id, $data, $data_trans)
-  {
-    $acheive = Acheive::find($id);
-    $acheive->update($data);
+    public function update($id, $data, $data_trans)
+    {
+        $acheive = Acheive::find($id);
+        $acheive->update($data);
 
-    foreach (\LanguageHelper::getLang() as $lang) {
-        $acheive->translate('' . $lang->lang)->title = $data_trans[$lang->lang]['title'];
-        $acheive->translate('' . $lang->lang)->number = $data_trans[$lang->lang]['number'];
-      
-      $acheive->save();
+        foreach (\LanguageHelper::getLang() as $lang) {
+            $acheive->translate('' . $lang->lang)->title = $data_trans[$lang->lang]['title'];
+            $acheive->translate('' . $lang->lang)->content = $data_trans[$lang->lang]['content'];
+
+            $acheive->save();
+        }
+        return $acheive;
     }
-    return $acheive;
-  }
 }

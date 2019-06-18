@@ -15,6 +15,7 @@ class CreateAcheivesTable extends Migration
     {
         Schema::create('acheive', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('number')->nullable();
             $table->string('icon');
 
             $table->timestamps();

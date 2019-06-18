@@ -13,9 +13,8 @@ class acheive extends Model
     use Translatable;
 
     protected $table = 'acheive';
-    protected $fillable = ['icon'];
-    public $translatedAttributes = ['title', 'number','content'];
+    protected $fillable = ['icon','number'];
+    public $translatedAttributes = ['title','content'];
     public $translationModel = AcheiveTranslation::class;
     
 }
- 

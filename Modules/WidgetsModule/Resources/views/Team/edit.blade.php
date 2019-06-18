@@ -86,7 +86,7 @@
         <div class="col-sm-8">
           <input type="file" autocomplete="off" name="photo">
           <br>
-          <img src="{{asset('public/images/team/' . $team->photo)}}" width="100" height="70">
+          <img src="{{asset('images/team/' . $team->photo)}}" width="100" height="70">
         </div>
       </div>
 

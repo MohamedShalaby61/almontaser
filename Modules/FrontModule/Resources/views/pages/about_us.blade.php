@@ -123,7 +123,7 @@
         </div>
         <div class="row">
             <div class="col-xl-6">
-                <div class="choose-carousel owl-carousel owl-theme" style="background-image: url({{ url('/images/choose.jpg') }});">
+                <div class="choose-carousel owl-carousel owl-theme" style="background-image: url({{ url('/images/choose.jpg') }});width:590px;height:295px">
                     @foreach($blogs as $blog)
                         <div class="single-choose-item text-center">
                             <h6>{{$blog->created_at->format('Y-m-d')}}</h6>
@@ -133,12 +133,13 @@
                     @endforeach
                 </div>
             </div>
+            @if($video !== null)
             <div class="col-xl-6">
                 <div class="video-holder-box" style="background-image: url({{ url('/images/choose2.jpg') }});">
                     <div class="icon-holder">
                         <div class="icon">
                             <div class="inner">
-                                <a class="html5lightbox" title="Dento Video Gallery" href="https://www.youtube.com/watch?v=p25gICT63ek">
+                                <a class="html5lightbox" title="Dento Video Gallery" href="{{ $video->link }}">
                                     <span class="flaticon-multimedia"></span>
                                 </a>
                             </div>   
@@ -146,6 +147,7 @@
                     </div>    
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </section> 
@@ -163,7 +165,7 @@
                        @foreach($doctors as $doctor)
                         <!--Start single item member-->
                         <div class="single-team-member">
-                            <div class="img-holder">
+                            <div style="width: 370px;height: 420px;" class="img-holder">
                                 @if($doctor->photo != null)
                                 <img src="{{ url('/') }}/images/team/{{$doctor->photo}}" alt="Awesome Image">
                                 @else

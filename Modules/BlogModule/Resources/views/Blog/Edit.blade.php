@@ -125,7 +125,7 @@
           <div class="col-sm-8">
             <input type="file" autocomplete="off" class="" name="photo">
             @if($blog->photo)
-              <img src="{{asset('/public/images/blog/' . $blog->photo)}}" style="margin-top: 5px;" height="70" width="100">
+              <img src="{{asset('/images/blog/' . $blog->photo)}}" style="margin-top: 5px;" height="70" width="100">
             @else
               <br>
               "<strong>No Photo</strong>"

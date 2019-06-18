@@ -65,17 +65,17 @@
                     <textarea id="editor{{$lang->id}}" name="{{$lang->lang}}[content]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                   </div>
                 </div>
-
-                <div class="form-group">
-                  {{-- Description --}}
-                  <label class="control-label col-sm-2" for="title">{{__('widgetsmodule::widgets.number')}} ({{$lang->display_lang}}):</label>
-                  <div class="col-sm-8">
-                    <input data-validation="length alphanumeric" data-validation-length="min4" type="text" autocomplete="off" class="form-control"
-                    name="{{$lang->lang}}[number]" data-validation="alphanumeric" @if ($loop->first) required @endif>
-                  </div>
-                </div>
               </div>
               @endforeach
+
+                  <div class="form-group">
+                      {{-- Description --}}
+                      <label class="control-label col-sm-2" for="title">{{__('widgetsmodule::widgets.number')}} ({{$lang->display_lang}}):</label>
+                      <div class="col-sm-8">
+                          <input data-validation="length alphanumeric" data-validation-length="min4" type="text" autocomplete="off" class="form-control"
+                                 name="number" data-validation="alphanumeric" required >
+                      </div>
+                  </div>
             </div>
             <!-- /.tab-content -->
           </div>

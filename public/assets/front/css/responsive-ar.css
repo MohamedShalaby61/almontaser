@@ -1,0 +1,967 @@
+/* Medium screen  */ 
+@media only screen and (min-width: 992px) and (max-width: 1199px) {  
+
+/*** 
+=============================================
+    Header Style1 Area Style
+=============================================
+***/ 
+.header-contact-info ul {
+    margin-left: 0;
+    margin-right: 30px;
+}    
+.header-contact-info ul li {
+    margin-right: 0;
+    margin-left: 15px;
+    padding-right: 0;
+    padding-left: 15px;
+}      
+/*** 
+=============================================
+    Mainmenu Area Style
+=============================================
+***/ 
+  
+/*** 
+=============================================
+    About Area Style
+=============================================
+***/     
+   
+ 
+/*** 
+=============================================
+    Highlights Area Style
+=============================================
+***/      
+  
+/*** 
+=============================================
+    Team Area v2 Style
+=============================================
+***/  
+.single-team-slide .img-holder {
+    left: auto;
+    right: 20px;
+}       
+  
+.single-team-slider ul.nav-link {
+    right: auto;
+    left: 0px;
+}
+
+/*** 
+=============================================
+    Footer Area style
+=============================================
+***/    
+
+
+/*** 
+=============================================
+    Header Style2 Area style
+=============================================
+***/ 
+.header-style2-logo {
+    padding-right: 0;
+    padding-left: 30px;
+}    
+.main-menu.style1.style2 .navigation li {
+    margin-right: 0;
+    margin-left: 15px;
+}    
+
+/*** 
+=============================================
+    Fact Counter Area style
+=============================================
+***/     
+
+
+/*** 
+=============================================
+    About Area.home2 style
+=============================================
+***/      
+   
+    
+/*** 
+=============================================
+    Brand area style
+=============================================
+***/      
+  
+    
+/*** 
+=============================================
+    Specialities Single Area style
+=============================================
+***/      
+.specialities-sidebar {
+    margin-left: 0;
+    margin-right: 0;
+}    
+    
+/*** 
+=============================================
+    Doctor Area style
+=============================================
+***/    
+.single-doctor-item .text-holder {
+    margin-left: 0;
+    margin-right: 0;
+}   
+ 
+/*** 
+=============================================
+    Blog Single Area style
+=============================================
+***/     
+.single-blog-post .text-holder{
+    padding: 28px 26px 22px;
+} 
+    
+/*** 
+=============================================
+    Visit Timetable Area Style
+=============================================
+***/
+
+/*** 
+=============================================
+    Appointment Area 2 Style
+=============================================
+***/    
+
+/*** 
+=============================================
+    Contact Info Map Area Style
+=============================================
+***/ 
+    
+
+}
+
+
+
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) {  
+    
+/*** 
+=============================================
+    Top Bar Area Style
+=============================================
+***/  
+
+.top-left ul li {
+    float: none;
+    margin-right: 0;
+    margin-left: 0;
+}    
+    
+/*** 
+=============================================
+    Header Style1 Area Style
+=============================================
+***/     
+.header-style1-logo {
+    float: none !important;
+}    
+.header-contact-info {
+    float: none !important;
+}    
+.header-contact-info ul {
+    margin-left: 0px;
+    margin-right: 0px;
+}    
+.header-contact-info ul li {
+    float: none;
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+    border-right: none;
+    border-left: none;
+}
+.header-style1-button {
+    float: none !important;
+}    
+ 
+/*** 
+=============================================
+    Mainmenu Area  style
+=============================================
+***/     
+.mainmenu-right {
+    right: auto;
+    left: 5px;
+} 
+.search-box-style1 {
+    right: auto;
+    left: 70px;
+}
+    
+/*** 
+=============================================
+    About Area Style
+=============================================
+***/     
+
+/*** 
+=============================================
+    Highlights Area Style
+=============================================
+***/     
+        
+/*** 
+=============================================
+    Team Area v2 Style
+=============================================
+***/    
+.single-team-slide .img-holder {
+    left: auto;
+    right: 20px;
+}         
+.single-team-slider ul.nav-link {
+    right: 0px;
+    left: 0px;
+}
+   
+/*** 
+=============================================
+    Testimonial Area  style
+=============================================
+***/    
+.testimonial-area .sec-title {
+    float: none !important;
+}    
+.testimonial-area .button {
+    float: none !important;
+}    
+.testimonial-area .owl-theme .owl-nav.disabled + .owl-dots {
+    left: auto;
+    right: -104px;
+}    
+    
+/*** 
+=============================================
+    Newsletter Area  style
+=============================================
+***/      
+
+/*** 
+=============================================
+    Footer Area style
+=============================================
+***/    
+    
+/*** 
+=============================================
+    Footer Bottom area  style
+=============================================
+***/   
+.footer-social-links {
+    float: none !important;
+} 
+.sociallinks-style-one li {
+    float: none;
+    margin: 0 8px;
+}    
+    
+    
+.footer-bottom-area .copyright-text {
+    float: none !important;
+}      
+.footer-menu {
+    float: none !important;
+}    
+.footer-menu li {
+    float: none;
+    margin-right: 0;
+    margin-left: 10px;
+    padding-right: 0;
+    padding-left: 10px;
+}     
+  
+/*** 
+=============================================
+    Header Style2 Area style
+=============================================
+***/     
+.header-style2-logo {
+    padding-right: 0;
+    padding-left: 0;
+    left: auto;
+    right: 80px;
+}     
+.header-style2-area .header-middle {
+    float: none !important;
+}    
+.header-style2-button {
+    right: auto;
+    left: 15px;
+}    
+ 
+/*** 
+=============================================
+    Fact Counter Area style
+=============================================
+***/      
+.single-fact-counter {
+    float: none;
+    border-right: none;
+    border-left: none;
+}    
+    
+/*** 
+=============================================
+    About Area.home2 style
+=============================================
+***/      
+
+/*** 
+=============================================
+    Appointment Area style
+=============================================
+***/       
+
+    
+/*** 
+=============================================
+    Works Area V2 style
+=============================================
+***/ 
+
+/*** 
+=============================================
+    Warranties Sec style
+=============================================
+***/ 
+    
+/*** 
+=============================================
+    Brand area style
+=============================================
+***/      
+    
+/*** 
+=============================================
+    Fact Counter Area style2 style
+=============================================
+***/ 
+.fact-counter-area.style2 .single-fact-counter {
+    border-right: 0px solid;
+    border-left: 0px solid;
+}    
+    
+/*** 
+=============================================
+    Choose Area style
+=============================================
+***/ 
+
+/*** 
+=============================================
+    Specialities Single Area style
+=============================================
+***/    
+.specialities-sidebar {
+    margin-left: 0;
+    margin-right: 0;
+}    
+    
+/*** 
+=============================================
+    Doctor Area style
+=============================================
+***/      
+.single-doctor-item .text-holder {
+    margin-left: 0;
+    margin-right: 0;
+}   
+   
+/*** 
+=============================================
+    Blog Area Style
+=============================================
+***/     
+#blog-area .sidebar-wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
+}     
+
+   
+/*** 
+=============================================
+    Blog Single area style
+=============================================
+***/ 
+
+/*** 
+=============================================
+    Testimonial Sec style4 style
+=============================================
+***/       
+   
+/*** 
+=============================================
+    Visit Timetable Area Style
+=============================================
+***/
+  
+  
+/*** 
+=============================================
+    Appointment Area 2 Style
+=============================================
+***/       
+    
+/*** 
+=============================================
+    Contact Info Map Area Style
+=============================================
+***/     
+    
+ 
+    
+}
+
+
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) { 
+
+/*** 
+=============================================
+    Top Bar Area Style
+=============================================
+***/  
+.top-left ul li {
+    float: none;
+    margin-right: 0;
+    margin-left: 0;
+}    
+.top-right p {
+    float: none;
+    padding-left: 0;
+    padding-right: 0;
+}    
+.top-right .sociallinks-style-one {
+    float: none;
+}    
+.top-right .sociallinks-style-one li {
+    float: none;
+    margin-right: 0;
+    margin-left: 0;
+}    
+    
+/*** 
+=============================================
+    Header Style1 Area Style
+=============================================
+***/     
+.header-style1-logo {
+    float: none !important;
+}    
+.header-contact-info {
+    float: none !important;
+}    
+.header-contact-info ul {
+    margin-left: 0px;
+    margin-right: 0px;
+}    
+.header-contact-info ul li {
+    float: none;
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+    border-right: none;
+    border-left: none;
+}   
+.header-style1-button {
+    float: none !important;
+}        
+    
+/*** 
+=============================================
+    Mainmenu Area  style
+=============================================
+***/    
+.mainmenu-right {
+    right: auto;
+    left: 5px;
+} 
+.search-box-style1 {
+    right: auto;
+    left: 56px;
+}
+    
+/*** 
+=============================================
+    Hidden Bar Css Style
+=============================================
+***/        
+   
+/*** 
+=============================================
+    About Area Style
+=============================================
+***/        
+.about-logo-box ul li {
+    float: none;
+    margin-right: 0;
+    margin-left: 0;
+}    
+    
+/*** 
+=============================================
+    Highlights Area Style
+=============================================
+***/     
+
+    
+/*** 
+=============================================
+    Team Area v2 Style
+=============================================
+***/   
+.single-team-slide .img-holder {
+    left: auto;
+    right: 0;
+}       
+.single-team-slider .thumb-box.style2 {
+    left: auto;
+    right: 0;
+}
+.single-team-slider ul.nav-link {
+    left: auto;
+    right: 0px;
+}   
+.single-team-slide .img-holder .team-social-links {
+    right: auto;
+    left: -21px;
+}    
+    
+    
+/*** 
+=============================================
+    Works Area style
+=============================================
+***/    
+   
+    
+/*** 
+=============================================
+    Testimonial Area  style
+=============================================
+***/   
+.testimonial-area .inner-content {
+    padding-left: 0;
+    padding-right: 50px;
+}    
+.testimonial-area .sec-title {
+    float: none !important;
+}    
+.testimonial-area .button {
+    float: none !important;
+}    
+.testimonial-area .owl-theme .owl-nav.disabled + .owl-dots {
+    left: auto;
+    right: -50px;
+}    
+    
+/*** 
+=============================================
+    Newsletter Area  style
+=============================================
+***/      
+ 
+/*** 
+=============================================
+    Footer Area style
+=============================================
+***/    
+
+/*** 
+/*** 
+=============================================
+    Footer Bottom area  style
+=============================================
+***/    
+.footer-social-links {
+    float: none !important;
+} 
+.sociallinks-style-one li {
+    float: none;
+    margin: 0 8px;
+}    
+.footer-bottom-area .copyright-text {
+    float: none !important;
+}      
+.footer-menu {
+    float: none !important;
+}    
+.footer-menu li {
+    float: none;
+    margin-right: 0;
+    margin-left: 10px;
+    padding-right: 0;
+    padding-left: 10px;
+}     
+  
+    
+    
+
+    
+/*** 
+=============================================
+    Topbar Style2 Area style
+=============================================
+***/       
+.top-left-style2 {
+    float: none !important;
+}    
+.top-left-style2 ul li {
+    float: none;
+    border-right: none;
+    border-left: none;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: 0;
+    margin-left: 0;
+    margin: 0 10px;
+}    
+.top-right-style2.float-right {
+    float: none !important;
+} 
+    
+/*** 
+=============================================
+    Header Style2 Area style
+=============================================
+***/     
+.header-style2-logo {
+    padding-right: 0;
+    padding-left: 0;
+    left: auto;
+    right: 80px;
+}     
+.header-style2-area .header-middle {
+    float: none !important;
+}    
+.header-style2-button {
+    right: auto;
+    left: 15px;
+}          
+    
+/*** 
+=============================================
+    Fact Counter Area style
+=============================================
+***/      
+.single-fact-counter {
+    float: none;
+    border-right: none;
+    border-left: none;
+}    
+    
+/*** 
+=============================================
+    About Area.home2 style
+=============================================
+***/      
+        
+/*** 
+=============================================
+    Appointment Area style
+=============================================
+***/  
+ 
+/*** 
+=============================================
+    Works Area V2 style
+=============================================
+***/ 
+.single-work-slide .text-holder {
+    padding-right: 0;
+    padding-left: 60px;
+}    
+    
+/*** 
+=============================================
+    Warranties Sec style
+=============================================
+***/ 
+   
+    
+/*** 
+=============================================
+    Brand area style
+=============================================
+***/       
+.brand-area .brand li {
+    float: none;
+}    
+    
+/*** 
+=============================================
+    Fact Counter Area style2 style
+=============================================
+***/ 
+.fact-counter-area.style2 .single-fact-counter {
+    border-right: 0px solid;
+    border-left: 0px solid;
+}    
+   
+/*** 
+=============================================
+    Choose Area style
+=============================================
+***/ 
+ 
+/*** 
+=============================================
+    Specialities Single Area style
+=============================================
+***/   
+.specialities-sidebar {
+    margin-left: 0;
+    margin-right: 0;
+}            
+    
+/*** 
+=============================================
+    Doctor Area style
+=============================================
+***/      
+.single-doctor-item .text-holder {
+    margin-left: 0;
+    margin-right: 0;
+}
+  
+/*** 
+=============================================
+    Breadcrumb Area style
+=============================================
+***/    
+.breadcrumb-area::before {
+    left: auto;
+    right: -25%;
+}    
+.breadcrumb-area .title {
+    float: none !important;
+}    
+.breadcrumb-area .breadcrumb-menu {
+    float: none !important;
+}    
+
+/*** 
+=============================================
+    Blog Area style
+=============================================
+***/    
+.single-blog-post.blog-large .inner-content {
+    padding-left: 0;
+    padding-right: 15px;
+}    
+#blog-area .sidebar-wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
+}      
+    
+/*** 
+=============================================
+    Blog Single area style
+=============================================
+***/      
+.blog-prev-next-option .single.prev {
+    float: none;
+    padding-left: 0;
+    padding-right: 90px;
+}          
+.blog-prev-next-option .single.next {
+    float: none;
+    padding-right: 0;
+    padding-left: 90px;
+}     
+
+/*** 
+=============================================
+    Testimonial Sec style4 style
+=============================================
+***/       
+       
+/*** 
+=============================================
+    Visit Timetable Area Style
+=============================================
+***/ 
+      
+/*** 
+=============================================
+    Appointment Area 2 Style
+=============================================
+***/ 
+
+/*** 
+=============================================
+    Contact Info Map Area Style
+=============================================
+***/     
+
+/*** 
+=============================================
+    Works Area Plus Mix Style
+=============================================
+***/     
+
+    
+}
+
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px){}
+
+@media (min-width: 992px){ 
+    
+    
+}
+
+
+
+@media only screen and (max-width: 991px){ 
+    
+.main-menu .collapse {
+    float: none;
+}    
+.main-menu .navbar-header {
+    float: none;
+    text-align: left;
+    right: auto;
+    left: 0px;
+}    
+.main-menu .navbar-header .navbar-toggle {
+    float: none;
+    left: auto;
+    right: 0;
+} 
+.main-menu .navbar-collapse > .navigation {
+    float: none !important;
+}   
+.main-menu .navbar-collapse .navigation > li{
+    float:none !important;
+    border-right: none;
+    border-left: none;
+} 
+.main-menu .navbar-collapse > .navigation > li > ul,
+.main-menu .navbar-collapse > .navigation > li > ul > li > ul{
+    float:none;
+}       
+.main-menu .navbar-collapse .navigation li,
+.main-menu .navbar-collapse .navigation li ul li,
+.main-menu .navbar-collapse .navigation li ul li ul li{
+    left:auto!important;
+    right:0px !important;
+}      
+.main-menu .navbar-collapse > .navigation > li > a {
+    text-align: right; 
+}  
+.main-menu .navbar-collapse .navigation li ul li a {
+    text-align: right;
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.main-menu.style1.style2 .navbar-collapse .navigation li {
+    float: none;
+    margin-right: 0px;
+    margin-left: 0px;
+} 
+.main-menu.style1.style2 .navbar-collapse > .navigation > li > a{
+    text-align: right; 
+}    
+.main-menu.style1.style2 .navbar-collapse .navigation li ul li a {
+    text-align: right;
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}    
+.main-menu .navigation > li > ul > li > ul:before {
+    left: auto;
+    right: 0px;
+}   
+    
+
+    
+}
+
+
+@media only screen and (min-width: 1200px) and (max-width: 1300px) { 
+    
+.main-slider .slide-content.left-slide{ 
+    margin-left: 0; 
+    margin-right: 100px; 
+}
+    
+ 
+}
+
+
+@media only screen and (max-width: 1199px){
+.main-slider .slide-content.left-slide{ 
+    margin-left: 0; 
+    margin-right: 100px; 
+}    
+    
+    
+    
+}
+
+
+@media only screen and (max-width: 1039px){
+    
+.main-slider .slide-content.left-slide{ 
+    margin-left: 0; 
+    margin-right: 50px; 
+}  
+ 
+    
+    
+}
+
+
+@media only screen and (max-width: 777px){
+
+
+    
+}
+
+
+
+
+@media only screen and (max-width: 599px) {
+/*** 
+=============================================
+    Rev slider wrapper style
+=============================================
+***/ 
+.main-slider .slide-content.left-slide {
+    margin-left: 0px;
+    margin-right: 0px;
+}    
+  
+    
+    
+    
+    
+}
+
+
+
+@media only screen and (max-width: 479px) {    
+  
+    
+}
+
+
+
+
+
+
+
+

@@ -90,9 +90,7 @@
                     </div>
                     <div class="specialities-top-content">
                         <div class="specialities-carousel owl-carousel owl-theme">
-                            <div class="single-item">
-                                <img src="{{ url('assets/front') }}/images/services/service-single/specialities-1.jpg" alt="Awesome Image">    
-                            </div>
+                            
                             <div class="single-item">
                                 <img src="{{ url('assets/front') }}/images/services/service-single/specialities-1.jpg" alt="Awesome Image">    
                             </div>      
