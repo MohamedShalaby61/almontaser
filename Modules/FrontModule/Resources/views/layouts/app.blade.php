@@ -2,14 +2,11 @@
 <html dir="{{ App()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 <head>
 	<meta charset="UTF-8">
-	<title>{{ $config['title'] }}</title>
-
+	<title>{{ $config['title_'.App()->getLocale()] }}</title>
 	<!-- responsive meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- For IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-	
         <!-- master stylesheet -->
     <link rel="stylesheet" href="{{ url('/assets/front') }}/css/style.css">
     <!-- Responsive stylesheet -->
@@ -27,11 +24,8 @@
         <link rel="stylesheet" href="{{ url('/assets/front') }}/css/responsive-ar.css">
     @endif
     @stack('css')
-    <!-- Fixing Internet Explorer-->
-    <!--[if lt IE 9]>
         <script src="{{ url('assets/front') }}/http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <script src="{{ url('assets/front') }}/js/html5shiv.js"></script>
-    <![endif]-->
     
 </head>
 <body>
@@ -46,8 +40,7 @@
             <div class="col-xl-12">
                 <div class="top-left-style2 float-left">
                     <ul>
-                        <li><span class="icon-clock"></span><b>{{ $work_hour->day }}: </b> {{ $work_hour->from }} {{ __('frontmodule::front.am') }} @lang('frontmodule::front.to') {{ $work_hour->to }}
-                        @lang('frontmodule::front.pm')</li>
+                        <li><span class="icon-clock"></span><b> {{ $config['work_hour_'.App()->getLocale()] }} </b>
                         <li><span class="icon-phone"></span><b>@lang('frontmodule::front.contact'): </b>{{ $config['phone'] }}</li>
                     </ul>
                 </div>
@@ -102,7 +95,7 @@
                             </a>
                         </div>  
                         <div class="text-box fix">
-                            {!! $config['about_index'] !!}
+                            {!! substr($config['about_index_'.App()->getLocale()],0,350) !!}
                         </div>
                         <div class="button fix">
                             <a class="btn-one" href="{{ route('about_us') }}">@lang('frontmodule::front.read_more')</a>
@@ -133,12 +126,12 @@
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                 <div class="single-footer-widget martop6 marbtm50">
                     <div class="title">
-                        <h3>@lang('frontmodule::front.services')</h3>
+                        <h3>@lang('frontmodule::front.categories')</h3>
                     </div>
                     <ul class="specialities">
-                        @if($services->count() > 0)
-                            @foreach($services as $service)
-                                <li><a href="{{ route('single_service',str_replace(' ','-',$service->title)) }}">{{ $service->title }}</a></li>
+                        @if($servicess->count() > 0)
+                            @foreach($servicess as $service)
+                                <li><a href="{{ route('service_categories',$service->id) }}">{{ $service->title }}</a></li>
                             @endforeach
                         @endif
                     </ul>
@@ -150,16 +143,14 @@
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                 <div class="single-footer-widget martop6 pdbtm50">
                     <div class="title">
-                        <h3>Facilities</h3>
+                        <h3>@lang('frontmodule::front.feature_services')</h3>
                     </div>
                     <ul class="facilities">
-                        <li><a href="#">Individual Tooth X-Ray</a></li>
-                        <li><a href="#">Intensive Care Unit</a></li>
-                        <li><a href="#">Blood Bank</a></li>
-                        <li><a href="#">Critical Care Areas</a></li>
-                        <li><a href="#">Laboratories</a></li>
-                        <li><a href="#">Scale and Clean</a></li>
-                        <li><a href="#">Fissure Sealants</a></li>
+                        @if($features->count() > 0)
+                            @foreach($features as $service)
+                                <li><a href="{{ route('single_service',str_replace(' ','-',$service->title)) }}">{{ $service->title }}</a></li>
+                            @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -178,12 +169,10 @@
                 <div class="inner clearfix">
                     <div class="footer-social-links float-left">
                         <ul class="sociallinks-style-one">
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                            <li><a href="{{ $config['fb_link'] }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="{{ $config['tw_link'] }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="{{ $config['youtube'] }}"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                            <li><a href="{{ $config['telegram'] }}"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                     <div class="copyright-text text-center">

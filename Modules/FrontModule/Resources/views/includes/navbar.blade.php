@@ -23,11 +23,11 @@
                                     <li><a href="{{route('about_us')}}">@lang('frontmodule::front.about_us')</a></li>
                                     <li><a href="{{ route('question') }}">@lang('frontmodule::front.ask')</a></li>
                                     <li><a href="{{ route('blogs') }}">@lang('frontmodule::front.blogs')</a></li>
-                                    <li class="dropdown"><a href="{{route('services')}}">@lang('frontmodule::front.services')</a>
+                                    <li class="dropdown"><a href="#">@lang('frontmodule::front.services')</a>
                                         <ul>
-                                            @if($services->count() > 0)
-                                                @foreach($services as $service)
-                                                <li><a href="{{ route('single_service',str_replace(' ','-',$service->title)) }}">{{ $service->title }}</a></li>
+                                            @if($servicess->count() > 0)
+                                                @foreach($servicess as $service)
+                                                <li><a href="{{ route('service_categories',$service->id) }}">{{ $service->title }}</a></li>
                                                 @endforeach
                                             @endif
                                         </ul>

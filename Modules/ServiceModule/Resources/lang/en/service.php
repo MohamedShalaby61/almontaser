@@ -30,5 +30,5 @@ return array(
   'feature' => 'YES',
   'not_feature'=>'NO',
    'yes'=>'Yes',
-   'No'=>'No',
+   'no'=>'No',
 );

@@ -64,4 +64,6 @@ return [
     'categories' => 'الاقسام',
     'recent_posts' => 'احدث التدوينات',
     'success_words' => 'تم ارسال رسالتك بنجاح',
+    'success_words_two'=>'شكرا لحجزك معنا في دينتكس',
+    'feature_services'=>'الخدمات المميزة',
 ];

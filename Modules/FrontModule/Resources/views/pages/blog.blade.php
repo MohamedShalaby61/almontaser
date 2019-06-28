@@ -40,7 +40,7 @@
                     </div>
                 </form>
             </div>
-            <div class="offer-box text-center" style="background-image: url(images/resources/offer-box.jpg);">
+            <div class="offer-box text-center" style="background-image: url({{ url('assets/front/images/resources/offer-box.jpg') }});">
                 <div class="big-title">50% <span>Offer</span></div>
                 <h3>5 Years Warranty</h3>
                 <a class="btn-one" href="#">Pricing Plans</a>
@@ -62,7 +62,11 @@
                         <div class="breadcrumb-menu float-right">
                             <ul class="clearfix">
                                 <li><a href="{{url('/')}}">@lang('frontmodule::front.home')</a></li>
+                                @if(App()->getLocale() == 'ar')
+                                <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+                                @else
                                 <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                                @endif
                                 <li class="active">@lang('frontmodule::front.blogs')</li>
                             </ul>
                         </div>

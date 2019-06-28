@@ -4,6 +4,7 @@ namespace Modules\FrontModule\Repository;
 
 use Modules\BlogModule\Entities\BlogCategory;
 use Modules\BlogModule\Entities\BlogTranslation;
+use Modules\ServiceModule\Entities\ServiceCategory\ServiceCategory;
 use Modules\WidgetsModule\Entities\Team\Team;
 use Modules\ServiceModule\Entities\ServiceMod\Service;
 use Modules\ServiceModule\Entities\ServiceMod\ServiceTranslation;
@@ -26,39 +27,39 @@ class FrontRepository
     }
     public function findDoctor()
     {
-        $doctor = Team::all()->first();
+        $doctor = Team::with(['translations'])->first();
         return $doctor;
     }
     public function findBlog($title)
     {
-        $blog = Blog::all()->where('title',str_replace('-',' ',$title))->first();
+        $blog = Blog::with(['translations','categories','admin'])->where('title',str_replace('-',' ',$title))->first();
         //dd($blog);
         return $blog;
     }
 
     public function findCategories()
     {
-        $cats = BlogCategory::all();
+        $cats = BlogCategory::with(['translations']);
         return $cats;
     }
     public function findVideo()
     {
-        $video = Video::all()->first();
+        $video = Video::with(['translations'])->first();
         return $video;
     }
     public function findCategoryById($id)
     {
-        $cats = BlogCategory::query()->where('id',$id)->first();
+        $cats = BlogCategory::with(['translations','child','parent','blogs'])->where('id',$id)->first();
         return $cats;
     }
     public function findFeatures($num)
     {
-        $feature = Service::query()->where('feature',1)->limit($num)->get();
+        $feature = Service::with(['translations'])->where('feature',1)->limit($num)->get();
         return $feature;
     }
     public function findAllDoctor()
     {
-        $doctor = Team::all();
+        $doctor = Team::with(['translations'])->get();
         return $doctor;
     }
     public function findAllBlog()
@@ -68,32 +69,44 @@ class FrontRepository
     }
     public function findTestimonials()
     {
-        $review = Testimonial::all();
+        $review = Testimonial::query()->get();
         return $review;
     }
     public function findLimitBlogs($num)
     {
-        $review = Blog::query()->limit($num)->get();
+        $review = Blog::with(['translations','admin','categories'])->limit($num)->get();
         return $review;
     }
     public function findAllServices()
     {
-        $review = Service::all();
+        $review = Service::with(['translations'])->get();
         return $review;
     }
     public function findLimitServices()
     {
-        $review = Service::query()->limit(6)->get();
+        $review = Service::with(['translations','service_category'])->limit(6)->get();
         return $review;
     }
     public function findAllAcheive()
     {
-        $review = Acheive::query();
+        $review = Acheive::with(['translations'])->limit(3)->get();
         return $review;
     }
     public function findServiceByTitle($title)
     {
-        $service = ServiceTranslation::where('title',str_replace('-', ' ', $title))->first();
+        $service = ServiceTranslation::query()->where('title',str_replace('-', ' ', $title))->first();
         return $service;
+    }
+
+    public function findAllServiceCategories()
+    {
+        $services = ServiceCategory::with(['translations'])->get();
+        return $services;
+    }
+
+    public function findServicesByCategory($id)
+    {
+        $services = Service::with(['translations'])->where('service_category_id',$id)->get();
+        return $services;
     }
 }

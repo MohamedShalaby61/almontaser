@@ -15,8 +15,9 @@ class ServiceCategory extends Model
     public $translationModel = ServiceCategoryTranslation::class;
 
     # Relation
-    public function service()
+
+    public function services()
     {
-        return $this->hasMany(Service::class);
+        return $this->hasMany('Modules\ServiceModule\Entities\ServiceMod\Service','service_category_id','id');
     }
 }

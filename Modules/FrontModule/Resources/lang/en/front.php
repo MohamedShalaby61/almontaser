@@ -65,4 +65,6 @@ return [
     'categories' => 'Categories',
     'recent_posts' => 'Recent Posts',
     'success_words' => 'Your Message Sent Successfully !',
+    'success_words_two'=>'Thank You For Joining Dentex',
+    'feature_services'=>'Feature Services',
 ];

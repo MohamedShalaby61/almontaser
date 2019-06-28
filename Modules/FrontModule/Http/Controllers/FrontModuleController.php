@@ -1,5 +1,4 @@
 <?php
-
 namespace Modules\FrontModule\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -29,9 +28,10 @@ class FrontModuleController extends Controller
         $reviews = $this->frontRepository->findTestimonials();
         $acheives = $this->frontRepository->findAllAcheive();
         $blogs = $this->frontRepository->findLimitBlogs(3);
-        $services = $this->frontRepository->findAllServices();
+        $servicess = $this->frontRepository->findAllServiceCategories();
+        //dd($services);
         $video = $this->frontRepository->findVideo();
-        return view('frontmodule::index',compact('asks','sliders','doctor','features','doctors','reviews','blogs','services','video','acheives'));
+        return view('frontmodule::index',compact('asks','sliders','doctor','features','doctors','reviews','blogs','servicess','video','acheives'));
     }
 
     /**
@@ -40,66 +40,91 @@ class FrontModuleController extends Controller
      */
     public function about_us()
     {
+        $servicess = $this->frontRepository->findAllServiceCategories();
         $services = $this->frontRepository->findAllServices();
         $doctor = $this->frontRepository->findDoctor();
         $doctors = $this->frontRepository->findAllDoctor();
         $acheives = $this->frontRepository->findAllAcheive();
         $blogs = $this->frontRepository->findLimitBlogs(3);
         $video = $this->frontRepository->findVideo();
-        return view('frontmodule::pages.about_us',compact('services','doctor','doctors','acheives','blogs','video'));
+        $features = $this->frontRepository->findFeatures(6);
+        return view('frontmodule::pages.about_us',compact('features','servicess','services','doctor','doctors','acheives','blogs','video'));
     }
     public function question()
     {
+        $servicess = $this->frontRepository->findAllServiceCategories();
         $services = $this->frontRepository->findAllServices();
         $doctor = $this->frontRepository->findDoctor();
         $doctors = $this->frontRepository->findAllDoctor();
         $acheives = $this->frontRepository->findAllAcheive();
-        return view('frontmodule::pages.question',compact('services','doctor','doctors','acheives'));
+        $features = $this->frontRepository->findFeatures(3);
+        return view('frontmodule::pages.question',compact('features','servicess','services','doctor','doctors','acheives'));
     }
     public function contact()
     {
+        $servicess = $this->frontRepository->findAllServiceCategories();
         $services = $this->frontRepository->findAllServices();
         $doctor = $this->frontRepository->findDoctor();
         $doctors = $this->frontRepository->findAllDoctor();
         $acheives = $this->frontRepository->findAllAcheive();
-        return view('frontmodule::pages.contact',compact('services','doctor','doctors','acheives'));
+        $features = $this->frontRepository->findFeatures(6);
+        return view('frontmodule::pages.contact',compact('features','servicess','services','doctor','doctors','acheives'));
     }
     public function services()
     {
+        $servicess = $this->frontRepository->findAllServiceCategories();
         $services = $this->frontRepository->findAllServices();
         $doctor = $this->frontRepository->findDoctor();
         $doctors = $this->frontRepository->findAllDoctor();
         $acheives = $this->frontRepository->findAllAcheive();
-        return view('frontmodule::pages.services',compact('services','doctor','doctors','acheives'));
+        $features = $this->frontRepository->findFeatures(6);
+        return view('frontmodule::pages.services',compact('features','servicess','services','doctor','doctors','acheives'));
     }
     public function blogs()
     {
+        $servicess = $this->frontRepository->findAllServiceCategories();
         $services = $this->frontRepository->findAllServices();
         $blogs = $this->frontRepository->findAllBlog();
         $acheives = $this->frontRepository->findAllAcheive();
-        return view('frontmodule::pages.blog',compact('services','blogs','acheives'));
+        $features = $this->frontRepository->findFeatures(6);
+        return view('frontmodule::pages.blog',compact('features','servicess','services','blogs','acheives'));
     }
     public function send_message(Request $request)
     {
         //dd($request->all());
-        $data = $request->validate(['name','email','phone','message']);
-        Booking::create($request->all());
-        return back()->with('success', 'success');
-    }
-    public function send_contact_us(Request $request)
-    {
+        $data = $request->validate([
+            'name'=>'required',
+            'email'=>'required',
+            'phone'=>'required',
+            'message'=>'required',
+        ]);
+        $servicess = $this->frontRepository->findAllServiceCategories();
         $sliders = $this->frontRepository->SliderAll();
         $services = $this->frontRepository->findLimitServices();
         $categories = $this->frontRepository->findCategories();
         $blogs = $this->frontRepository->findAllBlog();
+        $features = $this->frontRepository->findFeatures(6);
+        Booking::create($request->all());
+        return view('frontmodule::pages.success_two',compact('features','servicess','sliders','services','blogs'));
+    }
+    public function send_contact_us(Request $request)
+    {
+        $servicess = $this->frontRepository->findAllServiceCategories();
+        $sliders = $this->frontRepository->SliderAll();
+        $services = $this->frontRepository->findLimitServices();
+        $categories = $this->frontRepository->findCategories();
+        $blogs = $this->frontRepository->findAllBlog();
+        $features = $this->frontRepository->findFeatures(6);
         $request->validate(['name','email','phone','message']);
         Contactus::create($request->all());
-        return view('frontmodule::pages.success',compact('sliders','services','blogs'))->with('success', 'success');
+        return view('frontmodule::pages.success',compact('features','servicess','sliders','services','blogs'))->with('success', 'success');
     }
     public function single_service($title){
         $service = $this->frontRepository->findServiceByTitle($title);
         $services = $this->frontRepository->findLimitServices();
-        return view('frontmodule::pages.single_service',compact('services','service'));
+        $servicess = $this->frontRepository->findAllServiceCategories();
+        $features = $this->frontRepository->findFeatures(6);
+        return view('frontmodule::pages.single_service',compact('features','servicess','services','service'));
     }
     public function single_blog($title){
         $service = $this->frontRepository->findServiceByTitle($title);
@@ -107,14 +132,29 @@ class FrontModuleController extends Controller
         $categories = $this->frontRepository->findCategories();
         $blog = $this->frontRepository->findBlog($title);
         $blogs = $this->frontRepository->findAllBlog();
-        return view('frontmodule::pages.single_blog',compact('categories','blogs','blog','service','services'));
+        $servicess = $this->frontRepository->findAllServiceCategories();
+        $features = $this->frontRepository->findFeatures(6);
+        return view('frontmodule::pages.single_blog',compact('features','servicess','categories','blogs','blog','service','services'));
     }
 
     public function categories($id)
     {
+        $servicess = $this->frontRepository->findAllServiceCategories();
         $services = $this->frontRepository->findAllServices();
         $blogs = $this->frontRepository->findCategoryById($id);
         $acheives = $this->frontRepository->findAllAcheive();
-        return view('frontmodule::pages.categories',compact('services','blogs','acheives'));
+        $features = $this->frontRepository->findFeatures(6);
+        return view('frontmodule::pages.categories',compact('features','servicess','services','blogs','acheives'));
+    }
+
+    public function services_categories($id)
+    {
+        $servicess = $this->frontRepository->findAllServiceCategories();
+        $services = $this->frontRepository->findServicesByCategory($id);
+        //dd($services);
+        //$cats = $this->frontRepository->findAllServiceCategories();
+        $acheives = $this->frontRepository->findAllAcheive();
+        $features = $this->frontRepository->findFeatures(6);
+        return view('frontmodule::pages.services_categories',compact('features','servicess','services','acheives'));
     }
 }

@@ -40,7 +40,7 @@
                 </div>
             </form>
         </div>
-        <div class="offer-box text-center" style="background-image: url(images/resources/offer-box.jpg);">
+        <div class="offer-box text-center" style="background-image: url({{ url('assets/front/images/resources/offer-box.jpg') }});">
             <div class="big-title">50% <span>Offer</span></div>
             <h3>5 Years Warranty</h3>
             <a class="btn-one" href="#">Pricing Plans</a>    
@@ -64,7 +64,11 @@
                     <div class="breadcrumb-menu float-right">
                         <ul class="clearfix">
                             <li><a href="{{url('/')}}">@lang('frontmodule::front.home')</a></li>
+                            @if(App()->getLocale() == 'ar')
+                                <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+                            @else
                             <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                            @endif
                             <li class="active">@lang('frontmodule::front.ask')</li>
                         </ul>    
                     </div>
@@ -77,7 +81,7 @@
 
 <!--Start Appointment Area-->
 <section id="appointment" class="appointment-area">
-    <div class="appointment-title-box" style="background-image: url(images/parallax-background/appointment-title-bg.jpg);">
+    <div class="appointment-title-box" style="background-image: url({{ url('assets/front/images/parallax-background/appointment-title-bg.jpg') }});">
         <div class="sec-title text-center">
             <h3>@lang('frontmodule::front.appointment')</h3>
             <h1>@lang('frontmodule::front.online_booking')</h1>
@@ -94,9 +98,18 @@
             <div class="col-xl-6 col-lg-6">
                 <div class="appointment-form">
                     <div class="text">
-                        <p>@lang('frontmodule::front.question_message') {{$config['phone']}}. @lang('frontmodule::front.contact') {{ $work_hour->day }} {{ $work_hour->from }} – {{ $work_hour->to }}</p>
+                        <p>@lang('frontmodule::front.question_message') {{$config['phone']}}. @lang('frontmodule::front.contact') {{ $config['work_hour_'.App()->getLocale()] }}</p>
                     </div>
-                    <form name="appointment-form" id="send_form" action="#" method="get">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form name="appointment-form" id="send_form" action="{{ route('send_message') }}" method="POST">
                         <input id="_token" name="_token" type="hidden" value="{{ csrf_token() }}">
                         <div class="row">
                             <div class="col-xl-6 col-lg-6">
@@ -136,40 +149,75 @@
     </div>    
 </section>
 <!--End Appointment Area-->
+<hr>
+<section class="services-style2-area sec-pd1">
+    <div class="container">
+        <div class="sec-title max-width text-center">
+            <h3>@lang('frontmodule::front.specialities')</h3>
+            <h1>@lang('frontmodule::front.specialities_message')</h1>
+            <p>@lang('frontmodule::front.specialities_message2')</p>
+        </div>
+        @if($features->count() > 0 )
+            <div class="row">
+            @foreach($features as $feature)
+                <!--Start single solution style1-->
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                        <div class="single-solution-style2 text-center">
+                            <div class="icon-holder">
+                                <img style="width: 110px;height: 110px" src="{{url('/images/service')}}/{{ $feature->photo }}">
+                            </div>
+                            <div class="text-holder">
+                                <h3>{{ $feature->title }}</h3>
+                                <p>{!! substr($feature->description,0,101) !!}</p>
+                                <div class="readmore">
+                                    <a href="#"><span class="flaticon-next"></span></a>
+                                    <div class="overlay-button">
+                                        <a href="{{ route('single_service',str_replace(' ','-',$feature->title)) }}">@lang('frontmodule::front.more')</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--End single solution style1-->
+                @endforeach
+            </div>
+        @endif
+    </div>
+</section>
 @include('commonmodule::includes.swal')
 @endsection
 @push('js')
-    <script>
-        $('.customer_btn').on('click',function (e) {
-            e.preventDefault();
-            var name = $('#name').val();
-            var phone = $('#phone').val();
-            var email = $('#email').val();
-            var message = $('#message').val();
-            var _token = $('#_token').val();
-            $.ajax({
-                'method':'post',
-                'data':{_token:_token,name:name,phone:phone,email:email,message:message},
-                'url':'{{ route("send_message") }}',
-                success:function (data) {
-                    $('#send_form').trigger("reset");
-                    swal("{{__('commonmodule::swal.good')}}", "{{__('commonmodule::swal.send')}}", "success", { button: "{{__('commonmodule::swal.btn')}}", });
+{{--    <script>--}}
+{{--        $('.customer_btn').on('click',function (e) {--}}
+{{--            e.preventDefault();--}}
+{{--            var name = $('#name').val();--}}
+{{--            var phone = $('#phone').val();--}}
+{{--            var email = $('#email').val();--}}
+{{--            var message = $('#message').val();--}}
+{{--            var _token = $('#_token').val();--}}
+{{--            $.ajax({--}}
+{{--                'method':'post',--}}
+{{--                'data':{_token:_token,name:name,phone:phone,email:email,message:message},--}}
+{{--                'url':'{{ route("send_message") }}',--}}
+{{--                success:function (data) {--}}
+{{--                    $('#send_form').trigger("reset");--}}
+{{--                    swal("{{__('commonmodule::swal.good')}}", "{{__('commonmodule::swal.send')}}", "success", { button: "{{__('commonmodule::swal.btn')}}", });--}}
 
-                },
-                //error: function(XMLHttpRequest, textStatus, errorThrown){
-                //    alert("Status: " + textStatus); alert("Error: " + errorThrown); 
-                //}
-            });
-            $body = $("body");
+{{--                },--}}
+{{--                //error: function(XMLHttpRequest, textStatus, errorThrown){--}}
+{{--                //    alert("Status: " + textStatus); alert("Error: " + errorThrown); --}}
+{{--                //}--}}
+{{--            });--}}
+{{--            $body = $("body");--}}
 
-            $(document).on({
-                ajaxStart: function() { $body.addClass("loading");    },
-                 ajaxStop: function() { $body.removeClass("loading"); }    
-            });
+{{--            $(document).on({--}}
+{{--                ajaxStart: function() { $body.addClass("loading");    },--}}
+{{--                 ajaxStop: function() { $body.removeClass("loading"); }    --}}
+{{--            });--}}
 
-            
-        })
-    </script>
+{{--            --}}
+{{--        })--}}
+{{--    </script>--}}
 @endpush
 @push('css')
     <style>

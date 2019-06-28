@@ -44,66 +44,31 @@
 <!--End Welcome area-->
 <!--End fact counter area-->
 <!--Start fact counter area-->
-<section class="fact-counter-area" style="background-image: url(/images/parallax-background/fact-counter-bg.jpg);">
+<section class="fact-counter-area" style="background-image: url({{ url('assets/front/images/parallax-background/176845.jpg') }});">
     <div class="container">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 @if($acheives->count() > 2)
                 <ul class="clearfix">
-                    <!--Start single fact counter-->
-                    <li class="single-fact-counter text-center wow fadeInUp" data-wow-delay="300ms">
+                    @foreach($acheives as $acheive)
+                    <li class="single-fact-counter text-center wow fadeInUp">
                         <div class="count-box">
                             <div class="icon">
-                                <span class="icon-tooth-3"></span>    
+                                    <img style="width: 88px;height: 89px;" src="{{ url('images/acheives/'.$acheive->icon) }}">
+{{--                                <span class="icon-tooth-3"></span>--}}
                             </div>
                             <h1>
-                                <span class="timer" data-from="1" data-to="{{ $acheives->first()->number }}" data-speed="5000" data-refresh-interval="50">{{ $acheives->first()->number }}</span>
+                                <span class="timer" data-from="1" data-to="{{ $acheive->number }}" data-speed="5000" data-refresh-interval="50">{{ $acheive->number }}</span>
                             </h1>
                             <div class="title">
-                                <h3>{{ $acheives->first()->title }}</h3>
+                                <h3>{{ $acheive->title }}</h3>
                             </div>
                             <div class="text">
-                                <p>{!! $acheives->first()->content !!}</p>
+                                <p>{!! $acheive->content !!}</p>
                             </div>
                         </div>
                     </li>
-                    <!--End single fact counter-->
-                    <!--Start single fact counter-->
-                    <li class="single-fact-counter text-center wow fadeInUp" data-wow-delay="600ms">
-                        <div class="count-box">
-                            <div class="icon">
-                                <span class="icon-doctor-1"></span>    
-                            </div>
-                            <h1>
-                                <span class="timer" data-from="1" data-to="{{ $acheives->skip(1)->first()->number }}" data-speed="5000" data-refresh-interval="50">{{ $acheives->skip(1)->first()->number }}</span>
-                            </h1>
-                            <div class="title">
-                                <h3>{{ $acheives->skip(1)->first()->title }}</h3>
-                            </div>
-                            <div class="text">            
-                                <p>{!! $acheives->skip(1)->first()->content !!}</p>
-                            </div>
-                        </div>
-                    </li>
-                    <!--End single fact counter-->
-                    <!--Start single fact counter-->
-                    <li class="single-fact-counter text-center wow fadeInUp" data-wow-delay="900ms">
-                        <div class="count-box">
-                            <div class="icon">
-                                <span class="icon-hospital"></span>    
-                            </div>
-                            <h1>
-                                <span class="timer" data-from="1" data-to="{{ $acheives->skip(2)->first()->number }}" data-speed="5000" data-refresh-interval="50">{{ $acheives->skip(2)->first()->number }}</span>
-                            </h1>
-                            <div class="title">
-                                <h3>{{ $acheives->skip(2)->first()->title }}</h3>
-                            </div>
-                            <div class="text">
-                                <p>{!! $acheives->skip(2)->first()->content !!}</p>
-                            </div>
-                        </div>
-                    </li>
-                    <!--End single fact counter-->
+                    @endforeach
                 </ul>
                 @endif
             </div>
@@ -124,10 +89,10 @@
                 <div class="inner-content">
                     <div class="sec-title">
                         <h3>{{ __('frontmodule::front.about_us') }}</h3>
-                        <h1>{{ $config['about'] }}</h1>
+                        <h1>{{ $config['about_'.App()->getLocale() ] }}</h1>
                     </div>
                     <div class="about-text-holder">
-                        {!! $config['about_index'] !!}
+                        {!! substr($config['about_index_'.App()->getLocale()],0,620) !!}
                         <div class="author-box fix">
                             <div class="img-box">
                                 <img src="{{ url('/') }}/images/doctor.png" alt="Awesome Image">
@@ -189,7 +154,7 @@
 
 <!--Start Appointment Area-->
 <section id="appointment" class="appointment-area">
-    <div class="appointment-title-box" style="background-image: url(images/parallax-background/appointment-title-bg.jpg);">
+    <div class="appointment-title-box" style="background-image: url({{ url('assets/front/images/parallax-background/appointment-title-bg.jpg') }});">
         <div class="sec-title text-center">
             <h3>@lang('frontmodule::front.appointment')</h3>
             <h1>@lang('frontmodule::front.online_booking')</h1>
@@ -205,7 +170,7 @@
             <div class="col-xl-6 col-lg-6">
                 <div class="appointment-form">
                     <div class="text">
-                        <p>@lang('frontmodule::front.question_message') {{$config['phone']}}. @lang('frontmodule::front.contact') {{ $work_hour->day }} {{ $work_hour->from }} – {{ $work_hour->to }}</p>
+                        <p>@lang('frontmodule::front.question_message') {{$config['phone']}}. @lang('frontmodule::front.contact') </p>
                     </div>
                     <form name="appointment-form" id="send_form" action="#" method="get">
                         <input id="_token" name="_token" type="hidden" value="{{ csrf_token() }}">
@@ -399,9 +364,9 @@
                             <img style="height: 243px;width: 370px" src="{{ url('/assets/front') }}/images/blog/lat-blog-1.jpg" alt="
                             Awesome Image">
                             @endif
-                            <div class="categorie-button">
-                                <a class="btn-one" href="{{ route('categories',$blog->categories->first()->id) }}">{{$blog->categories->first()->title}}</a>
-                            </div>
+{{--                            <div class="categorie-button">--}}
+{{--                                <a class="btn-one" href="{{ route('categories',$blog->categories->first()->id) }}">{{$blog->categories->first()->title}}</a>--}}
+{{--                            </div>--}}
                         </div>
                         <div class="text-holder">
                             <div class="meta-box">
