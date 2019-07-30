@@ -15,7 +15,6 @@ class CreateAcheiveTranslationsTable extends Migration
     {
         Schema::create('acheive_translation', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('number');
             $table->string('title');
             $table->integer('acheive_id')->unsigned();
             $table->string('locale')->index();

@@ -44,7 +44,7 @@
 
                                 <td> {{$item->title}} </td>
 
-                                <td> {{$item->content}} </td>
+                                <td> {!! $item->content !!} </td>
 
                                 <td>
                                     @if ($item->icon)

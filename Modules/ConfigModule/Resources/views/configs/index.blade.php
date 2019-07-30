@@ -56,7 +56,7 @@
                                                     <div class="col-sm-9">
                                                         <input type="file" autocomplete="off" name="{{$cat->var}}">
                                                     </div>
-                                                      <img src="{{ asset('public/images/config') }}/{{ $cat->value }}" width="100" height="100">
+                                                      <img src="{{ asset('images/config') }}/{{ $cat->value }}" width="100" height="100">
                                                 </div>
                                             @elseif($cat->type == 3)
                                                 <div class="form-group">

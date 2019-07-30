@@ -11,20 +11,20 @@
     
 	
         <!-- master stylesheet -->
-    <link rel="stylesheet" href="{{ url('assets/front') }}/css/style.css">
+    <link rel="stylesheet" href="{{ url('/assets/front') }}/css/style.css">
     <!-- Responsive stylesheet -->
-    <link rel="stylesheet" href="{{ url('assets/front') }}/css/responsive.css">
+    <link rel="stylesheet" href="{{ url('/assets/front') }}/css/responsive.css">
     <!--Color Switcher Mockup-->
-    <link rel="stylesheet" href="{{ url('assets/front') }}/css/color-switcher-design.css">
+    <link rel="stylesheet" href="{{ url('/assets/front') }}/css/color-switcher-design.css">
     <!--Color Themes-->
-    <link rel="stylesheet" href="{{ url('assets/front') }}/css/color-themes/default-theme.css" id="theme-color-file">
+    <link rel="stylesheet" href="{{ url('/assets/front') }}/css/color-themes/default-theme.css" id="theme-color-file">
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url('assets/front') }}/images/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" href="{{ url('assets/front') }}/images/favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="{{ url('assets/front') }}/images/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url('/assets/front') }}/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="{{ url('/assets/front') }}/images/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="{{ url('/assets/front') }}/images/favicon/favicon-16x16.png" sizes="16x16">
     @if(App()->getLocale() == 'ar')
-        <link rel="stylesheet" href="{{ url('assets/front') }}/css/style-ar.css">
-        <link rel="stylesheet" href="{{ url('assets/front') }}/css/responsive-ar.css">
+        <link rel="stylesheet" href="{{ url('/assets/front') }}/css/style-ar.css">
+        <link rel="stylesheet" href="{{ url('/assets/front') }}/css/responsive-ar.css">
     @endif
     @stack('css')
     <!-- Fixing Internet Explorer-->
@@ -98,7 +98,7 @@
                     <div class="about-us">
                         <div class="footer-logo fix">
                             <a href="{{ route('index_front') }}">
-                                <img src="{{ url('assets/front') }}/images/resources/logo-2.png" alt="Awesome Logo">
+                                <img src="{{ url('/assets/front') }}/images/resources/logo-2.png" alt="Awesome Logo">
                             </a>
                         </div>  
                         <div class="text-box fix">
@@ -232,64 +232,64 @@
 <!-- /.End Of Color Palate -->
 
     <!-- main jQuery -->
-    <script src="{{ url('assets/front') }}/js/jquery.js"></script>
+    <script src="{{ url('/assets/front') }}/js/jquery.js"></script>
     <!-- Wow Script -->
-    <script src="{{ url('assets/front') }}/js/wow.js"></script>
+    <script src="{{ url('/assets/front') }}/js/wow.js"></script>
     <!-- bootstrap -->
-    <script src="{{ url('assets/front') }}/js/bootstrap.min.js"></script>
+    <script src="{{ url('/assets/front') }}/js/bootstrap.min.js"></script>
     <!-- Slick slider Script -->
-    <script src="{{ url('assets/front') }}/js/slick.js"></script>
+    <script src="{{ url('/assets/front') }}/js/slick.js"></script>
     <!-- bx slider -->
-    <script src="{{ url('assets/front') }}/js/jquery.bxslider.min.js"></script>
+    <script src="{{ url('/assets/front') }}/js/jquery.bxslider.min.js"></script>
     <!-- count to -->
-    <script src="{{ url('assets/front') }}/js/jquery.countTo.js"></script>
-    <script src="{{ url('assets/front') }}/js/appear.js"></script>
+    <script src="{{ url('/assets/front') }}/js/jquery.countTo.js"></script>
+    <script src="{{ url('/assets/front') }}/js/appear.js"></script>
     <!-- owl carousel -->
-    <script src="{{ url('assets/front') }}/js/owl.js"></script>
+    <script src="{{ url('/assets/front') }}/js/owl.js"></script>
     <!-- validate -->
-    <script src="{{ url('assets/front') }}/js/validation.js"></script>
+    <script src="{{ url('/assets/front') }}/js/validation.js"></script>
     <!-- mixit up -->
-    <script src="{{ url('assets/front') }}/js/jquery.mixitup.min.js"></script>
+    <script src="{{ url('/assets/front') }}/js/jquery.mixitup.min.js"></script>
     <!-- isotope script-->
-    <script src="{{ url('assets/front') }}/js/isotope.js"></script>
+    <script src="{{ url('/assets/front') }}/js/isotope.js"></script>
     <!-- Easing -->
-    <script src="{{ url('assets/front') }}/js/jquery.easing.min.js"></script>
+    <script src="{{ url('/assets/front') }}/js/jquery.easing.min.js"></script>
     <!-- Gmap helper -->
-    <script src="{{ url('assets/front') }}/http://maps.google.com/maps/api/js?key=AIzaSyB2uu6KHbLc_y7fyAVA4dpqSVM4w9ZnnUw"></script>
+    <script src="{{ url('/assets/front') }}/http://maps.google.com/maps/api/js?key=AIzaSyB2uu6KHbLc_y7fyAVA4dpqSVM4w9ZnnUw"></script>
     <!--Gmap script-->
-    <script src="{{ url('assets/front') }}/js/gmaps.js"></script>
-    <script src="{{ url('assets/front') }}/js/map-helper.js"></script>
+    <script src="{{ url('/assets/front') }}/js/gmaps.js"></script>
+    <script src="{{ url('/assets/front') }}/js/map-helper.js"></script>
     <!-- jQuery ui js -->
-    <script src="{{ url('assets/front') }}/assets/jquery-ui-1.11.4/jquery-ui.js"></script>
+    <script src="{{ url('/assets/front') }}/assets/jquery-ui-1.11.4/jquery-ui.js"></script>
     <!-- Language Switche  -->
-    <script src="{{ url('assets/front') }}/assets/language-switcher/jquery.polyglot.language.switcher.js"></script>
+    <script src="{{ url('/assets/front') }}/assets/language-switcher/jquery.polyglot.language.switcher.js"></script>
     <!-- jQuery timepicker js -->
-    <script src="{{ url('assets/front') }}/assets/timepicker/timePicker.js"></script>
+    <script src="{{ url('/assets/front') }}/assets/timepicker/timePicker.js"></script>
     <!-- Bootstrap select picker js -->
-    <script src="{{ url('assets/front') }}/assets/bootstrap-sl-1.12.1/bootstrap-select.js"></script> 
+    <script src="{{ url('/assets/front') }}/assets/bootstrap-sl-1.12.1/bootstrap-select.js"></script> 
     <!-- html5lightbox js -->                              
-    <script src="{{ url('assets/front') }}/assets/html5lightbox/html5lightbox.js"></script>
+    <script src="{{ url('/assets/front') }}/assets/html5lightbox/html5lightbox.js"></script>
     <!-- html5lightbox js -->                              
-    <script src="{{ url('assets/front') }}/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="{{ url('/assets/front') }}/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <!--Color Switcher-->
-    <script src="{{ url('assets/front') }}/js/color-settings.js"></script>
+    <script src="{{ url('/assets/front') }}/js/color-settings.js"></script>
 
     <!--Revolution Slider-->
-    <script src="{{ url('assets/front') }}/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="{{ url('assets/front') }}/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script src="{{ url('assets/front') }}/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-    <script src="{{ url('assets/front') }}/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-    <script src="{{ url('assets/front') }}/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script src="{{ url('assets/front') }}/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script src="{{ url('assets/front') }}/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
-    <script src="{{ url('assets/front') }}/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script src="{{ url('assets/front') }}/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script src="{{ url('assets/front') }}/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script src="{{ url('assets/front') }}/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
-    <script src="{{ url('assets/front') }}/js/main-slider-script.js"></script>
+    <script src="{{ url('/assets/front') }}/plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="{{ url('/assets/front') }}/plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="{{ url('/assets/front') }}/plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
+    <script src="{{ url('/assets/front') }}/plugins/revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+    <script src="{{ url('/assets/front') }}/plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+    <script src="{{ url('/assets/front') }}/plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+    <script src="{{ url('/assets/front') }}/plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script src="{{ url('/assets/front') }}/plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+    <script src="{{ url('/assets/front') }}/plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+    <script src="{{ url('/assets/front') }}/plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+    <script src="{{ url('/assets/front') }}/plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
+    <script src="{{ url('/assets/front') }}/js/main-slider-script.js"></script>
 
     <!-- thm custom script -->
-    <script src="{{ url('assets/front') }}/js/custom.js"></script>
+    <script src="{{ url('/assets/front') }}/js/custom.js"></script>
     <script>
         $('#dynamic-select').bind('change', function () { // bind change event to select
             var url = $(this).val(); // get selected value

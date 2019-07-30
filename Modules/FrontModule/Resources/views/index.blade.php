@@ -27,12 +27,12 @@
                 <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                 <div class="single-welcome-box text-center" style="height:447px;">
                     <div  class="icon-holder">
-                        <img style="height: 180px;width: 270px" src="{{url('')}}/images/why_us/{{ $ask->photo }}" alt="Icon">
+                        <img style="height: 100px;width: 80px" src="{{url('')}}/images/why_us/{{ $ask->photo }}" alt="Icon">
                     </div>
                     <div class="text-holder">
                         <h3>{{ $ask->title }}</h3>
-                        {!! $ask->description !!}
-                        <a class="btn-one" href="#">{{ __('frontmodule::front.more') }}</a>
+                        <p>{!! $ask->content !!}</p>
+                        <a class="btn-one" href="{{ route('about_us') }}">{{ __('frontmodule::front.more') }}</a>
                     </div>    
                 </div>   
             </div>
@@ -44,10 +44,11 @@
 <!--End Welcome area-->
 <!--End fact counter area-->
 <!--Start fact counter area-->
-<section class="fact-counter-area" style="background-image: url(images/parallax-background/fact-counter-bg.jpg);">
+<section class="fact-counter-area" style="background-image: url(/images/parallax-background/fact-counter-bg.jpg);">
     <div class="container">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                @if($acheives->count() > 2)
                 <ul class="clearfix">
                     <!--Start single fact counter-->
                     <li class="single-fact-counter text-center wow fadeInUp" data-wow-delay="300ms">
@@ -56,13 +57,13 @@
                                 <span class="icon-tooth-3"></span>    
                             </div>
                             <h1>
-                                <span class="timer" data-from="1" data-to="4257" data-speed="5000" data-refresh-interval="50">4257</span>
+                                <span class="timer" data-from="1" data-to="{{ $acheives->first()->number }}" data-speed="5000" data-refresh-interval="50">{{ $acheives->first()->number }}</span>
                             </h1>
                             <div class="title">
-                                <h3>@lang('frontmodule::front.project_complete')</h3>
+                                <h3>{{ $acheives->first()->title }}</h3>
                             </div>
                             <div class="text">
-                                <p>@lang('frontmodule::front.complete_message')</p>
+                                <p>{!! $acheives->first()->content !!}</p>
                             </div>
                         </div>
                     </li>
@@ -74,13 +75,13 @@
                                 <span class="icon-doctor-1"></span>    
                             </div>
                             <h1>
-                                <span class="timer" data-from="1" data-to="18" data-speed="5000" data-refresh-interval="50">18</span>
+                                <span class="timer" data-from="1" data-to="{{ $acheives->skip(1)->first()->number }}" data-speed="5000" data-refresh-interval="50">{{ $acheives->skip(1)->first()->number }}</span>
                             </h1>
                             <div class="title">
-                                <h3>@lang('frontmodule::front.expert_dentists')</h3>
+                                <h3>{{ $acheives->skip(1)->first()->title }}</h3>
                             </div>
                             <div class="text">            
-                                <p>@lang('frontmodule::front.expert_message')</p>
+                                <p>{!! $acheives->skip(1)->first()->content !!}</p>
                             </div>
                         </div>
                     </li>
@@ -92,18 +93,19 @@
                                 <span class="icon-hospital"></span>    
                             </div>
                             <h1>
-                                <span class="timer" data-from="1" data-to="6" data-speed="5000" data-refresh-interval="50">6</span>
+                                <span class="timer" data-from="1" data-to="{{ $acheives->skip(2)->first()->number }}" data-speed="5000" data-refresh-interval="50">{{ $acheives->skip(2)->first()->number }}</span>
                             </h1>
                             <div class="title">
-                                <h3>@lang('frontmodule::front.branches_in_city')</h3>
+                                <h3>{{ $acheives->skip(2)->first()->title }}</h3>
                             </div>
                             <div class="text">
-                                <p>@lang('frontmodule::front.branches_message')</p>
+                                <p>{!! $acheives->skip(2)->first()->content !!}</p>
                             </div>
                         </div>
                     </li>
                     <!--End single fact counter-->
                 </ul>
+                @endif
             </div>
         </div>
     </div>
@@ -115,7 +117,7 @@
         <div class="row">
             <div class="col-xl-6">
                 <div class="about-image-holder">
-                    <img src="{{ url('images/config') }}/{{ $config['logo'] }}" alt="Awesome Image">
+                    <img src="{{ url('/images/project/about.jpg') }}" alt="Awesome Image">
                 </div>    
             </div>
             <div class="col-xl-6">
@@ -138,7 +140,7 @@
                             </div>
                         </div>
                         <div class="read-more">
-                            <a class="btn-two" href="#"><span class="flaticon-next"></span>@lang('frontmodule::front.more_about')</a>
+                            <a class="btn-two" href="{{ route('about_us') }}"><span class="flaticon-next"></span>@lang('frontmodule::front.more_about')</a>
                         </div>
                     </div>
                 </div>
@@ -156,14 +158,14 @@
             <h1>@lang('frontmodule::front.specialities_message')</h1>
             <p>@lang('frontmodule::front.specialities_message2')</p>
         </div>
-        @if($features->count() == 6)
+        @if($features->count() > 0 )
             <div class="row">
                 @foreach($features as $feature)
                     <!--Start single solution style1-->
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                         <div class="single-solution-style2 text-center">
                             <div class="icon-holder">
-                                <img style="width: 110px;height: 110px" src="{{url('images/service')}}/{{ $feature->photo }}">
+                                <img style="width: 110px;height: 110px" src="{{url('/images/service')}}/{{ $feature->photo }}">
                             </div>
                             <div class="text-holder">
                                 <h3>{{ $feature->title }}</h3>
@@ -255,7 +257,7 @@
         </div>
         <div class="row">
             <div class="col-xl-6">
-                <div class="choose-carousel owl-carousel owl-theme" style="background-image: url({{ url('/images/choose.jpg') }});">
+                <div class="choose-carousel owl-carousel owl-theme" style="background-image: url({{ url('/images/choose.jpg') }});width:590px;height:295px">
                     @foreach($blogs as $blog)
                         <div class="single-choose-item text-center">
                             <h6>{{$blog->created_at->format('Y-m-d')}}</h6>
@@ -265,12 +267,13 @@
                     @endforeach
                 </div>
             </div>
+            @if($video !== null)
             <div class="col-xl-6">
                 <div class="video-holder-box" style="background-image: url({{ url('/images/choose2.jpg') }});">
                     <div class="icon-holder">
                         <div class="icon">
                             <div class="inner">
-                                <a class="html5lightbox" title="Dento Video Gallery" href="https://www.youtube.com/watch?v=p25gICT63ek">
+                                <a class="html5lightbox" title="Dento Video Gallery" href="{{ $video->link }}">
                                     <span class="flaticon-multimedia"></span>
                                 </a>
                             </div>   
@@ -278,6 +281,7 @@
                     </div>    
                 </div>
             </div>
+            @endif
         </div>
     </div>
 </section> 
@@ -296,11 +300,11 @@
                        @foreach($doctors as $doctor)
                         <!--Start single item member-->
                         <div class="single-team-member">
-                            <div class="img-holder">
+                            <div style="width:370px;height:420px" class="img-holder">
                                 @if($doctor->photo != null)
-                                <img style="" src="{{ url('/') }}/images/team/{{$doctor->photo}}" alt="Awesome Image">
+                                <img style="" src="{{ url('') }}/images/team/{{$doctor->photo}}" alt="Awesome Image">
                                 @else
-                                <img style="" src="{{ url('/') }}/images/doctor.png" alt="Awesome Image">    
+                                <img style="" src="{{ url('') }}/images/doctor.png" alt="Awesome Image">    
                                 @endif
                                 <div class="overlay-style-one"></div>
                                 <div class="text-holder text-center">
@@ -345,9 +349,9 @@
                         <!--Start Single Testimonial Item-->
                         <div class="single-testimonial-style2 text-center">
                             <div class="quote-icon">
-                                <img src="{{ url('assets/front') }}/images/icon/1.png" alt="Quote Icon">
+                                <img src="{{ url('/assets/front') }}/images/icon/1.png" alt="Quote Icon">
                             </div>
-                            <div class="text-holder">
+                            <div style="width:700px;height:150px" class="text-holder">
                                 <p>{!! $review->quote !!}</p>
                             </div>
                             <div class="review-box">
@@ -364,7 +368,7 @@
                                 <span>{{$review->job_title}}</span>
                             </div>
                             <div class="quote-icon2">
-                                <img src="{{ url('assets/front') }}/images/icon/2.png" alt="Quote Icon">
+                                <img src="{{ url('/assets/front') }}/images/icon/2.png" alt="Quote Icon">
                             </div>    
                         </div>
                         @endforeach
@@ -392,7 +396,7 @@
                             @if($blog->photo !== null)
                             <img style="height: 243px;width: 370px" src="{{ url('/') }}/images/blog/{{$blog->photo}}" alt="Image">
                             @else
-                            <img style="height: 243px;width: 370px" src="{{ url('assets/front') }}/images/blog/lat-blog-1.jpg" alt="
+                            <img style="height: 243px;width: 370px" src="{{ url('/assets/front') }}/images/blog/lat-blog-1.jpg" alt="
                             Awesome Image">
                             @endif
                             <div class="categorie-button">
@@ -402,7 +406,7 @@
                         <div class="text-holder">
                             <div class="meta-box">
                                 <div class="author-thumb">
-                                    <img src="{{ url('assets/front') }}/images/blog/auth-1.png" alt="Image">
+                                    <img src="{{ url('/assets/front') }}/images/blog/auth-1.png" alt="Image">
                                 </div>
                                 <ul class="meta-info">
                                     <li>{{$blog->admin->name}}</li>
@@ -410,7 +414,7 @@
                                 </ul>    
                             </div>
                             <h3 class="blog-title"><a href="{{ route('single_blog',str_replace(' ','-',$blog->title)) }}">{{$blog->title}}</a></h3>
-                            <div class="text-box">
+                            <div style="width: 300px;height: 48px;" class="text-box">
                                 <p>{!! substr($blog->description,0,150) !!}</p>
                             </div>
                             <div class="readmore-button">

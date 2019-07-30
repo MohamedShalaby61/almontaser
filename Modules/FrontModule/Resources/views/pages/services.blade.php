@@ -88,7 +88,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
                         <div class="single-solution-style2 text-center">
                             <div class="icon-holder">
-                                <img style="width: 110px" src="{{url('images/service')}}/{{ $service->photo }}">
+                                <img style="width: 110px;height: 110px" src="{{url('images/service')}}/{{ $service->photo }}">
                             </div>
                             <div class="text-holder">
                                 <h3>{{ $service->title }}</h3>

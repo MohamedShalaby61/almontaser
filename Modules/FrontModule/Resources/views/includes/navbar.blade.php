@@ -5,7 +5,7 @@
                 <div class="inner-content clearfix">
                     <div class="header-style2-logo float-left">
                         <a href="{{ route('index_front') }}">
-                            <img style="width:230px;height:50px" src="{{ url('') }}/images/config/{{ $config['logo'] }}" alt="Awesome Logo">
+                            <img style="width:230px;height:50px" src="{{ url('/') }}/images/config/{{ $config['logo'] }}" alt="Awesome Logo">
                         </a>
                     </div>   
                     <div class="header-middle clearfix float-left" >
@@ -22,7 +22,7 @@
                                     <li class="dropdown current"><a href="{{ route('index_front') }}">@lang('frontmodule::front.home')</a></li>
                                     <li><a href="{{route('about_us')}}">@lang('frontmodule::front.about_us')</a></li>
                                     <li><a href="{{ route('question') }}">@lang('frontmodule::front.ask')</a></li>
-                                    <li><a href="{{ url('blogs') }}">@lang('frontmodule::front.blogs')</a></li>
+                                    <li><a href="{{ route('blogs') }}">@lang('frontmodule::front.blogs')</a></li>
                                     <li class="dropdown"><a href="{{route('services')}}">@lang('frontmodule::front.services')</a>
                                         <ul>
                                             @if($services->count() > 0)

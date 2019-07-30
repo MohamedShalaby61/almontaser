@@ -83,7 +83,7 @@
             <input type="file" autocomplete="off" name="photo">
             <br/>
             @if ($service->photo)
-                <img src="{{asset('public/images/service/' . $service->photo)}}" width="100" height="70">
+                <img src="{{asset('images/service/' . $service->photo)}}" width="100" height="70">
             @else
                 "<strong>No Photo</strong>"
             @endif

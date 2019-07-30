@@ -12,6 +12,7 @@ use Modules\WidgetsModule\Entities\Front;
 use Modules\WidgetsModule\Entities\Slider\Slider;
 use Modules\WidgetsModule\Entities\Testimonial;
 use Modules\WidgetsModule\Entities\Acheive;
+use Modules\VideoModule\Entities\Video;
 use DB;
 
 class FrontRepository
@@ -40,6 +41,11 @@ class FrontRepository
         $cats = BlogCategory::all();
         return $cats;
     }
+    public function findVideo()
+    {
+        $video = Video::all()->first();
+        return $video;
+    }
     public function findCategoryById($id)
     {
         $cats = BlogCategory::query()->where('id',$id)->first();
@@ -47,7 +53,7 @@ class FrontRepository
     }
     public function findFeatures($num)
     {
-        $feature = Service::query()->limit($num)->get();
+        $feature = Service::query()->where('feature',1)->limit($num)->get();
         return $feature;
     }
     public function findAllDoctor()
@@ -82,7 +88,7 @@ class FrontRepository
     }
     public function findAllAcheive()
     {
-        $review = Acheive::all();
+        $review = Acheive::query();
         return $review;
     }
     public function findServiceByTitle($title)

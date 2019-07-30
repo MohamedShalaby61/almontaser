@@ -1,0 +1,1598 @@
+/***************************************************************************************************************
+||||||||||||||||||||||||||       MASTER STYLESHEET FOR DENTO             |||||||||||||||||||||||||||||||||||||||
+****************************************************************************************************************
+||||||||||||||||||||||||||                TABLE OF CONTENT               |||||||||||||||||||||||||||||||||||||||
+****************************************************************************************************************
+****************************************************************************************************************
+
+01. Imported styles
+02. Flaticon reset styles
+03. Header styles
+04. Mainmenu styles
+05. Rev_slider_wrapper styles
+66. Call to action area Style
+07. Categories area style
+08. Fact counter area style
+09. Latest Blog area style
+10. Latest blog area style 
+11. Testimonial area style
+12. Brand area style
+13. Single service style
+14. Pricing table area style
+15. About page style
+16. Account page style
+17. 404 page style style
+18. Blog page style
+19. Blog single style
+20. Contact page style
+
+****************************************************************************************************************
+||||||||||||||||||||||||||||            End TABLE OF CONTENT                ||||||||||||||||||||||||||||||||||||
+****************************************************************************************************************/
+
+/*==============================================
+   rtl css
+===============================================*/
+.float-left{
+    float: right!important;
+}
+.float-right{
+    float: left!important;
+}
+
+.ui-selectmenu-button span.ui-icon {
+    right: auto !important;
+    left: 0.5em !important;
+}
+.state-select-box .ui-selectmenu-button span.ui-selectmenu-text {
+    text-align: right;
+}
+.owl-carousel{
+    direction: ltr;
+}
+
+
+/*==============================================
+   Base Css
+===============================================*/
+/*Fonts*/
+@font-face {
+    font-family:'DIN-NEXT-BOLD';
+    src: url(../fonts/DIN-NEXT-BOLD.otf);
+}
+@font-face {
+    font-family:'DIN-NEXT-MEDIUM';
+    src: url(../fonts/DIN-NEXT-MEDIUM.otf);
+}
+@font-face {
+    font-family:'DIN-NEXT-REGULAR';
+    src: url(../fonts/DIN-NEXT-REGULAR.otf);
+}
+
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'DIN-NEXT-REGULAR', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'DIN-NEXT-BOLD', sans-serif;
+}
+.sec-title h3{
+    line-height: 30px;
+}
+.btn-one {
+    font-size: 15px;
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.btn-two{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+/*
+.btn-two span:before {
+    padding-right: 0;
+    padding-left: 9px;
+}
+*/
+.parallax-bg-one::before {
+    left: auto;
+    right: 0;
+} 
+.parallax-bg-two::before {
+    left: auto;
+    right: 0;
+} 
+.owl-nav-style-one.owl-theme .owl-nav .owl-next {
+    margin-left: 0;
+    margin-right: 10px;
+}
+.owl-nav-style-two.owl-theme .owl-nav .owl-next {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.accordion-box .accordion .accord-btn {
+    padding-left: 20px;
+    padding-right: 75px;
+}
+.accordion-box .accordion .accord-btn::after {
+    left: auto;
+    right: 27px;
+}
+.accordion-box .accordion .accord-content:before{
+    left: auto;
+    right: 0px;
+}
+
+.slick-dots li:before {
+    right: auto;
+    left: -17px;
+}
+.slick-dots li button {
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+
+/*________________Preloader_______________ */
+.preloader{ 
+    left: auto; 
+    right: 0px; 
+}
+
+
+/* Update header Style */
+.mainmenu-area.stricky-fixed {
+    left: auto;
+    right: 0;
+}
+.header-style2-area.stricky-fixed {
+    left: auto;
+    right: 0;
+}
+.header-style2-area.stricky-fixed .main-menu.style1.style2 .navigation > li > ul > li:hover > a {
+    padding-left: 0;
+    padding-right: 30px;
+}
+
+/* scroll to top styles */
+.scroll-to-top {
+    right: auto;
+    left: 15px;
+}
+
+
+/* Post pagination styles */
+.post-pagination li {
+    float: right;
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.post-pagination li a.left {
+    float: right;
+    border-right: none;
+    border-left: 1px solid #eeeeee;
+}
+.post-pagination li a.right {
+    float: left;
+    border-left: none;
+    border-right: 1px solid #eeeeee;
+}
+
+.post-pagination2 li {
+    float: right;
+}
+.post-pagination2 li a {
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+    border-right: none;
+    border-left: 1px solid #eeeeee;
+}
+.post-pagination2 li a.left {
+    padding-right: 0;
+    padding-left: 10px;
+}
+.post-pagination2 li a.left i {
+    padding-right: 0;
+    padding-left: 8px;
+}
+.post-pagination2 li a.right {
+    padding-left: 0;
+    padding-right: 10px;
+}
+.post-pagination2 li a.right i {
+    padding-left: 0;
+    padding-right: 8px;
+}
+
+/* Overlay styles */
+.overlay-style-one{
+    left: auto;
+    right: 0;
+}
+.review-box ul li {
+    float: right;
+    margin-right: 0;
+    margin-left: 4px;
+}
+.review-box ul li:last-child{
+    margin-right: 0px;    
+    margin-left: 0px;    
+}
+
+.sociallinks-style-one li{
+    float: right;
+    margin-right: 0;
+    margin-left: 18px;
+}
+.sociallinks-style-one li:last-child{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.sociallinks-style-two li {
+    margin-right: 0;
+    margin-left: 10px;
+}
+.sociallinks-style-two li:last-child{
+    margin-right: 0px;    
+    margin-left: 0px;    
+}
+
+/*==============================================
+    Top bar Area Css
+===============================================*/
+.top-left ul li {
+    float: right;
+    margin-right: 0;
+    margin-left: 15px;
+}
+.top-left ul li:last-child {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.top-left ul li a{
+    padding-left: 0;
+    padding-right: 15px;
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.top-left ul li a:before {
+    left: auto;
+    right: 0;
+}
+.top-right p {
+    float: right;
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+    padding-left: 0;
+    padding-right: 25px;
+}
+.top-right p span:before{
+    padding-right: 0;
+    padding-left: 9px;
+}
+.top-right .sociallinks-style-one {
+    float: left;
+}
+
+/*==============================================
+    Topbar Style2 Area Css
+===============================================*/
+.top-left-style2 ul {
+    margin: 16px 0 16px;
+}
+.top-left-style2 ul li{
+    float: right;
+    border-right: none;
+    border-left: 1px solid #e2e2e2;
+    padding-right: 0;
+    padding-left: 15px;
+    margin-right: 0;
+    margin-left: 15px;
+    line-height: 20px;
+}
+.top-left-style2 ul li span:before{
+    padding-right: 0;
+    padding-left: 8px;
+}
+.top-left-style2 ul li b{
+    font-weight: bold;
+}
+.outer-search-box {
+    border-left: none;
+    border-right: 1px solid #e2e2e2;
+    padding-left: 0;
+    padding-right: 10px;
+}
+.search-box {
+    right: auto;
+    left: 15px;
+}
+.search-box .form-group input[type="search"] {
+    padding-left: 50px;
+    padding-right: 15px;
+}
+.search-box .form-group button, 
+.search-box .form-group input[type="submit"] {
+    right: auto;
+    left: 0;
+}
+
+/*==============================================
+    Header Style1 Area Css        
+===============================================*/
+.header-contact-info ul {
+    margin-left: 0;
+    margin-right: 200px;
+}
+.header-contact-info ul li{
+    float: right;
+    margin-right: 0;
+    margin-left: 25px;
+    padding-right: 0;
+    padding-left: 25px;
+    border-right: none;
+    border-left: 1px solid #eeeeee;
+}
+.header-contact-info ul li:last-child{
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+.header-contact-info ul li .single-item .text{
+    padding-left: 0;
+    padding-right: 20px;
+}
+.header-style1-button a {
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.header-style1-button a span:before {
+    padding-right: 0;
+    padding-left: 13px;
+}
+
+/*==============================================
+    Header Style2 Area Css        
+===============================================*/
+.header-style2-logo {
+    padding-right: 0;
+    padding-left: 90px;
+}
+.main-menu.style1.style2 {
+    float: right;
+}
+.main-menu.style1.style2 .navigation li {
+    float: right;
+    margin-right: 0;
+    margin-left: 40px;
+    border-right: 0px solid;
+    border-left: 0px solid;
+}
+.main-menu.style1.style2 .navigation li:last-child{
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.main-menu.style1.style2 .navigation li a {
+    font-family: 'DIN-NEXT-BOLD', sans-serif;
+}
+.main-menu.style1.style2 .navigation li ul li a {
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.header-style2-button a {
+    font-family: 'DIN-NEXT-BOLD', sans-serif;
+}
+.header-style2-button a span:before {
+    padding-right: 0;
+    padding-left: 13px;
+}
+
+/*** 
+=====================================================
+	Mainmenu Area style
+=====================================================
+***/
+
+.main-menu.style1 {
+    float: right;
+}
+.main-menu.style1 .navigation li {
+    float: right;
+    border-right: none;
+    border-left: 1px solid #2fa895;
+}
+.main-menu.style1 .navigation li:last-child{
+    border-right: none;
+    border-left: none;
+}
+.main-menu.style1 .navigation li a {
+    font-family: 'DIN-NEXT-BOLD', sans-serif;
+}
+.main-menu.style1 .navigation > li > ul {
+    left: auto;
+    right: 0px;
+}
+.main-menu.style1 .navigation li ul li a {
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.main-menu.style1 .navigation li ul li a:after {
+    left: auto;
+    right: 0px;
+}
+.main-menu.style1 .navigation > li > ul > li:hover > a {
+    padding-left: 0;
+    padding-right: 30px;
+}
+.main-menu .navigation li ul li.dropdown:after{
+    right: auto;
+    left: 30px;
+}
+.main-menu .navbar-collapse > ul li.dropdown .dropdown-btn {
+    right: auto;
+    left: 10px;
+}
+.mainmenu-right {
+   float: left;
+}
+.search-box-style1 {
+    float: right;
+}
+.search-box-style1 form.search-form input[type="search"] {
+    padding-left: 70px;
+    padding-right: 20px;
+}
+.search-box-style1 form.search-form button {
+    right: auto;
+    left: 0px;
+}
+.toggler-button{
+    float: left;
+}
+
+/*** 
+============================================
+	Hidden Sidebar style
+============================================
+***/
+.hidden-bar .mCSB_inside > .mCSB_container{
+	margin-right:0px;	
+	margin-left:0px;	
+}
+.hidden-bar.right-align {
+	right: auto;
+	left: -420px;
+}
+.hidden-bar.right-align.visible-sidebar{
+	right:auto;
+	left:0px;
+}
+.hidden-bar .hidden-bar-closer {
+	right: auto;
+	left: 20px;
+}
+
+.hidden-bar .newsletter-form-box form input[type="email"] {
+    padding-right: 0;
+    padding-left: 60px;
+}
+.hidden-bar .newsletter-form-box form button {
+    right: auto;
+    left: 15px;
+}
+.hidden-bar .newsletter-form-box form button:before{
+    left: auto;
+    right: 0;
+}
+.hidden-bar .offer-box .big-title {
+    font-family: 'Kaushan Script', cursive;
+}
+.hidden-bar .offer-box .big-title span {
+    font-family: 'DIN-NEXT-BOLD', sans-serif;
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+/*** 
+=====================================================
+	Main Slider style
+=====================================================
+***/
+.main-slider #rev_slider_two_wrapper .slide-content .big-title{
+    line-height: 1.4em;
+}
+.main-slider .slide-content .big-title{
+    font-family: 'DIN-NEXT-BOLD', sans-serif;
+}
+.main-slider #rev_slider_two_wrapper .slide-content .big-title span{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.main-slider .slide-content .text{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+
+/*** 
+=============================================
+    About Area Style      
+=============================================
+***/
+.about-logo-box ul li{
+    float: right;
+    margin-right: 0;
+    margin-left: 40px;
+}
+.about-logo-box ul li:last{
+    margin-right: 0;
+    margin-left: 0;
+}
+.about-text-holder .author-box .text-box{
+    padding-left: 0;    
+    padding-right: 20px;    
+}
+.about-text-holder .author-box .signatire-box{
+    left: auto;
+    right: 300px;
+}
+.about-text-holder .author-box .signatire-box:before{
+    left: auto;
+    right: -20px;
+}
+.flaticon-next:before {
+    transform: rotate(180deg);
+}
+
+/*** 
+=============================================
+    Highlights Area Style      
+=============================================
+***/
+.highlights-area:before{
+    left: auto;
+    right: 0;
+}
+.highlights-area .single-middle-box form .input-box .icon-box {
+    right: auto;
+    left: 15px;
+}
+.highlights-area .single-middle-box form .input-box input[type=text]{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+#ui-datepicker-div.ui-widget-content {
+    font-family: "DIN-NEXT-BOLD",sans-serif;
+}
+.ui-datepicker .ui-datepicker-prev {
+    left: auto;
+    right: 5px;
+}
+.ui-datepicker .ui-datepicker-next {
+    right: auto;
+    left: 5px;
+}
+
+/*** 
+=============================================
+    Services Style1 Area Style      
+=============================================
+***/
+.services-style1-area:before{
+    left: auto;
+    right: 0;
+}
+.single-solution-style1 .img-holder::after {
+    right: auto;    
+    left: -100%;    
+}
+.single-solution-style1:hover .img-holder::after{
+    right: auto; 
+    left: 0%; 
+}
+.single-solution-style1 .icon-holder{
+    left: auto;
+    right: 0;
+}
+.single-solution-style1:hover .icon-holder{
+    left: auto;    
+    right: -100%;    
+}
+.single-solution-style1 .text-holder .readmore .overlay-button a{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+
+/*** 
+=============================================
+    Works Area Style      
+=============================================
+***/
+.works-area:before{
+    left: auto;
+    right: 0;
+}
+.works-tab-box .tab-btns li span {
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.works-tab-box .tab-content-box .single-tab-content{
+    left: auto;
+    right: 0px;
+}
+.works-tab-box .tab-content-box .img-holder .before{
+    right: auto;
+    left: 0;
+}
+.works-tab-box .tab-content-box .img-holder .before a{
+    border-top-left-radius: 0;
+    border-top-right-radius: 20px;
+    font-family: 'DIN-NEXT-BOLD', sans-serif;
+}
+.works-tab-box .tab-content-box .img-holder .after{
+    left: auto;
+    right: 0;
+}
+.works-tab-box .tab-content-box .img-holder .after a{
+    border-top-right-radius: 0;
+    border-top-left-radius: 20px;
+    font-family: 'DIN-NEXT-BOLD', sans-serif;
+}
+
+/*** 
+=============================================
+    Works Area V2 Style      
+=============================================
+***/
+.works-area-v2:before{
+    left: auto;
+    right: 0;
+}
+.single-vertical-carousel:before{
+    right: auto;
+    left: 22px;
+}
+.single-work-slide .img-holder:before{
+    left: auto;
+    right: 50%;
+    margin-left: 0;
+    margin-right: -25px;
+}
+.single-work-slide .text-holder .inner-content ul li b{
+    font-family: 'DIN-NEXT-BOLD', sans-serif;
+}
+.works-area-v2 .prev-btn{
+	right: auto;
+	left: 0;
+}
+.works-area-v2 .next-btn{
+	right: auto;
+	left: 0;
+}
+
+/*** 
+=============================================
+    Testimonial Area Style      
+=============================================
+***/
+.testimonial-area .inner-content{
+    padding-left: 0;
+    padding-right: 200px;
+}
+.testimonial-area .inner-content:before{
+    left: auto;
+    right: 0px;
+}
+.single-testimonial-item .text-holder:after {
+    left: auto;
+    right: 40px;
+}
+.testimonial-area .owl-theme .owl-nav.disabled + .owl-dots {
+    left: auto;
+    right: -104px;
+}
+
+/*** 
+=============================================
+    Latest blog Area style
+=============================================
+***/
+.single-blog-post .img-holder:after {
+    left: auto;
+    right: 0;
+}
+.single-blog-post .img-holder .categorie-button {
+    left: auto;
+    right: 30px;
+}
+.single-blog-post .text-holder .meta-box .meta-info{
+    padding-left: 0;
+    padding-right: 10px;
+}
+.single-blog-post .text-holder .meta-box .meta-info li {
+    float: right;
+    margin-right: 0;
+    margin-left: 10px;
+    padding-right: 0;
+    padding-left: 10px;
+    border-right: none;
+    border-left: 1px solid #eeeeee;
+}
+.single-blog-post .text-holder .meta-box .meta-info li:last-child{
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+.single-blog-post .text-holder .meta-box .meta-info li a{
+    font-family: 'DIN-NEXT-REGULAR', sans-serif;
+}
+
+/*** 
+=============================================
+    Newsletter Area Style      
+=============================================
+***/
+
+
+/*** 
+=============================================
+    Footer Contact Info Area style
+=============================================
+***/
+.single-footer-contact-box {
+    padding-right: 0;
+    padding-left: 20px;
+}
+.single-footer-contact-box.left-icon:before {
+    right: auto;
+    left: 33px;
+}
+.single-footer-contact-box.right-box{
+    padding-right: 0;
+    padding-left: 20px;
+}
+.single-footer-contact-box.right-box:before {
+    right: auto;
+    left: 50px;
+}
+.single-footer-contact-box .text-holder{
+    padding-left: 0;
+    padding-right: 32px;
+}
+.single-footer-contact-box.right-box .text-holder{
+    padding-left: 0;
+    padding-right: 40px;
+}
+
+/*** 
+=============================================
+    Footer area style
+=============================================
+***/
+.single-footer-widget .title:before{
+    left: auto;
+    right: 0;
+}
+.single-footer-widget .specialities li,
+.single-footer-widget .facilities li,
+.single-footer-widget .opening-hours li{
+    margin-bottom: 16px;
+    line-height: 20px;
+}
+.single-footer-widget .specialities li a{
+    padding-left: 0;
+    padding-right: 30px;
+}
+.single-footer-widget .specialities li a:before {
+    left: auto;
+    right: 0px;
+}
+.single-footer-widget .facilities li a{
+    padding-left: 0;
+    padding-right: 30px;
+}
+.single-footer-widget .facilities li a:before {
+    left: auto;
+    right: 0px;
+}
+
+/*** 
+=============================================
+    Footer Bottom Area Style      
+=============================================
+***/
+.footer-bottom-area .copyright-text p a {
+    font-family: 'DIN-NEXT-BOLD', sans-serif;
+}
+.footer-menu li{
+    float: right;
+    margin-right: 0;
+    margin-left: 30px;
+}
+.footer-menu li:last-child{
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/*** 
+=============================================
+    Welcome Area Style      
+=============================================
+***/
+
+/*** 
+=============================================
+    Fact counter Area style
+=============================================
+***/
+.fact-counter-area::before {
+    left: auto;
+    right: 0;
+} 
+.single-fact-counter {
+    float: right;
+    border-right: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/*** 
+=============================================
+    Fact counter Area style2 style
+=============================================
+***/
+
+.fact-counter-area.style2 .single-fact-counter {
+    border-right: none;
+    border-left: 1px solid #eeeeee;
+}
+.fact-counter-area.style2 .single-fact-counter:last-child {
+    border-right: 0px solid;
+    border-left: 0px solid;
+}
+
+/*** 
+=============================================
+    About Area Home2 Style      
+=============================================
+***/
+
+/*** 
+=============================================
+    Services Style2 Area Style      
+=============================================
+***/
+.single-solution-style2 .text-holder .readmore .overlay-button a{
+    font-size: 16px;
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+
+/*** 
+=============================================
+    Appointment Area Style      
+=============================================
+***/
+
+.appointment-title-box::before {
+    left: auto;
+    right: 0;
+} 
+.appointment-form form .input-box .icon-box {
+    right: auto;
+    left: 20px;
+}
+.appointment-form form .input-box input[type=text],
+.appointment-form form .input-box input[type=email],
+.appointment-form form .input-box textarea{
+    font-family: 'DIN-NEXT-REGULAR', sans-serif;
+}
+.appointment-form form .input-box .ui-selectmenu-button{
+    font-family: 'DIN-NEXT-REGULAR', sans-serif;   
+}
+.appointment-form form .input-box .ui-selectmenu-button span.ui-selectmenu-text{
+    text-align: right;
+}
+
+/*** 
+=============================================
+    Team Area style
+=============================================
+***/
+.single-team-member .img-holder .overlay-style-one{
+    left: auto;
+    right: 0px;
+}
+
+/*** 
+=============================================
+    Team Area V2 style
+=============================================
+***/
+.single-team-slide .top h3{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.pgrs-bar-wrapper .pgrs-bar li h5 {
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.pgrs-bar-wrapper .pgrs-bar li span {
+    right: auto;
+    left: 0;
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.pgrs-bar-wrapper .pgrs-bar li .box .inner {
+    left: auto;
+    right: 0px;
+}
+
+.single-team-slide .button a{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+
+.single-team-slide .img-holder {
+    right: auto;
+    left: -20px;
+}
+.single-team-slide .img-holder .team-social-links {
+    right: auto;
+    left: -27px;
+}
+.single-team-slider .bx-wrapper {
+    float: right;
+}
+.single-team-slider .bx-wrapper .bx-viewport {
+    float: right;
+    left: auto;
+    right: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.single-team-slider .thumb-box.style2 li a.active .img-holder:before {
+    left: auto;
+    right: 0;
+}
+.single-team-slider ul.nav-link {
+    right: auto;
+    left: 0px;
+}
+.single-team-slider ul.nav-link li#slider-prev {
+    left: auto;
+    right: 0;
+}
+.single-team-slider ul.nav-link li#slider-next {
+    left: auto;
+    right: 0;
+}
+
+/*** 
+=============================================
+    Testimonial sec Style
+=============================================
+***/
+.testimonial-sec .inner-content:before {
+    left: auto;
+    right: 0px;
+}
+.single-testimonial-style2 .quote-icon {
+    left: auto;
+    right: 0px;
+    transform: rotateY(180deg);
+}
+.single-testimonial-style2 .quote-icon2 {
+    right: auto;
+    left: 0px;
+    transform: rotateY(180deg);
+}
+.testimonial-sec .owl-nav {
+    left: auto;
+    right: 0px;
+}
+.testimonial-sec .owl-nav .owl-prev{
+	left: auto;
+	right: -120px;
+    transform: rotateY(180deg);
+}
+.testimonial-sec .owl-nav .owl-next{
+	right: auto;
+	left: -120px;
+    transform: rotateY(180deg);
+}
+
+/*** 
+=============================================
+    Warranties Sec Style      
+=============================================
+***/
+.warranties-content ul li{
+    padding-left: 0;
+    padding-right: 35px;
+}
+.warranties-content ul li:before {
+    left: auto;
+    right: 0px;
+}
+
+/*** 
+=============================================
+    Brand Area Style      
+=============================================
+***/
+.brand-area .brand li {
+    float: right;
+}
+
+/*** 
+=============================================
+    Breadcrumb area style
+=============================================
+***/
+.breadcrumb-area::before {
+    left: auto;
+    right: -14%;
+}
+.breadcrumb-area .breadcrumb-menu ul li {
+    float: right;
+    padding-right: 0;
+    padding-left: 10px;
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.breadcrumb-area .breadcrumb-menu ul li:last-child{
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+/*** 
+=============================================
+    Mission Vision Area Style      
+=============================================
+***/
+
+/*** 
+=============================================
+    Choose Area Style      
+=============================================
+***/
+.single-choose-box .count{
+    left: auto;
+    right: 30px;
+}
+.choose-carousel::before {
+    left: auto;
+    right: 0;
+} 
+.video-holder-box::before {
+    left: auto;
+    right: 0;
+} 
+
+/*** 
+=============================================
+    Services Style1 Area Spec Page Css     
+=============================================
+***/
+
+/*** 
+=============================================
+    Choose Area style2 Style      
+=============================================
+***/
+.choose-area.style2 .owl-nav {
+    left: a;
+    right: 0px;
+}
+.choose-area.style2 .owl-nav .owl-prev{
+	left: auto;
+	right: -90px;
+}
+.choose-area.style2 .owl-nav .owl-next{
+	right: auto;
+	left: -90px;
+}
+
+/*** 
+=============================================
+    Quote Area Style2 Style      
+=============================================
+***/
+.specialities-title .title-holder{
+    padding-left: 0;
+    padding-right: 30px;
+}
+.specialities-carousel .owl-nav {
+    left: auto;
+    right: 0px;
+}
+.specialities-carousel .owl-nav .owl-prev {
+    left: auto;
+    right: 0px;
+}
+.specialities-carousel .owl-nav .owl-next{
+	right: auto;
+	left: 0px;
+    border-radius: 0px 30px 30px 0px;
+}
+.single-wedo-box .overlay-image {
+    left: auto;
+    right: 0;
+}
+.single-wedo-box .inner{
+    padding-left: 0;
+    padding-right: 80px;
+}
+.single-wedo-box .inner .image{
+    left: auto;
+    right: 0;
+}
+.single-wedo-box .inner .text{
+    padding-left: 0;
+    padding-right: 20px;
+}
+.transform-smile-content .text-holder ul li{
+    padding-left: 0;
+    padding-right: 30px;
+}
+.transform-smile-content .text-holder ul li:before {
+    left: auto;
+    right: 0px;
+}
+.video-holder-box2::before {
+    left: auto;
+    right: 0;
+} 
+.video-holder-box2 .overlay-text h3{
+    font-family: 'Kaushan Script', cursive;
+}
+.treatments-pricing-box .pricing-plan .table-heading tr th {
+    font-family: 'DIN-NEXT-BOLD', sans-serif;
+}
+.specialities-sidebar{
+    margin-left: 0;
+    margin-right: 35px;
+}
+.specialities-sidebar .single-sidebar .inner h3{
+    padding-right: 0;
+    padding-left: 0;
+}
+.specialities-sidebar .specialities-categories li a{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.specialities-sidebar .specialities-categories li a:hover,
+.specialities-sidebar .specialities-categories li.active a{
+    padding-left: 0;
+    padding-right: 15px;
+}
+.specialities-sidebar .our-brochures li a {
+    padding-right: 0;
+    padding-left: 0;
+}
+.specialities-sidebar .our-brochures li a .icon-holder {
+    left: auto;
+    right: 18px;
+}
+.sidebar-appointment-box{
+    padding-right: 0;
+    padding-left: 20px;
+}
+
+/*** 
+=============================================
+    Doctor Area Style      
+=============================================
+***/
+.doctor-tab-box .tab-btns .tab-btn {
+    float: right;
+    margin-right: 0;
+    margin-left: 10px;
+}
+.doctor-tab-box .tab-btns .tab-btn:last-child{
+    margin-right: 0;
+    margin-left: 0;
+}
+.doctor-tab-box .tab-btns .tab-btn span {
+    font-family: 'DIN-NEXT-BOLD', sans-serif;
+}
+.doctor-tab-box .tab-btns .tab-btn.left span {
+    border-radius: 0 10px 0px 0px;
+}
+.doctor-tab-box .tab-btns .tab-btn.right span {
+    border-radius: 10px 0 0px 0px;
+}
+.doctor-sidebar .sidebar-appoinment .title {
+    padding-right: 0;
+    padding-left: 0;
+}
+.doctor-sidebar .sidebar-appoinment .appoinment-form .input-box .icon-box {
+    right: auto;
+    left: 19px;
+}
+.doctor-sidebar .sidebar-appoinment .appoinment-form .input-box input[type=text],
+.doctor-sidebar .sidebar-appoinment .appoinment-form .input-box input[type=email],
+.doctor-sidebar .sidebar-appoinment .appoinment-form .input-box textarea{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.single-doctor-item .text-holder {
+    margin-left: 0;
+    margin-right: -35px;
+}
+.single-doctor-item .text-holder ul li span:before{
+    padding-right: 0;
+    padding-left: 10px;
+}
+
+/*** 
+=============================================
+    Faq Area style
+=============================================
+***/
+.faq-search-box .search-form input[type="search"] {
+    padding-left: 65px;
+    padding-right: 20px;
+}
+.faq-search-box .search-form button {
+    right: auto;
+    left: 0px;
+}
+
+/*** 
+=============================================
+    Pricing Plan Area Style      
+=============================================
+***/
+.single-price-box:before{
+    left: auto;
+    right: 0;
+}
+.single-price-box .table-header .package span {
+    padding-right: 0;
+    padding-left: 6px;
+}
+.single-price-box .table-header .package b {
+    padding-left: 0;
+    padding-right: 7px;
+}
+
+/*** 
+=============================================
+    Pricing Plan Area style2 Style      
+=============================================
+***/
+.pricing-plan-area.style2 .single-price-box:before{
+    left: auto;
+    right: 0;
+}
+.pricing-plan-area.style2 .single-price-box:after{
+    right: auto;
+    left: 0;
+}
+
+
+/*** 
+=============================================
+    Testimonial page style
+=============================================
+***/
+.single-testimonial-item.style2 .text-holder:after {
+    left: auto;
+    right: 30px;
+}
+
+/*** 
+=============================================
+    Testimonial Sec Style4 Style      
+=============================================
+***/
+.testimonial-sec.style4::before {
+    left: auto;
+    right: 0;
+}
+.testimonial-sec.style4 .owl-nav .owl-prev {
+    left: auto;
+    right: -120px;
+}
+.testimonial-sec.style4 .owl-nav .owl-next {
+    right: auto;
+    left: -120px;
+}
+
+/*** 
+=============================================
+    Testimonial Sec Style3 Style      
+=============================================
+***/
+
+/*** 
+=============================================
+   Visit timetable area style
+=============================================
+***/
+.visit_timetable thead tr th{
+    font-family: 'DIN-NEXT-BOLD', sans-serif;
+}
+.visit_timetable tbody tr td h6{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+
+/*** 
+=============================================
+    Appointment Area style
+=============================================
+***/
+.appointment-form-left form .single-box{
+    padding-left: 0;
+    padding-right: 130px;
+}
+.appointment-form-left form .single-box .title {
+    left: auto;
+    right: 0;
+}
+.available-time ul li{
+    float: right;
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.appointment-form-left form .single-box .input-box input[type=text],
+.appointment-form-left form .single-box .input-box textarea{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.appointment-right .input-box input[type=text] {
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.appointment-right form .input-box .icon-box {
+    right: auto;
+    left: 19px;
+}
+.appointment-right .confirm-booking ul li span{
+    font-family: 'DIN-NEXT-BOLD', sans-serif;
+}
+.appointment-right form .button-box button{
+    margin-right: 0;
+    margin-left: 7px;
+}
+
+/*** 
+=============================================
+    Blog Default Area style
+=============================================
+***/
+
+/*** 
+=============================================
+    Blog large Area style
+=============================================
+***/
+.single-blog-post.blog-large {
+    padding-left: 0;
+    padding-right: 70px;
+}
+.single-blog-post.blog-large .left-box {
+    left: auto;
+    right: 0;
+}
+.post-info-style1 h3{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.single-blog-post.blog-large .left-box .share-comment-box ul li a:after {
+    left: auto;
+    right: 0;
+}
+.single-blog-post.blog-large .inner-content{
+    padding-left: 0;
+    padding-right: 30px;
+}
+.single-blog-post.blog-large .text-holder .meta-box .meta-info {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.single-blog-post.blog-large .text-holder .meta-box .meta-info li a i{
+    padding-right: 0;
+    padding-left: 8px;
+}
+.blog-large-area .post-pagination2 {
+    padding-left: 0;
+    padding-right: 100px;
+}
+.sidebar-wrapper .single-sidebar .search-form input[type="text"] {
+    padding-left: 60px;
+    padding-right: 30px;
+}
+.sidebar-wrapper .single-sidebar .search-form button {
+    right: auto;
+    left: 0px;
+    border-left: none;
+    border-right: 1px solid #eeeeee;
+}
+.single-sidebar .categories li a {
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.single-sidebar .categories li a span{
+    padding-left: 0;
+    padding-right: 5px;
+} 
+.single-sidebar .recent-post li {
+    padding-left: 0;
+    padding-right: 80px;
+}
+.single-sidebar .recent-post li .img-holder {
+    left: auto;
+    right: 0;
+}
+.single-sidebar .recent-post li .title-holder {
+    padding-left: 0;
+    padding-right: 20px;
+}
+.single-sidebar .recent-post li .title-holder p span:before{
+    padding-right: 0;
+    padding-left: 8px;
+}
+.single-sidebar .recent-post li .title-holder a.readmore {
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.single-sidebar .instagram li {
+    float: right;
+}
+.follow-us-instagram {
+    left: auto;
+    right: 40px;
+}
+.follow-us-instagram a i{
+    padding-right: 0;
+    padding-left: 9px;
+}
+.single-sidebar .archives li a {
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.single-sidebar .archives li a span{
+    padding-left: 0;
+    padding-right: 5px;
+}
+.single-sidebar .popular-tag li {
+    float: right;
+}
+.single-sidebar .popular-tag li a {
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+
+/*** 
+=============================================
+    Blog Single Area style
+=============================================
+***/
+.single-blog-post.single_post .top-box{
+    padding-left: 0;
+    padding-right: 70px;
+}
+.single-blog-post.single_post .top-box .left{
+    left: auto;
+    right: 0;
+}
+.single-blog-post.single_post .top-box .right{
+    padding-left: 0;
+    padding-right: 30px;
+}
+.single-blog-post.single_post .top-box .right .meta-box .meta-info li {
+    float: right;
+    margin-right: 0;
+    margin-left: 20px;
+}
+.single-blog-post.single_post .top-box .right .meta-box .meta-info li:last-child{
+    margin-right: 0;
+    margin-left: 0;
+}
+.single-blog-post.single_post .top-box .right .meta-box .meta-info li a{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.single-blog-post.single_post .top-box .right .meta-box .meta-info li a span:before{
+    padding-right: 0;
+    padding-left: 9px;
+}
+.single-blog-post.single_post .main-author-box .inner{
+    padding-left: 0;
+    padding-right: 50px;
+}
+.single-blog-post.single_post .main-author-box .inner .icon-holder {
+    left: auto;
+    right: 0;
+}
+.single-blog-post.single_post .main-author-box .inner .text{
+    padding-left: 0;
+    padding-right: 30px;
+}
+.single-blog-post.single_post .main-author-box .inner .text h3 span{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.single-blog-post.single_post .text-box2 ul li i{
+    padding-right: 0;
+    padding-left: 9px;
+}
+.single-blog-post.single_post .smile-design-content-box .accordion-box .accordion .accord-btn {
+    padding-left: 20px;
+    padding-right: 75px;
+}
+.single-blog-post.single_post .smile-design-content-box .accordion-box .accordion .accord-btn::after {
+    left: auto;
+    right: 27px;
+}
+.single-blog-post.single_post .tag-holder-box .left h5 {
+    float: right;
+    padding-right: 0;
+    padding-left: 15px;
+}
+.single-blog-post.single_post .tag-holder-box .left ul{
+    float: right;
+}
+.single-blog-post.single_post .tag-holder-box .left ul li{
+    float: right;
+    margin-right: 0;
+    margin-left: 10px;
+}
+.single-blog-post.single_post .tag-holder-box .left ul li:last-child{
+    margin-right: 0;
+    margin-left: 0;
+}
+.single-blog-post.single_post .tag-holder-box .right p i {
+    padding-right: 0;
+    padding-left: 10px;
+}
+.author-box-holder .inner-box .text{
+    padding-left: 0;    
+    padding-right: 40px;    
+}
+.blog-prev-next-option:before {
+    left: auto;
+    right: 50%;
+}
+.blog-prev-next-option .single.prev {
+    float: right;
+    padding-left: 0;
+    padding-right: 80px;
+}
+.blog-prev-next-option .single.prev .image-thumb{
+    left: auto;
+    right: 0;
+}
+.blog-prev-next-option .single.prev .title {
+    padding-left: 0;
+    padding-right: 20px;
+}
+.blog-prev-next-option .single .title a i{
+    padding-right: 0;
+    padding-left: 5px;
+}
+.blog-prev-next-option .single.next{
+    float: left;
+    padding-right: 0;
+    padding-left: 80px;
+}
+.blog-prev-next-option .single.next .image-thumb{
+    right: auto;
+    left: 0;
+}
+.blog-prev-next-option .single.next .title {
+    text-align: left;
+    float: left;
+}
+.blog-prev-next-option .single.next .title a i {
+    padding-left: 0;
+    padding-right: 5px;
+}
+.blog-single-area .inner-comment-box .single-comment-box {
+    padding-left: 0;
+    padding-right: 80px;
+}
+.blog-single-area .inner-comment-box .single-comment-box.mar-left{
+    margin-left: 0;
+    margin-right: 50px;
+}
+.blog-single-area .inner-comment-box .single-comment-box .img-holder {
+    left: auto;
+    right: 0;
+}
+.blog-single-area .inner-comment-box .single-comment-box .text-holder {
+    margin-left: 0;
+    margin-right: 30px;
+}
+.blog-single-area .inner-comment-box .single-comment-box .text-holder .reply-button a{
+    font-family: 'DIN-NEXT-MEDIUM', sans-serif;
+}
+.blog-single-area .inner-comment-box .single-comment-box .text-holder .reply-button a span:before{
+    padding-right: 0;
+    padding-left: 9px;
+}
+
+/*** 
+=============================================
+    Contact Info Map Area style
+=============================================
+***/
+
+/*** 
+=============================================
+    Contact Form Area style
+=============================================
+***/

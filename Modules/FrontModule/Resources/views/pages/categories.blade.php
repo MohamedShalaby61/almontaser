@@ -80,7 +80,7 @@
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
                         <div class="single-blog-post">
                             <div class="img-holder">
-                                <img src="{{ asset('') }}/images/blog/{{ $blog->photo }}" alt="Awesome Image">
+                                <img style="height: 243px;width: 370px" src="{{ asset('') }}/images/blog/{{ $blog->photo }}" alt="Awesome Image">
                             </div>
                             <div class="text-holder">
                                 <div class="meta-box">
@@ -90,7 +90,7 @@
                                     </ul>
                                 </div>
                                 <h3 class="blog-title"><a href="{{ route('single_blog',str_replace(' ','-',$blog->title)) }}">{{ $blog->title }}</a></h3>
-                                <div class="text-box">
+                                <div style="width: 300px;height: 48px;" class="text-box">
                                     {!! substr($blog->description,0,150) !!}
                                 </div>
                                 <div class="readmore-button">

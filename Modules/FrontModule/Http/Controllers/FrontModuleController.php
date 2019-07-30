@@ -27,9 +27,11 @@ class FrontModuleController extends Controller
         $doctors = $this->frontRepository->findAllDoctor();
         $features = $this->frontRepository->findFeatures(6);
         $reviews = $this->frontRepository->findTestimonials();
+        $acheives = $this->frontRepository->findAllAcheive();
         $blogs = $this->frontRepository->findLimitBlogs(3);
         $services = $this->frontRepository->findAllServices();
-        return view('frontmodule::index',compact('asks','sliders','doctor','features','doctors','reviews','blogs','services'));
+        $video = $this->frontRepository->findVideo();
+        return view('frontmodule::index',compact('asks','sliders','doctor','features','doctors','reviews','blogs','services','video','acheives'));
     }
 
     /**
@@ -43,7 +45,8 @@ class FrontModuleController extends Controller
         $doctors = $this->frontRepository->findAllDoctor();
         $acheives = $this->frontRepository->findAllAcheive();
         $blogs = $this->frontRepository->findLimitBlogs(3);
-        return view('frontmodule::pages.about_us',compact('services','doctor','doctors','acheives','blogs'));
+        $video = $this->frontRepository->findVideo();
+        return view('frontmodule::pages.about_us',compact('services','doctor','doctors','acheives','blogs','video'));
     }
     public function question()
     {

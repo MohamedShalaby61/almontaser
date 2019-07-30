@@ -48,7 +48,7 @@ class BlogController extends Controller
 
             ->addColumn('photo', function($row) {
                 if($row->photo){
-                    return '<img width="100" height="100" src='. asset("public/images/blog/" . $row->photo).'/>';
+                    return '<img width="100" height="100" src='. asset("images/blog/" . $row->photo).'/>';
                 } else {
                     return '<strong> No Photo </strong>';
                 }

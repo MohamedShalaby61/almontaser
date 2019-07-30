@@ -1,0 +1,150 @@
+	
+@import url('https://fonts.googleapis.com/css?family=Bitter|Oswald&display=swap');
+body,
+		html {
+			margin: 0;
+			padding: 0;
+			background: white!important;
+			font-family: 'Bitter', serif;
+		}
+header{
+	text-align: center;
+	line-height: 3;
+	height: 3rem;
+	color: white;
+	background:#60a3bc; 
+}
+footer{
+	bottom: 0;
+	left: 0;
+	right: 0;
+	text-align: center;
+	color: white;
+	background: #60a3bc;
+	line-height: 3;
+	height: 3rem;
+	margin-top: 2rem;
+}
+.input-group{
+	width: 400px;
+	margin-bottom: 2rem;
+}
+		.user_card {
+			height: 500px;
+			width: 500px;
+			margin-top: 8rem;
+			margin-bottom: 4rem;
+			position: relative;
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			padding: 10px;
+			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+			border-radius: 5px;
+
+		}
+		.brand_logo_container {
+			position: absolute;
+			height: 170px;
+			width: 170px;
+			top: -75px;
+			border-radius: 50%;
+			background: #60a3bc;
+			padding: 10px;
+			text-align: center;
+		}
+.text-logo{
+	color: white;
+	font-size: 1.5rem;
+	position: relative;
+	top: 40%;
+}
+		.brand_logo {
+			height: 150px;
+			width: 150px;
+			border-radius: 50%;
+			border: 2px solid white;
+		}
+		.form_container {
+			margin-top: 5rem;
+		}
+		.login_btn {
+			width: 55%;
+			font-size: 1.2rem;
+			background: #60a3bc !important;
+			color: white !important;
+			transition: all 0.3s ease;
+		}
+.login_btn:hover{
+	background: white!important;
+	color: #60a3bc !important;
+	border: 1px solid #60a3bc !important;
+}
+		.login_btn:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.login_container {
+			padding: 0 2rem;
+		}
+		.input-group-text {
+			background: #60a3bc!important;
+			color: white !important;
+			border: 0 !important;
+			border-radius: 0.25rem 0 0 0.25rem !important;
+		}
+		.input_user,
+		.input_pass:focus {
+			box-shadow: none !important;
+			outline: 0px !important;
+		}
+		.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+			background-color:#60a3bc !important;
+		}
+.mb--3{
+	margin-bottom: 2rem;
+}
+.error{
+	    padding: 5px;
+    background: #ffcccc;
+    color: #d63031;
+    width: 82%;
+    margin: 0 auto;
+	margin-bottom: 0.5rem!important;
+}
+.error .fa{
+	color: #d63031;
+	padding-right: 10px;
+	cursor: pointer;
+}
+
+
+@media(max-width:767px){
+	body{
+		font-size: 0.7rem;
+	}
+	.user_card{
+		width: 95%;
+	}
+	.input-group{
+		width: 100%;
+	}
+	.brand_logo_container{
+		    height: 22%;
+            width: 39%;
+		    top: -56px;
+	}
+	.text-logo{
+		font-size: 1rem;
+	}
+	.brand_logo{
+		width: 100%;
+		height: 100%;
+	}
+	.login_btn{
+		width: 70%;
+	}
+	header,footer{
+		height: 2rem;
+	}
+}
