@@ -85,7 +85,7 @@
             <h3>@lang('frontmodule::front.services')</h3>
             <h1>@lang('frontmodule::front.services_here')</h1>
         </div>
-        @if($services->count() == 6)
+
             <div class="row">
                 @foreach($services as $service)
                     <!--Start single solution style1-->
@@ -109,7 +109,7 @@
                     <!--End single solution style1-->
                 @endforeach    
         </div>
-        @endif
+
     </div>
 </section>
 

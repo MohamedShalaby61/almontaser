@@ -165,6 +165,13 @@
                         <li><a href="{{url('admin-panel/widgets/contact_us')}}"><i
                                         class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.contact')}}</a></li>
                 @endif
+{{--                @if(in_array('why_us_app',$activeApps))--}}
+
+                    <!-- contact -->
+                        <li><a href="{{url('admin-panel/widgets/why_us')}}"><i
+                                    class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.why_us')}}</a>
+                        </li>
+{{--                @endif--}}
                 @if(in_array('subscribe_app',$activeApps))
 
                     <!-- subscribe -->

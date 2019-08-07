@@ -30,6 +30,8 @@ Route::group(
     Route::get('/contact/us','FrontModuleController@contact')->name('contact');
     Route::get('/services','FrontModuleController@services')->name('services');
     Route::get('/blogs','FrontModuleController@blogs')->name('blogs');
+    Route::get('/photos','FrontModuleController@photos')->name('photos');
+    Route::get('/videos','FrontModuleController@videos')->name('videos');
     Route::get('/categories/{id}','FrontModuleController@categories')->name('categories');
     Route::get('/services/categories/{id}','FrontModuleController@services_categories')->name('service_categories');
     Route::get('/blogs/{title}','FrontModuleController@single_blog')->name('single_blog');

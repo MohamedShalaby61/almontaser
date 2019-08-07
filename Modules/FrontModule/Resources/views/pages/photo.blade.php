@@ -40,7 +40,7 @@
                     </div>
                 </form>
             </div>
-            <div class="offer-box text-center" style="background-image: url({{url('assets/front/images/resources/offer-box.jpg')}});">
+            <div class="offer-box text-center" style="background-image: url({{ url('assets/front/images/resources/offer-box.jpg') }});">
                 <div class="big-title">50% <span>Offer</span></div>
                 <h3>5 Years Warranty</h3>
                 <a class="btn-one" href="#">Pricing Plans</a>
@@ -57,17 +57,17 @@
                 <div class="col-xl-12">
                     <div class="inner-content clearfix">
                         <div class="title float-left">
-                            <h2>@lang('frontmodule::front.services')</h2>
+                            <h2>@lang('frontmodule::front.photos')</h2>
                         </div>
                         <div class="breadcrumb-menu float-right">
                             <ul class="clearfix">
                                 <li><a href="{{url('/')}}">@lang('frontmodule::front.home')</a></li>
                                 @if(App()->getLocale() == 'ar')
-                                    <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
                                 @else
-                                    <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
                                 @endif
-                                <li class="active">@lang('frontmodule::front.categories')</li>
+                                <li class="active">@lang('frontmodule::front.photos')</li>
                             </ul>
                         </div>
                     </div>
@@ -80,21 +80,21 @@
     <section id="blog-area" class="blog-default-area">
         <div class="container">
             <div class="row">
-                @foreach($services as $service)
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="single-solution-style2 text-center">
-                            <div class="icon-holder">
-                                <img style="width: 110px;height: 110px" src="{{url('/images/service')}}/{{ $service->photo }}">
+                @foreach($photos as $blog)
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                        <div class="single-blog-post">
+                            <div class="img-holder">
+                                <img style="height: 243px;width: 370px" src="{{ asset('') }}/images/photo/{{ $blog->photo }}" alt="Awesome Image">
                             </div>
                             <div class="text-holder">
-                                <h3>{{ $service->title }}</h3>
-                                <p>{!! substr($service->description,0,101) !!}</p>
-                                <div class="readmore">
-                                    <a href="#"><span class="flaticon-next"></span></a>
-                                    <div class="overlay-button">
-                                        <a href="{{ route('single_service',str_replace(' ','-',$service->title)) }}">@lang('frontmodule::front.more')</a>
-                                    </div>
+                                <div class="meta-box">
+{{--                                    <ul class="meta-info">--}}
+{{--                                        <li><a href="#">{{ $blog->created_at->diffForHumans() }}</a></li>--}}
+{{--                                    </ul>--}}
                                 </div>
+{{--                                <h3 class="blog-title"><a href="{{ route('single_blog',str_replace(' ','-',$blog->title)) }}">{{ $blog->title }}</a></h3>--}}
+                                <h3 class="blog-title"><a href="#">{{ $blog->title }}</a></h3>
+
                             </div>
                         </div>
                     </div>
@@ -102,9 +102,9 @@
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    {{--                    <ul class="post-pagination text-center">--}}
-                    {{--                        <li class="text-center">{{ $services->links() }}</li>--}}
-                    {{--                    </ul>--}}
+                    <ul class="post-pagination text-center">
+                        <li class="text-center">{{ $photos->links() }}</li>
+                    </ul>
                 </div>
             </div>
         </div>

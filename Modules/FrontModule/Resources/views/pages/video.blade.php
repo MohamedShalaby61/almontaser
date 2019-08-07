@@ -40,7 +40,7 @@
                     </div>
                 </form>
             </div>
-            <div class="offer-box text-center" style="background-image: url({{url('assets/front/images/resources/offer-box.jpg')}});">
+            <div class="offer-box text-center" style="background-image: url({{ url('assets/front/images/resources/offer-box.jpg') }});">
                 <div class="big-title">50% <span>Offer</span></div>
                 <h3>5 Years Warranty</h3>
                 <a class="btn-one" href="#">Pricing Plans</a>
@@ -57,17 +57,17 @@
                 <div class="col-xl-12">
                     <div class="inner-content clearfix">
                         <div class="title float-left">
-                            <h2>@lang('frontmodule::front.services')</h2>
+                            <h2>@lang('frontmodule::front.videos')</h2>
                         </div>
                         <div class="breadcrumb-menu float-right">
                             <ul class="clearfix">
                                 <li><a href="{{url('/')}}">@lang('frontmodule::front.home')</a></li>
                                 @if(App()->getLocale() == 'ar')
-                                    <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
                                 @else
-                                    <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                                <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
                                 @endif
-                                <li class="active">@lang('frontmodule::front.categories')</li>
+                                <li class="active">@lang('frontmodule::front.videos')</li>
                             </ul>
                         </div>
                     </div>
@@ -80,31 +80,21 @@
     <section id="blog-area" class="blog-default-area">
         <div class="container">
             <div class="row">
-                @foreach($services as $service)
-                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12">
-                        <div class="single-solution-style2 text-center">
-                            <div class="icon-holder">
-                                <img style="width: 110px;height: 110px" src="{{url('/images/service')}}/{{ $service->photo }}">
-                            </div>
-                            <div class="text-holder">
-                                <h3>{{ $service->title }}</h3>
-                                <p>{!! substr($service->description,0,101) !!}</p>
-                                <div class="readmore">
-                                    <a href="#"><span class="flaticon-next"></span></a>
-                                    <div class="overlay-button">
-                                        <a href="{{ route('single_service',str_replace(' ','-',$service->title)) }}">@lang('frontmodule::front.more')</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                @foreach($videos as $blog)
+                    @php
+                        $serial = explode('?v=',$blog->link);
+                        //dd($serial[1]);
+                    @endphp
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12">
+                        <iframe width="400" height="315" src="https://www.youtube.com/embed/{{ $serial[1] }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>  
                 @endforeach
             </div>
             <div class="row">
                 <div class="col-md-12">
-                    {{--                    <ul class="post-pagination text-center">--}}
-                    {{--                        <li class="text-center">{{ $services->links() }}</li>--}}
-                    {{--                    </ul>--}}
+                    <ul class="post-pagination text-center">
+                        <li class="text-center">{{ $videos->links() }}</li>
+                    </ul>
                 </div>
             </div>
         </div>

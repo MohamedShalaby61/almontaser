@@ -2,8 +2,10 @@
 
 namespace Modules\FrontModule\Repository;
 
+use Illuminate\Http\Request;
 use Modules\BlogModule\Entities\BlogCategory;
 use Modules\BlogModule\Entities\BlogTranslation;
+use Modules\PhotoAlbumModule\Entities\Photo;
 use Modules\ServiceModule\Entities\ServiceCategory\ServiceCategory;
 use Modules\WidgetsModule\Entities\Team\Team;
 use Modules\ServiceModule\Entities\ServiceMod\Service;
@@ -67,6 +69,16 @@ class FrontRepository
         $blog = Blog::paginate(9);
         return $blog;
     }
+    public function findAllPhoto()
+    {
+        $photo = Photo::paginate(9);
+        return $photo;
+    }
+    public function findAllVideos()
+    {
+        $video = Video::paginate(9);
+        return $video;
+    }
     public function findTestimonials()
     {
         $review = Testimonial::query()->get();
@@ -80,6 +92,19 @@ class FrontRepository
     public function findAllServices()
     {
         $review = Service::with(['translations'])->get();
+        return $review;
+    }
+
+    public function searchAllServices($req)
+    {
+        //$review = ServiceTranslation::with(['translations']);
+        $review = DB::table('service')
+            ->join('service_translation', 'service.id','=','service_translation.service_id')
+            ->select('service.*', 'service_translation.*')
+            ->where('title','like','%'. $req->q .'%')
+            ->orWhere('description','like','%'. $req->q .'%')
+            ->get();
+
         return $review;
     }
     public function findLimitServices()

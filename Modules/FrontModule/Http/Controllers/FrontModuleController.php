@@ -4,10 +4,12 @@ namespace Modules\FrontModule\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\View;
 use Modules\FrontModule\Repository\FrontRepository;
 use Modules\WidgetsModule\Entities\Contactus;
 use Modules\WidgetsModule\Entities\Booking;
 use Modules\WidgetsModule\Entities\WhyUs;
+use Modules\WidgetsModule\Entities\WorkHours;
 
 class FrontModuleController extends Controller
 {
@@ -17,6 +19,9 @@ class FrontModuleController extends Controller
     )
     {
         $this->frontRepository = $frontRepository;
+        $workhours = WorkHours::all();
+
+        View::share('workhours',$workhours);
     }
     public function index()
     {
@@ -70,10 +75,14 @@ class FrontModuleController extends Controller
         $features = $this->frontRepository->findFeatures(6);
         return view('frontmodule::pages.contact',compact('features','servicess','services','doctor','doctors','acheives'));
     }
-    public function services()
+    public function services(Request $req)
     {
         $servicess = $this->frontRepository->findAllServiceCategories();
-        $services = $this->frontRepository->findAllServices();
+        if (!request()->has('q')){
+            $services = $this->frontRepository->findAllServices();
+        }else{
+            $services = $this->frontRepository->searchAllServices( $req);
+        }
         $doctor = $this->frontRepository->findDoctor();
         $doctors = $this->frontRepository->findAllDoctor();
         $acheives = $this->frontRepository->findAllAcheive();
@@ -89,6 +98,27 @@ class FrontModuleController extends Controller
         $features = $this->frontRepository->findFeatures(6);
         return view('frontmodule::pages.blog',compact('features','servicess','services','blogs','acheives'));
     }
+
+    public function photos()
+    {
+        $servicess = $this->frontRepository->findAllServiceCategories();
+        $services = $this->frontRepository->findAllServices();
+        $photos = $this->frontRepository->findAllPhoto();
+        $acheives = $this->frontRepository->findAllAcheive();
+        $features = $this->frontRepository->findFeatures(6);
+        return view('frontmodule::pages.photo',compact('features','servicess','services','photos','acheives'));
+    }
+
+    public function videos()
+    {
+        $servicess = $this->frontRepository->findAllServiceCategories();
+        $services = $this->frontRepository->findAllServices();
+        $videos = $this->frontRepository->findAllVideos();
+        $acheives = $this->frontRepository->findAllAcheive();
+        $features = $this->frontRepository->findFeatures(6);
+        return view('frontmodule::pages.video',compact('features','servicess','services','videos','acheives'));
+    }
+
     public function send_message(Request $request)
     {
         //dd($request->all());
