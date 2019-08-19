@@ -88,7 +88,7 @@ class TestimonialController extends Controller
 
             // Save the new one.
             $image = $request->file('photo');
-            $imageName = $this->upload($image, 'partners');
+            $imageName = $this->upload($image, 'testimonials');
             $monial['photo'] = $imageName;
         }
 

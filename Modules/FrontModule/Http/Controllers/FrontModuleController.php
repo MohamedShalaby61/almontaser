@@ -161,6 +161,7 @@ class FrontModuleController extends Controller
         $services = $this->frontRepository->findLimitServices();
         $categories = $this->frontRepository->findCategories();
         $blog = $this->frontRepository->findBlog($title);
+
         $blogs = $this->frontRepository->findAllBlog();
         $servicess = $this->frontRepository->findAllServiceCategories();
         $features = $this->frontRepository->findFeatures(6);

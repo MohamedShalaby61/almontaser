@@ -14,7 +14,7 @@ return [
     'branches' => 'our branches',
     'you_ask' => 'you can ask in any time',
     'other_services' => 'other services',
-    'services_here' => 'services that we can do',
+    'services_here' => 'services that we are specialist',
     'feature_why_us' => 'modern services and our skills',
     'why_us' => 'why us',
     'about_us_message' => 'our success and discovery',

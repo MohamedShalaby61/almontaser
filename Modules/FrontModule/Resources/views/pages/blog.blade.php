@@ -96,12 +96,12 @@
                                         <li><a href="#">{{ $blog->created_at->diffForHumans() }}</a></li>
                                     </ul>
                                 </div>
-                                <h3 class="blog-title"><a href="{{ route('single_blog',str_replace(' ','-',$blog->title)) }}">{{ $blog->title }}</a></h3>
+                                <h3 class="blog-title"><a href="{{ route('single_blog',$blog->id) }}">{{ $blog->title }}</a></h3>
                                 <div style="width:300px;height:48px;" class="text-box">
                                     {!! substr($blog->description,0,150) !!}
                                 </div>
                                 <div class="readmore-button">
-                                    <a class="btn-two" href="{{ route('single_blog',str_replace(' ','-',$blog->title)) }}"><span class="flaticon-next"></span>{{ __('frontmodule::front.con_read') }}</a>
+                                    <a class="btn-two" href="{{ route('single_blog',$blog->id) }}"><span class="flaticon-next"></span>{{ __('frontmodule::front.con_read') }}</a>
                                 </div>
                             </div>
                         </div>

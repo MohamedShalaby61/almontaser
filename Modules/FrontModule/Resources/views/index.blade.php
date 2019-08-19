@@ -276,7 +276,7 @@
                                     <h3>@lang('frontmodule::front.dr') {{ $doctor->name }}</h3>
                                     <span>{{$doctor->job_title}}</span>
                                     <div class="button">
-                                        <a class="btn-one" href="#">@lang('frontmodule::front.more')</a>
+                                        <a class="btn-one" href="{{ $doctor->facebook }}">@lang('frontmodule::front.more')</a>
                                     </div>
                                 </div>
                             </div>
@@ -328,8 +328,8 @@
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                             </div>
+                            <img class="img-thumbnail" style="border-radius: 50px;width: 100px;height: 100px;margin: auto;" src="{{ asset('images/testimonials/'.$review->photo) }}">
                             <div class="name">
-                                <img src="{{ $review->photo }}">
                                 <h3>{{ $review->name }}</h3>
                                 <span>{{$review->job_title}}</span>
                             </div>
@@ -379,12 +379,12 @@
                                     <li><a href="#">{{$blog->created_at->diffForHumans()}}</a></li>
                                 </ul>
                             </div>
-                            <h3 class="blog-title"><a href="{{ route('single_blog',str_replace(' ','-',$blog->title)) }}">{{$blog->title}}</a></h3>
+                            <h3 class="blog-title"><a href="{{ route('single_blog',$blog->id) }}">{{$blog->title}}</a></h3>
                             <div style="width: 300px;height: 48px;" class="text-box">
                                 <p>{!! substr($blog->description,0,150) !!}</p>
                             </div>
                             <div class="readmore-button">
-                                <a class="btn-two" href="{{ route('single_blog',str_replace(' ','-',$blog->title)) }}"><span class="flaticon-next"></span>@lang('frontmodule::front.read_more')</a>
+                                <a class="btn-two" href="{{ route('single_blog',$blog->id) }}"><span class="flaticon-next"></span>@lang('frontmodule::front.read_more')</a>
                             </div>
                         </div>
                     </div>

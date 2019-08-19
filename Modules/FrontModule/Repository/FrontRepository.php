@@ -34,7 +34,7 @@ class FrontRepository
     }
     public function findBlog($title)
     {
-        $blog = Blog::with(['translations','categories','admin'])->where('title',str_replace('-',' ',$title))->first();
+        $blog = Blog::find($title);
         //dd($blog);
         return $blog;
     }
