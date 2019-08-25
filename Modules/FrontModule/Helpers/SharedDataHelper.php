@@ -32,9 +32,9 @@ class SharedDataHelper
         $WorkArr = [];
 
         $all = WorkHours::all()->first();
-        foreach ($all as $item) {
-            $WorkArr[$item] = $item;
-        }
+//        foreach ($all as $item) {
+//            $WorkArr[$item] = $item;
+//        }
         return $all;
     }
 

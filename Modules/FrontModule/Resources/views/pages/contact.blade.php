@@ -40,7 +40,7 @@
                 </div>
             </form>
         </div>
-        <div class="offer-box text-center" style="background-image: url(images/resources/offer-box.jpg);">
+        <div class="offer-box text-center" style="background-image: url({{ url('images/resources/offer-box.jpg') }});">
             <div class="big-title">50% <span>Offer</span></div>
             <h3>5 Years Warranty</h3>
             <a class="btn-one" href="#">Pricing Plans</a>    
@@ -64,7 +64,11 @@
                     <div class="breadcrumb-menu float-right">
                         <ul class="clearfix">
                             <li><a href="{{url('/')}}">@lang('frontmodule::front.home')</a></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                            @if(App()->getLocale() == 'ar')
+                                <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+                            @else
+                                <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                            @endif
                             <li class="active">@lang('frontmodule::front.contact_us')</li>
                         </ul>    
                     </div>
@@ -73,68 +77,50 @@
         </div>
     </div>
 </section>
-<!--End breadcrumb area--> 
-
-<!--Start Appointment Area-->
-<section id="appointment" class="appointment-area">
-    <div class="appointment-title-box" style="background-image: url(images/parallax-background/appointment-title-bg.jpg);">
-        <div class="sec-title text-center">
-            <h3>@lang('frontmodule::front.contact_us')</h3>
-            <h1>@lang('frontmodule::front.contact_us_message')</h1>
-        </div>    
-    </div>
-    <div class="container appointment-content">
+<!--End breadcrumb area-->
+<!--Start contact form area-->
+<section class="contact-form-area">
+    <div class="container">
         <div class="row">
-           
-            <div class="col-xl-6 col-lg-6">
-                <div class="appointment-image text-center">
-                    <img style="width: 460px;height: 600px;" src="{{ url('/') }}/images/Doctor-PNG-File-Download-Free.png" alt="Awesome Image">
-                </div>
-            </div>
-            <div class="col-xl-6 col-lg-6">
-                <div class="appointment-form">
-                    <div class="text">
-                        <p>@lang('frontmodule::front.question_message') {{$config['phone']}}. @lang('frontmodule::front.contact') {{ $work_hour->day }} {{ $work_hour->from }} – {{ $work_hour->to }}</p>
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                <div class="contact-form">
+                    <div class="contact-title">
+                        <h2>@lang('frontmodule::front.contact_us')</h2>
+                        <p>@lang('frontmodule::front.contact_us_message')</p>
                     </div>
-                    <form name="appointment-form" action="{{ route('send_contact_us') }}" method="POST">
+                    <form class="default-form" action="{{ route('send_contact_us') }}" method="post">
                         @csrf
                         <div class="row">
-                            <div class="col-xl-6 col-lg-6">
-                                <div class="input-box">   
-                                    <input type="text" id="name" name="name" value="" placeholder="{{__('frontmodule::front.name')}}*" required="">
+                            <div class="col-md-6">
+                                <div class="input-box">
+                                    <input type="text" name="name" value="" placeholder="{{ __('frontmodule::front.name') }}*" required="">
                                 </div>
-                                <div class="input-box">   
-                                    <input type="text" id="phone" name="phone" value="" placeholder="{{__('frontmodule::front.phone')}}">
-                                </div>   
-                            </div>
-                            <div class="col-xl-6 col-lg-6">
-                                <div class="input-box"> 
-                                    <input type="email" id="email" name="email" value="" placeholder="{{__('frontmodule::front.email')}}*" required="">
+                                <div class="input-box">
+                                    <input type="email" name="email" value="" placeholder="{{ __('frontmodule::front.email') }}*" required="">
+                                </div>
+                                <div class="input-box">
+                                    <input type="text" name="phone" value="" placeholder="{{ __('frontmodule::front.phone') }}*">
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-12">
-                                <div class="input-box">    
-                                    <textarea name="message" id="message" placeholder="{{__('frontmodule::front.your_message')}}" required=""></textarea>
+                            <div class="col-md-6">
+                                <div class="input-box">
+                                    <textarea name="message" placeholder="{{ __('frontmodule::front.your_message') }}*" required=""></textarea>
                                 </div>
-                            </div>    
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-12">
                                 <div class="button-box">
-                                    <button class="btn-one customer_btn" type="submit">@lang('frontmodule::front.send')</button>
+                                    <input  class="form-control" type="hidden" value="">
+                                    <button class="btn-one" type="submit" >@lang('frontmodule::front.send')</button>
                                 </div>
-                                <div class="modal"></div>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
+
         </div>
-    </div>    
+    </div>
 </section>
-<!--End Appointment Area-->
+<!--End contact form area-->
+
 @include('commonmodule::includes.swal')
 @endsection
 @push('css')

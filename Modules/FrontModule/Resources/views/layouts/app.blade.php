@@ -2,14 +2,11 @@
 <html dir="{{ App()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
 <head>
 	<meta charset="UTF-8">
-	<title>{{ $config['title'] }}</title>
-
+	<title>{{ $config['title_'.App()->getLocale()] }}</title>
 	<!-- responsive meta -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- For IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-	
         <!-- master stylesheet -->
     <link rel="stylesheet" href="{{ url('/assets/front') }}/css/style.css">
     <!-- Responsive stylesheet -->
@@ -27,28 +24,36 @@
         <link rel="stylesheet" href="{{ url('/assets/front') }}/css/responsive-ar.css">
     @endif
     @stack('css')
-    <!-- Fixing Internet Explorer-->
-    <!--[if lt IE 9]>
+    <style>
+        .dropdown-submenu {
+            position: relative;
+        }
+
+        .dropdown-submenu .dropdown-menu {
+            top: 0;
+            left: 100%;
+            margin-top: -1px;
+        }
+    </style>
         <script src="{{ url('assets/front') }}/http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <script src="{{ url('assets/front') }}/js/html5shiv.js"></script>
-    <![endif]-->
-    
+
 </head>
 <body>
 <div class="boxed_wrapper">
 
-<div class="preloader"></div> 
+<div class="preloader"></div>
 
-<!-- Start Top Bar style2 area -->  
+<!-- Start Top Bar style2 area -->
 <section class="topbar-style2-area">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
                 <div class="top-left-style2 float-left">
                     <ul>
-                        <li><span class="icon-clock"></span><b>{{ $work_hour->day }}: </b> {{ $work_hour->from }} {{ __('frontmodule::front.am') }} @lang('frontmodule::front.to') {{ $work_hour->to }}
-                        @lang('frontmodule::front.pm')</li>
+                        <li><span class="icon-clock"></span><b> {{ $config['work_hour_'.App()->getLocale()] }} </b>
                         <li><span class="icon-phone"></span><b>@lang('frontmodule::front.contact'): </b>{{ $config['phone'] }}</li>
+                        <li><span class="icon-clock"></span><b>@lang('frontmodule::front.address'): </b>{{ $config['address_'.App()->getLocale()] }}</li>
                     </ul>
                 </div>
                 <div class="top-right-style2 clearfix float-right">
@@ -62,56 +67,56 @@
                         <div class="seach-toggle"><i class="fa fa-search"></i></div>
                         <ul class="search-box">
                             <li>
-                                <form method="post" action="index.html">
+                                <form method="get" action="{{ route('services') }}">
                                     <div class="form-group">
-                                        <input type="search" name="search" placeholder="Search Here" required>
+                                        <input type="search" name="q" value="{{ request()->q }}" placeholder="@lang('frontmodule::front.search_here')" required>
                                         <button type="submit"><i class="fa fa-search"></i></button>
                                     </div>
                                 </form>
                             </li>
                         </ul>
-                    </div>    
-                </div>    
-            </div>     
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
-<!-- End Top Bar style2 area -->  
- 
+<!-- End Top Bar style2 area -->
+
 <!--Start header style2 area-->
-@include('frontmodule::includes.navbar') 
+@include('frontmodule::includes.navbar')
 <!--End header style2 area-->
-  
+
 <!-- Hidden Navigation Bar -->
 @include('frontmodule::includes.hide_navbar')
 
-<!-- Start Top Bar style2 area -->  
+<!-- Start Top Bar style2 area -->
     @yield('content')
-<!--Start footer area-->  
+<!--Start footer area-->
 <footer class="footer-area pdtop80">
     <div class="container">
         <div class="row">
-           
+
             <!--Start single footer widget-->
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                 <div class="single-footer-widget marbtm50">
                     <div class="about-us">
                         <div class="footer-logo fix">
                             <a href="{{ route('index_front') }}">
-                                <img src="{{ url('/assets/front') }}/images/resources/logo-2.png" alt="Awesome Logo">
+                                <img style ="height: 50px" src="{{ url('/') }}/images/config/{{ $config['logo'] }}" alt="Awesome Logo">
                             </a>
-                        </div>  
+                        </div>
                         <div class="text-box fix">
-                            {!! $config['about_index'] !!}
+                            {!! substr($config['about_index_'.App()->getLocale()],0,350) !!}
                         </div>
                         <div class="button fix">
                             <a class="btn-one" href="{{ route('about_us') }}">@lang('frontmodule::front.read_more')</a>
-                        </div>   
+                        </div>
                     </div>
                 </div>
             </div>
             <!--End single footer widget-->
-            
+
             <!--Start single footer widget-->
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                 <div class="single-footer-widget martop6 marbtm50">
@@ -123,24 +128,10 @@
                         <li><a href="{{route('about_us')}}">@lang('frontmodule::front.about_us')</a></li>
                         <li><a href="{{ route('question') }}">@lang('frontmodule::front.ask')</a></li>
                         <li><a href="{{ route('blogs') }}">@lang('frontmodule::front.blogs')</a></li>
+                        <li><a href="{{ route('photos') }}">@lang('frontmodule::front.photos')</a></li>
+                        <li><a href="{{ route('videos') }}">@lang('frontmodule::front.videos')</a></li>
                         <li><a href="{{route('services')}}">@lang('frontmodule::front.services')</a></li>
                         <li><a href="{{route('contact')}}">@lang('frontmodule::front.contact_us')</a></li>
-                    </ul>
-                </div>
-            </div>
-            <!--End single footer widget-->
-            <!--Start single footer widget-->
-            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
-                <div class="single-footer-widget martop6 marbtm50">
-                    <div class="title">
-                        <h3>@lang('frontmodule::front.services')</h3>
-                    </div>
-                    <ul class="specialities">
-                        @if($services->count() > 0)
-                            @foreach($services as $service)
-                                <li><a href="{{ route('single_service',str_replace(' ','-',$service->title)) }}">{{ $service->title }}</a></li>
-                            @endforeach
-                        @endif
                     </ul>
                 </div>
             </div>
@@ -150,16 +141,32 @@
             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
                 <div class="single-footer-widget martop6 pdbtm50">
                     <div class="title">
-                        <h3>Facilities</h3>
+                        <h3>@lang('frontmodule::front.feature_services')</h3>
                     </div>
                     <ul class="facilities">
-                        <li><a href="#">Individual Tooth X-Ray</a></li>
-                        <li><a href="#">Intensive Care Unit</a></li>
-                        <li><a href="#">Blood Bank</a></li>
-                        <li><a href="#">Critical Care Areas</a></li>
-                        <li><a href="#">Laboratories</a></li>
-                        <li><a href="#">Scale and Clean</a></li>
-                        <li><a href="#">Fissure Sealants</a></li>
+                        @if($servicess->count() > 0)
+                            @foreach($servicess as $service)
+                                <li><a href="{{ route('service_categories',$service->id) }}">{{ $service->title }}</a></li>
+                            @endforeach
+                        @endif
+                    </ul>
+                </div>
+            </div>
+            <!--End single footer widget-->
+
+
+            <!--Start single footer widget-->
+            <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+                <div class="single-footer-widget martop6 pdtop-50">
+                    <div class="title">
+                        <h3>@lang('frontmodule::front.workhours')</h3>
+                    </div>
+                    <ul class="opening-hours">
+                        @if($workhours->count() > 0)
+                            @foreach($workhours as $workhour)
+                        <li>{{ $workhour->day }} <span class="float-right">{{ $workhour->from }} – {{ $workhour->to }}</span></li>
+                            @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>
@@ -167,7 +174,7 @@
 
         </div>
     </div>
-</footer>   
+</footer>
 <!--End footer area-->
 
 <!--Start footer bottom area-->
@@ -178,29 +185,27 @@
                 <div class="inner clearfix">
                     <div class="footer-social-links float-left">
                         <ul class="sociallinks-style-one">
-                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                            <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                            <li><a href="{{ $config['fb_link'] }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="{{ $config['tw_link'] }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                            <li><a href="{{ $config['youtube'] }}"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                            <li><a href="{{ $config['telegram'] }}"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                     <div class="copyright-text text-center">
-                        <p>© <a href="#">Dento</a> 2018, All Rights Reserved.</p>
+                        <p>© @lang('frontmodule::front.copy_rights') <a href="#">@lang('frontmodule::front.dentex')</a></p>
                     </div>
                     <ul class="footer-menu float-right">
-                        <li><a href="#">@lang('frontmodule::front.terms_condition')</a></li>
-                        <li><a href="#">@lang('frontmodule::front.privacy_policy')</a></li>
+{{--                        <li><a href="#">@lang('frontmodule::front.terms_condition')</a></li>--}}
+{{--                        <li><a href="#">@lang('frontmodule::front.privacy_policy')</a></li>--}}
                     </ul>
-                </div>   
+                </div>
             </div>
         </div>
-    </div>    
+    </div>
 </section>
-<!--End footer bottom area-->   
+<!--End footer bottom area-->
 
-</div>  
+</div>
 
 <!--Scroll to top-->
 <div class="scroll-to-top scroll-to-target thm-bg-clr" data-target="html"><span class="fa fa-angle-up"></span></div>
@@ -266,10 +271,10 @@
     <!-- jQuery timepicker js -->
     <script src="{{ url('/assets/front') }}/assets/timepicker/timePicker.js"></script>
     <!-- Bootstrap select picker js -->
-    <script src="{{ url('/assets/front') }}/assets/bootstrap-sl-1.12.1/bootstrap-select.js"></script> 
-    <!-- html5lightbox js -->                              
+    <script src="{{ url('/assets/front') }}/assets/bootstrap-sl-1.12.1/bootstrap-select.js"></script>
+    <!-- html5lightbox js -->
     <script src="{{ url('/assets/front') }}/assets/html5lightbox/html5lightbox.js"></script>
-    <!-- html5lightbox js -->                              
+    <!-- html5lightbox js -->
     <script src="{{ url('/assets/front') }}/js/jquery.mCustomScrollbar.concat.min.js"></script>
     <!--Color Switcher-->
     <script src="{{ url('/assets/front') }}/js/color-settings.js"></script>
@@ -300,8 +305,15 @@
         });
     </script>
 @if(App()->getLocale() == 'ar')
-    
+
 @endif
 @stack('js')
+<script>
+    if ((screen.width < 900)) {
+        $('.logo-btn').css('width','140px');
+    }else{
+        $('.logo-btn').css('width','230px');
+    }
+</script>
 </body>
 </html>

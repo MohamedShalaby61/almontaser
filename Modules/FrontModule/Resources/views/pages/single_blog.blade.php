@@ -58,12 +58,16 @@
                 <div class="col-xl-12">
                     <div class="inner-content clearfix">
                         <div class="title float-left">
-                            <h2>{{$blog->title}}</h2>
+                            <h2>{{ $blog->title }}</h2>
                         </div>
                         <div class="breadcrumb-menu float-right">
                             <ul class="clearfix">
                                 <li><a href="{{url('/')}}">@lang('frontmodule::front.home')</a></li>
-                                <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                                @if(App()->getLocale() == 'ar')
+                                    <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+                                @else
+                                    <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                                @endif
                                 <li class="active">@lang('frontmodule::front.blogs')</li>
                             </ul>
                         </div>
@@ -147,8 +151,8 @@
                                     </div>
                                     <div class="title-holder">
                                         <p><span class="icon-date"></span>{{ $blog->created_at->format('d-m-y') }}</p>
-                                        <h5 class="post-title"><a href="{{ route('single_blog',str_replace(' ','-',$blog->title)) }}">{{ $blog->title }}</a></h5>
-                                        <a class="readmore" href="{{ route('single_blog',str_replace(' ','-',$blog->title)) }}">{{__('frontmodule::front.con_read')}}</a>
+                                        <h5 class="post-title"><a href="{{ route('single_blog',$blog->id) }}">{{ $blog->title }}</a></h5>
+                                        <a class="readmore" href="{{ route('single_blog',$blog->id) }}">{{__('frontmodule::front.con_read')}}</a>
                                     </div>
                                 </li>
                                 @endforeach
