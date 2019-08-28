@@ -30,167 +30,213 @@ class ConfigModuleDatabaseSeeder extends Seeder
         $config_categ::insert([
             'title' => 'social'
         ]);
-        $config_categ::insert([
-            'title' => 'Ads'
-        ]);
 
 
         //////////////////////////////////////////////////////////////////////////////////////
         ///  General  ///////////////////////////////////////////////////////////////////////
 
-        $config::insert([
+        $config::create([
+            'is_static' => 0,
+            'static_value' => '',
             'var' => 'title',
-            'display_name' => 'Website Name',
+            'ar' => [
+                'display_name' => 'اسم الموقع',
+                'value' => 'جورنت',
+            ],
+            'en' => [
+                'display_name' => 'website name',
+                'value' => 'jorent',
+            ],
             'type' => 1,
-            'value' => 'Car Rental',
             'category_id' => 1
         ]);
-        $config::insert([
+        $config::create([
+            'is_static' => 0,
+            'static_value' => '',
             'var' => 'about',
-            'display_name' => 'About',
+            'ar' => [
+                'display_name' => 'وصف الموقع',
+                'value' => 'وصف الموقع',
+            ],
+            'en' => [
+                'display_name' => 'website description',
+                'value' => 'website description',
+            ],
             'type' => 3,
-            'value' => 'detail about website ',
             'category_id' => 1
         ]);
 
-        $config::insert([
+        $config::create([
+            'is_static' => 0,
+            'static_value' => '',
             'var' => 'logo',
-            'display_name' => 'Logo',
+            'ar' => [
+                'display_name' => 'لوجو الموقع',
+                'value' => '',
+            ],
+            'en' => [
+                'display_name' => 'website logo',
+                'value' => '',
+            ],
             'type' => 2,
-            'value' => 'logo.png',
             'category_id' => 1
         ]);
-        $config::insert([
+        $config::create([
+            'is_static' => 0,
+            'static_value' => '',
             'var' => 'about_index',
-            'display_name' => 'about_index',
+            'ar' => [
+                'display_name' => 'وصف مختصر للموقع',
+                'value' => 'وصف مختصر للموقع',
+            ],
+            'en' => [
+                'display_name' => 'short description',
+                'value' => 'short description',
+            ],
             'type' => 3,
-            'value' => 'فيردى هى شركه مساهمه مصريه متخصصه فى انتاج وتوزيع الاسمده المتخصصه والكيماويات وبالتالى نضمن استمرار تحسين جوده وحلول مبتكره بالاضافه الى ذلك اننا نهتم بالصناعه المصريه ونضمن خدمتنا الفنيه ونعطى شراكه واعده لتحقيق الازدهار الانسانى للحفاظ على ثقه عملائنا حيث ان الجوده هيا المعيار الاول ولذلك يتم التحقق من جميع المنتجات فى كل مستوى والتاكد من تحقيق مقياس التميز المطلوب لتحقيق التميز فى قطاع الاعمال',
             'category_id' => 1
         ]);
 
 
          //////////////////////////////////////////////////////////////////////////////////////
         ///  SEO  ///////////////////////////////////////////////////////////////////////
-        $config::insert([
+        $config::create([
+            'is_static' => 0,
             'var' => 'meta_title',
-            'display_name' => 'Meta Title',
+            'ar' => [
+                'display_name' => 'اسم الميتا',
+                'value' => 'اسم الميتا',
+            ],
+            'en' => [
+                'display_name' => 'meta_title',
+                'value' => 'meta_title',
+            ],
             'type' => 1,
-            'value' => '0123456789',
             'category_id' => 2
         ]);
-        $config::insert([
+        $config::create([
+            'is_static' => 0,
             'var' => 'meta_desc',
-            'display_name' => 'Meta Description',
+            'ar' => [
+                'display_name' => 'وصف الميتا',
+                'value' => 'وصف الميتا',
+            ],
+            'en' => [
+                'display_name' => 'meta_desc',
+                'value' => 'meta_desc',
+            ],
             'type' => 3,
-            'value' => '0123456789',
             'category_id' => 2
         ]);
-        $config::insert([
+        $config::create([
+            'is_static' => 0,
             'var' => 'meta_keywords',
-            'display_name' => 'Meta Keywords',
+            'ar' => [
+                'display_name' => 'كلمات الميتا',
+                'value' => 'كلمات الميتا',
+            ],
+            'en' => [
+                'display_name' => 'meta_keywords',
+                'value' => 'meta_keywords',
+            ],
             'type' => 3,
-            'value' => '0123456789',
             'category_id' => 2
         ]);
         //////////////////////////////////////////////////////////////////////////////////////
         ///  Contact  ///////////////////////////////////////////////////////////////////////
-        $config::insert([
+        $config::create([
+            'is_static' => 1,
+            'static_value' => '0123456789',
+            'ar' => [
+                'display_name' => 'رقم الهاتف',
+                'value' => 'dsadas',
+            ],
+            'en' => [
+                'display_name' => 'phone',
+            ],
             'var' => 'phone',
-            'display_name' => 'Phone',
             'type' => 1,
-            'value' => '0123456789',
             'category_id' => 3
         ]);
-        $config::insert([
+        $config::create([
             'var' => 'email',
-            'display_name' => 'Email',
+            'is_static' => 1,
+            'static_value' => '0123456789',
+            'ar' => [
+                'display_name' => 'البريد الالكتروني',
+            ],
+            'en' => [
+                'display_name' => 'email',
+            ],
             'type' => 1,
-            'value' => 'ddd@ff.com',
             'category_id' => 3
         ]);
-        $config::insert([
+        $config::create([
             'var' => 'address',
-            'display_name' => 'Address',
+            'ar' => [
+                'display_name' => 'العنوان',
+            ],
+            'en' => [
+                'display_name' => 'address',
+            ],
             'type' => 3,
-            'value' => '23 st cairo',
             'category_id' => 3
         ]);
         //////////////////////////////////////////////////////////////////////////////////////
         ///  Social  ///////////////////////////////////////////////////////////////////////
-        $config::insert([
+        $config::create([
             'var' => 'youtube',
-            'display_name' => 'Youtube ',
+            'is_static' => 1,
+            'static_value' => 'youtube',
+            'ar' => [
+                'display_name' => 'اليوتيوب',
+            ],
+            'en' => [
+                'display_name' => 'youtube',
+            ],
             'type' => 1,
-            'value' => '',
             'category_id' => 4
         ]);
-        $config::insert([
+        $config::create([
             'var' => 'telegram',
-            'display_name' => 'Telegram',
+            'is_static' => 1,
+            'static_value' => 'telegram',
+            'ar' => [
+                'display_name' => 'تليجرام',
+            ],
+            'en' => [
+                'display_name' => 'telegram',
+            ],
             'type' => 1,
-            'value' => '',
             'category_id' => 4
         ]);
-        $config::insert([
+        $config::create([
             'var' => 'tw_link',
-            'display_name' => 'Twitter ',
+            'is_static' => 1,
+            'static_value' => 'tw_link',
+            'ar' => [
+                'display_name' => 'تويتر',
+            ],
+            'en' => [
+                'display_name' => 'twitter',
+            ],
             'type' => 1,
-            'value' => '',
             'category_id' => 4
         ]);
-        $config::insert([
+        $config::create([
             'var' => 'fb_link',
-            'display_name' => 'FaceBook',
+            'is_static' => 1,
+            'static_value' => 'fb_link',
+            'ar' => [
+                'display_name' => 'فيس بوك',
+            ],
+            'en' => [
+                'display_name' => 'facebook',
+            ],
             'type' => 1,
-            'value' => '',
             'category_id' => 4
         ]);
 
-        //////////////////////////////////
-        /// ADs
-        $config::insert([
-            'var' => 'header_ads',
-            'display_name' => 'Header Ad 728*90',
-            'type' => 3,
-            'value' => '  ',
-            'category_id' => 5
-        ]);
-
-        $config::insert([
-            'var' => 'sidebar_ads_1',
-            'display_name' => 'Side Ad 300*250 (1)',
-            'type' => 3,
-            'value' => '  ',
-            'category_id' => 5
-        ]);
-        $config::insert([
-            'var' => 'sidebar_ads_2',
-            'display_name' => 'Side Ad 300*250 (2)',
-            'type' => 3,
-            'value' => '  ',
-            'category_id' => 5
-        ]);
-        $config::insert([
-            'var' => 'bottom_ads',
-            'display_name' => 'Bottom Ad 728*90',
-            'type' => 3,
-            'value' => '  ',
-            'category_id' => 5
-        ]);
-        $config::insert([
-            'var' => 'g+_link',
-            'display_name' => 'google+_link',
-            'type' => 4,
-            'value' => ' https://www.googleplus.com/ ',
-            'category_id' => 5
-        ]);
-        $config::insert([
-            'var' => 'be_link',
-            'display_name' => 'be_link',
-            'type' => 4,
-            'value' => ' https://www.behance.com/ ',
-            'category_id' => 5
-        ]);
 
     }
 }

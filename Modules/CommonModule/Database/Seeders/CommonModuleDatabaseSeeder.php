@@ -29,6 +29,13 @@ class CommonModuleDatabaseSeeder extends Seeder
             'active' => 1,
             'lang_type'=>0
         ]);
+
+        Language::create([
+            'lang' => 'en',
+            'display_lang' => 'English',
+            'active' => 1,
+            'lang_type'=>1
+        ]);
         Language::create([
             'lang' => 'ar',
             'display_lang' => 'Arabic',
