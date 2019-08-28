@@ -63,7 +63,11 @@
                     <div class="breadcrumb-menu float-right">
                         <ul class="clearfix">
                             <li><a href="{{url('/')}}">@lang('frontmodule::front.home')</a></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                            @if(App()->getLocale() == 'ar')
+                                <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+                            @else
+                                <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                            @endif
                             <li class="active">@lang('frontmodule::front.services')</li>
                         </ul>    
                     </div>
@@ -91,9 +95,9 @@
                     <div class="specialities-top-content">
                         <div class="specialities-carousel owl-carousel owl-theme">
                             
-                            <div class="single-item">
-                                <img src="{{ url('assets/front') }}/images/services/service-single/specialities-1.jpg" alt="Awesome Image">    
-                            </div>      
+{{--                            <div class="single-item">--}}
+{{--                                <img src="{{ url('assets/front') }}/images/services/service-single/specialities-1.jpg" alt="Awesome Image">    --}}
+{{--                            </div>      --}}
                         </div>
                     </div>
                     <div class="what-wedo-content">

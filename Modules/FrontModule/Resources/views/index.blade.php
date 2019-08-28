@@ -18,8 +18,8 @@
 <section class="welcome-area sec-pd1">
     <div class="container">
         <div class="sec-title max-width text-center">
-            <h3>@lang('frontmodule::front.welcome_message')</h3>
-            <h1>@lang('frontmodule::front.website_words')</h1>
+            <h3>{{ $config['first_title_'.App()->getLocale()] }}</h3>
+            <h1>{{ $config['first_desc_'.App()->getLocale()] }}</h1>
         </div>
         <div class="row">
             @if($asks->count() > 0)
@@ -33,8 +33,8 @@
                         <h3>{{ $ask->title }}</h3>
                         <p>{!! $ask->content !!}</p>
                         <a class="btn-one" href="{{ route('about_us') }}">{{ __('frontmodule::front.more') }}</a>
-                    </div>    
-                </div>   
+                    </div>
+                </div>
             </div>
             @endforeach
             @endif
@@ -44,66 +44,31 @@
 <!--End Welcome area-->
 <!--End fact counter area-->
 <!--Start fact counter area-->
-<section class="fact-counter-area" style="background-image: url(/images/parallax-background/fact-counter-bg.jpg);">
+<section class="fact-counter-area" style="background-image: url({{ url('assets/front/images/parallax-background/176845.jpg') }});">
     <div class="container">
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 @if($acheives->count() > 2)
                 <ul class="clearfix">
-                    <!--Start single fact counter-->
-                    <li class="single-fact-counter text-center wow fadeInUp" data-wow-delay="300ms">
+                    @foreach($acheives as $acheive)
+                    <li class="single-fact-counter text-center wow fadeInUp">
                         <div class="count-box">
                             <div class="icon">
-                                <span class="icon-tooth-3"></span>    
+                                    <img style="width: 88px;height: 89px;" src="{{ url('images/acheives/'.$acheive->icon) }}">
+{{--                                <span class="icon-tooth-3"></span>--}}
                             </div>
                             <h1>
-                                <span class="timer" data-from="1" data-to="{{ $acheives->first()->number }}" data-speed="5000" data-refresh-interval="50">{{ $acheives->first()->number }}</span>
+                                <span class="timer" data-from="1" data-to="{{ $acheive->number }}" data-speed="5000" data-refresh-interval="50">{{ $acheive->number }}</span>
                             </h1>
                             <div class="title">
-                                <h3>{{ $acheives->first()->title }}</h3>
+                                <h3>{{ $acheive->title }}</h3>
                             </div>
                             <div class="text">
-                                <p>{!! $acheives->first()->content !!}</p>
+                                <p>{!! $acheive->content !!}</p>
                             </div>
                         </div>
                     </li>
-                    <!--End single fact counter-->
-                    <!--Start single fact counter-->
-                    <li class="single-fact-counter text-center wow fadeInUp" data-wow-delay="600ms">
-                        <div class="count-box">
-                            <div class="icon">
-                                <span class="icon-doctor-1"></span>    
-                            </div>
-                            <h1>
-                                <span class="timer" data-from="1" data-to="{{ $acheives->skip(1)->first()->number }}" data-speed="5000" data-refresh-interval="50">{{ $acheives->skip(1)->first()->number }}</span>
-                            </h1>
-                            <div class="title">
-                                <h3>{{ $acheives->skip(1)->first()->title }}</h3>
-                            </div>
-                            <div class="text">            
-                                <p>{!! $acheives->skip(1)->first()->content !!}</p>
-                            </div>
-                        </div>
-                    </li>
-                    <!--End single fact counter-->
-                    <!--Start single fact counter-->
-                    <li class="single-fact-counter text-center wow fadeInUp" data-wow-delay="900ms">
-                        <div class="count-box">
-                            <div class="icon">
-                                <span class="icon-hospital"></span>    
-                            </div>
-                            <h1>
-                                <span class="timer" data-from="1" data-to="{{ $acheives->skip(2)->first()->number }}" data-speed="5000" data-refresh-interval="50">{{ $acheives->skip(2)->first()->number }}</span>
-                            </h1>
-                            <div class="title">
-                                <h3>{{ $acheives->skip(2)->first()->title }}</h3>
-                            </div>
-                            <div class="text">
-                                <p>{!! $acheives->skip(2)->first()->content !!}</p>
-                            </div>
-                        </div>
-                    </li>
-                    <!--End single fact counter-->
+                    @endforeach
                 </ul>
                 @endif
             </div>
@@ -117,27 +82,28 @@
         <div class="row">
             <div class="col-xl-6">
                 <div class="about-image-holder">
-                    <img src="{{ url('/images/project/about.jpg') }}" alt="Awesome Image">
-                </div>    
+
+                    <img style="width:570px;height: 475px;" src="{{ url('/images/config/'.$config['about_photo'] ) }}" alt="Awesome Image">
+                </div>
             </div>
             <div class="col-xl-6">
                 <div class="inner-content">
                     <div class="sec-title">
                         <h3>{{ __('frontmodule::front.about_us') }}</h3>
-                        <h1>{{ $config['about'] }}</h1>
+                        <h1>{{ $config['about_'.App()->getLocale() ] }}</h1>
                     </div>
                     <div class="about-text-holder">
-                        {!! $config['about_index'] !!}
+                        {!! substr($config['about_index_'.App()->getLocale()],0,620) !!}
                         <div class="author-box fix">
-                            <div class="img-box">
-                                <img src="{{ url('/') }}/images/doctor.png" alt="Awesome Image">
-                            </div>
-                            <div class="text-box">
-                                @if($doctor !== null)
-                                <h3>@lang('frontmodule::front.dr'). {{ $doctor->name }}</h3>
-                                <span>{{ $doctor->job_title }}</span>
-                                @endif
-                            </div>
+{{--                            <div class="img-box">--}}
+{{--                                <img src="{{ url('/') }}/images/doctor.png" alt="Awesome Image">--}}
+{{--                            </div>--}}
+{{--                            <div class="text-box">--}}
+{{--                                @if($doctor !== null)--}}
+{{--                                <h3>@lang('frontmodule::front.dr'). {{ $doctor->name }}</h3>--}}
+{{--                                <span>{{ $doctor->job_title }}</span>--}}
+{{--                                @endif--}}
+{{--                            </div>--}}
                         </div>
                         <div class="read-more">
                             <a class="btn-two" href="{{ route('about_us') }}"><span class="flaticon-next"></span>@lang('frontmodule::front.more_about')</a>
@@ -154,9 +120,8 @@
 <section class="services-style2-area sec-pd1">
     <div class="container">
         <div class="sec-title max-width text-center">
-            <h3>@lang('frontmodule::front.specialities')</h3>
-            <h1>@lang('frontmodule::front.specialities_message')</h1>
-            <p>@lang('frontmodule::front.specialities_message2')</p>
+            <h1>{{ $config['second_title_'.App()->getLocale()] }}</h1>
+            <p>{{ $config['second_desc_'.App()->getLocale()] }}</p>
         </div>
         @if($features->count() > 0 )
             <div class="row">
@@ -180,7 +145,7 @@
                         </div>
                     </div>
                     <!--End single solution style1-->
-                @endforeach    
+                @endforeach
         </div>
         @endif
     </div>
@@ -189,47 +154,47 @@
 
 <!--Start Appointment Area-->
 <section id="appointment" class="appointment-area">
-    <div class="appointment-title-box" style="background-image: url(images/parallax-background/appointment-title-bg.jpg);">
+    <div class="appointment-title-box" style="background-image: url({{ url('assets/front/images/parallax-background/appointment-title-bg.jpg') }});">
         <div class="sec-title text-center">
-            <h3>@lang('frontmodule::front.appointment')</h3>
-            <h1>@lang('frontmodule::front.online_booking')</h1>
-        </div>    
+            <h3>{{ $config['third_title_'.App()->getLocale()] }}</h3>
+            <h1>{{ $config['third_desc_'.App()->getLocale()] }}</h1>
+        </div>
     </div>
     <div class="container appointment-content">
         <div class="row">
             <div class="col-xl-6 col-lg-6">
                 <div class="appointment-image text-center">
-                    <img style="width: 460px;height: 600px;" src="{{ url('/') }}/images/team-2.png" alt="Awesome Image">
+                    <img style="width: 460px;height: 600px;" src="{{ url('/') }}/images/config/{{ $config['appointment_photo'] }}" alt="Awesome Image">
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6">
                 <div class="appointment-form">
                     <div class="text">
-                        <p>@lang('frontmodule::front.question_message') {{$config['phone']}}. @lang('frontmodule::front.contact') {{ $work_hour->day }} {{ $work_hour->from }} – {{ $work_hour->to }}</p>
+                        <p>@lang('frontmodule::front.question_message') {{$config['phone']}}. @lang('frontmodule::front.contact') </p>
                     </div>
                     <form name="appointment-form" id="send_form" action="#" method="get">
                         <input id="_token" name="_token" type="hidden" value="{{ csrf_token() }}">
                         <div class="row">
                             <div class="col-xl-6 col-lg-6">
-                                <div class="input-box">   
+                                <div class="input-box">
                                     <input type="text" id="name" name="name" value="" placeholder="{{__('frontmodule::front.name')}}*" required="">
                                 </div>
-                                <div class="input-box">   
+                                <div class="input-box">
                                     <input type="text" id="phone" name="phone" value="" placeholder="{{__('frontmodule::front.phone')}}">
-                                </div>   
+                                </div>
                             </div>
                             <div class="col-xl-6 col-lg-6">
-                                <div class="input-box"> 
+                                <div class="input-box">
                                     <input type="email" id="email" name="email" value="" placeholder="{{__('frontmodule::front.email')}}*" required="">
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-12">
-                                <div class="input-box">    
+                                <div class="input-box">
                                     <textarea name="message" id="message" placeholder="{{__('frontmodule::front.your_message')}}" required=""></textarea>
                                 </div>
-                            </div>    
+                            </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-12">
@@ -243,17 +208,17 @@
                 </div>
             </div>
             <!-- Modal HTML -->
-            
+
         </div>
-    </div>    
+    </div>
 </section>
 <!--End Appointment Area-->
 
 <section class="choose-area">
     <div class="container">
         <div class="sec-title max-width text-center">
-            <h3>@lang('frontmodule::front.why_us')</h3>
-            <h1>@lang('frontmodule::front.feature_why_us')</h1>
+            <h3>{{ $config['fourth_title_'.App()->getLocale()] }}</h3>
+            <h1>{{ $config['fourth_desc_'.App()->getLocale()] }}</h1>
         </div>
         <div class="row">
             <div class="col-xl-6">
@@ -276,23 +241,23 @@
                                 <a class="html5lightbox" title="Dento Video Gallery" href="{{ $video->link }}">
                                     <span class="flaticon-multimedia"></span>
                                 </a>
-                            </div>   
+                            </div>
                         </div>
-                    </div>    
+                    </div>
                 </div>
             </div>
             @endif
         </div>
     </div>
-</section> 
+</section>
 
 <!--Start team area-->
 <section class="team-area">
     <div class="container">
         <div class="sec-title text-center">
-            <h3>@lang('frontmodule::front.special_doctors')</h3>
-            <h1>@lang('frontmodule::front.highly_doctors')</h1>
-        </div> 
+            <h3>{{ $config['fifth_title_'.App()->getLocale()] }}</h3>
+            <h1>{{ $config['fifth_desc_'.App()->getLocale()] }}</h1>
+        </div>
         <div class="row">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                 <div class="team-carousel owl-carousel owl-theme">
@@ -304,14 +269,14 @@
                                 @if($doctor->photo != null)
                                 <img style="" src="{{ url('') }}/images/team/{{$doctor->photo}}" alt="Awesome Image">
                                 @else
-                                <img style="" src="{{ url('') }}/images/doctor.png" alt="Awesome Image">    
+                                <img style="" src="{{ url('') }}/images/doctor.png" alt="Awesome Image">
                                 @endif
                                 <div class="overlay-style-one"></div>
                                 <div class="text-holder text-center">
                                     <h3>@lang('frontmodule::front.dr') {{ $doctor->name }}</h3>
                                     <span>{{$doctor->job_title}}</span>
                                     <div class="button">
-                                        <a class="btn-one" href="#">@lang('frontmodule::front.more')</a>
+                                        <a class="btn-one" href="{{ $doctor->facebook }}">@lang('frontmodule::front.more')</a>
                                     </div>
                                 </div>
                             </div>
@@ -321,7 +286,7 @@
                     @endif
                     <!--Start single item member-->
                     <!--End single item member-->
-                    
+
                 </div>
             </div>
         </div>
@@ -336,8 +301,8 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="sec-title max-width text-center">
-                    <h3>@lang('frontmodule::front.testimonials')</h3>
-                    <h1>@lang('frontmodule::front.say_customers')</h1>
+                    <h3>{{ $config['sixth_title_'.App()->getLocale()] }}</h3>
+                    <h1>{{ $config['sixth_desc_'.App()->getLocale()] }}</h1>
                 </div>
             </div>
         </div>
@@ -363,28 +328,29 @@
                                     <li><i class="fa fa-star"></i></li>
                                 </ul>
                             </div>
+                            <img class="img-thumbnail" style="border-radius: 50px;width: 100px;height: 100px;margin: auto;" src="{{ asset('images/testimonials/'.$review->photo) }}">
                             <div class="name">
                                 <h3>{{ $review->name }}</h3>
                                 <span>{{$review->job_title}}</span>
                             </div>
                             <div class="quote-icon2">
                                 <img src="{{ url('/assets/front') }}/images/icon/2.png" alt="Quote Icon">
-                            </div>    
+                            </div>
                         </div>
                         @endforeach
                     @endif
-                </div> 
+                </div>
             </div>
-        </div>  
-    </div>    
+        </div>
+    </div>
 </section>
 <!--End Testimonial Sec style2-->
 <!--Start latest blog area-->
 <section class="latest-blog-area sec-pd1 pd-btm60">
     <div class="container inner-content">
         <div class="sec-title max-width text-center">
-            <h3>{{__('frontmodule::front.news_tips')}}</h3>
-            <h1>{{__('frontmodule::front.lastest_blogs')}}</h1>
+            <h3>{{ $config['seventh_title_'.App()->getLocale()] }}</h3>
+            <h1>{{ $config['seventh_desc_'.App()->getLocale()] }}</h1>
         </div>
         <div class="row">
         @if($blogs->count() > 0)
@@ -399,9 +365,9 @@
                             <img style="height: 243px;width: 370px" src="{{ url('/assets/front') }}/images/blog/lat-blog-1.jpg" alt="
                             Awesome Image">
                             @endif
-                            <div class="categorie-button">
-                                <a class="btn-one" href="{{ route('categories',$blog->categories->first()->id) }}">{{$blog->categories->first()->title}}</a>
-                            </div>
+{{--                            <div class="categorie-button">--}}
+{{--                                <a class="btn-one" href="{{ route('categories',$blog->categories->first()->id) }}">{{$blog->categories->first()->title}}</a>--}}
+{{--                            </div>--}}
                         </div>
                         <div class="text-holder">
                             <div class="meta-box">
@@ -411,15 +377,15 @@
                                 <ul class="meta-info">
                                     <li>{{$blog->admin->name}}</li>
                                     <li><a href="#">{{$blog->created_at->diffForHumans()}}</a></li>
-                                </ul>    
+                                </ul>
                             </div>
-                            <h3 class="blog-title"><a href="{{ route('single_blog',str_replace(' ','-',$blog->title)) }}">{{$blog->title}}</a></h3>
+                            <h3 class="blog-title"><a href="{{ route('single_blog',$blog->id) }}">{{$blog->title}}</a></h3>
                             <div style="width: 300px;height: 48px;" class="text-box">
                                 <p>{!! substr($blog->description,0,150) !!}</p>
                             </div>
                             <div class="readmore-button">
-                                <a class="btn-two" href="{{ route('single_blog',str_replace(' ','-',$blog->title)) }}"><span class="flaticon-next"></span>@lang('frontmodule::front.read_more')</a>
-                            </div>  
+                                <a class="btn-two" href="{{ route('single_blog',$blog->id) }}"><span class="flaticon-next"></span>@lang('frontmodule::front.read_more')</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -430,9 +396,176 @@
     </div>
 </section>
 <!--End latest blog area-->
-<!--Start Brand area-->  
+
+<!--Start Contact info map area-->
+{{--<section class="contact-info-map-area">--}}
+{{--    <div class="container">--}}
+{{--        <div class="sec-title max-width text-center">--}}
+{{--            <h1>We are Here to Help You, Don’t Hesitate.</h1>--}}
+{{--        </div>--}}
+{{--        <div class="row">--}}
+{{--            <div class="col-xl-12">--}}
+{{--                <div class="contact-info-map">--}}
+{{--                    <div class="row">--}}
+{{--                        <div class="col-xl-4">--}}
+{{--                            <div class="contact-info-left">--}}
+{{--                                <div class="contact-title">--}}
+{{--                                    <h2>Send Your Message Us</h2>--}}
+{{--                                    <p>Dont be shy, Send your message or through form, our expert will help you ASAP.</p>--}}
+{{--                                </div>--}}
+{{--                                <div class="state-select-box2">--}}
+{{--                                    <select class="selectmenu area_select">--}}
+{{--                                        <option value="1">North California</option>--}}
+{{--                                        <option value="2">Los Angeles</option>--}}
+{{--                                        <option value="3">San Francisco</option>--}}
+{{--                                        <option value="4">British Columbia</option>--}}
+{{--                                        <option value="5">Nova Scotia</option>--}}
+{{--                                    </select>--}}
+{{--                                    <div class="state-content">--}}
+{{--                                        <div class="state" id="value1">--}}
+{{--                                            <ul>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Address</h5>--}}
+{{--                                                        <p>Romanian  9520 Faires Farm Road,<br> Carlsbad, NC 28213, California.</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Phone</h5>--}}
+{{--                                                        <p>Phone 1: +1 555-7890-123<br> Phone 2: (+ 760) 987-65-43210.</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Email</h5>--}}
+{{--                                                        <p>supportyou@example.com</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="state" id="value2">--}}
+{{--                                            <ul>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Address</h5>--}}
+{{--                                                        <p>Romanian  9520 Faires Farm Road,<br> Carlsbad, NC 28213, Los Angeles.</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Phone</h5>--}}
+{{--                                                        <p>Phone 1: +1 555-7890-123<br> Phone 2: (+ 760) 987-65-43210.</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Email</h5>--}}
+{{--                                                        <p>supportyou@example.com</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="state" id="value3">--}}
+{{--                                            <ul>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Address</h5>--}}
+{{--                                                        <p>Romanian  9520 Faires Farm Road,<br> Carlsbad, NC 28213, San Francisco.</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Phone</h5>--}}
+{{--                                                        <p>Phone 1: +1 555-7890-123<br> Phone 2: (+ 760) 987-65-43210.</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Email</h5>--}}
+{{--                                                        <p>supportyou@example.com</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="state" id="value4">--}}
+{{--                                            <ul>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Address</h5>--}}
+{{--                                                        <p>Romanian  9520 Faires Farm Road,<br> Carlsbad, NC 28213, British Columbia.</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Phone</h5>--}}
+{{--                                                        <p>Phone 1: +1 555-7890-123<br> Phone 2: (+ 760) 987-65-43210.</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Email</h5>--}}
+{{--                                                        <p>supportyou@example.com</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="state" id="value5">--}}
+{{--                                            <ul>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Address</h5>--}}
+{{--                                                        <p>Romanian  9520 Faires Farm Road,<br> Carlsbad, NC 28213, Nova Scotia.</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Phone</h5>--}}
+{{--                                                        <p>Phone 1: +1 555-7890-123<br> Phone 2: (+ 760) 987-65-43210.</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                                <li>--}}
+{{--                                                    <div class="text">--}}
+{{--                                                        <h5>Email</h5>--}}
+{{--                                                        <p>supportyou@example.com</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </li>--}}
+{{--                                            </ul>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-xl-8">--}}
+{{--                            <div class="google-map-box">--}}
+{{--                                <div--}}
+{{--                                    class="google-map"--}}
+{{--                                    id="contact-google-map"--}}
+{{--                                    data-map-lat="40.584160"--}}
+{{--                                    data-map-lng="-74.415543"--}}
+{{--                                    data-icon-path="images/resources/map-marker.png"--}}
+{{--                                    data-map-title="Brooklyn, New York, United Kingdom"--}}
+{{--                                    data-map-zoom="12"--}}
+{{--                                    data-markers='{--}}
+{{--                                    "marker-1": [40.584160, -74.415543, "<h4>Head Office</h4><p>44/108 Brooklyn, UK</p>"],--}}
+{{--                                    "marker-2": [40.602230, -74.689910, "<h4>Head Office</h4><p>44/108 Brooklyn, UK</p>"],--}}
+{{--                                    "marker-3": [35.616959, -87.838852, "<h4>Head Office</h4><p>44/108 Brooklyn, UK</p>"]--}}
+
+{{--                                }'>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+{{--</section>--}}
+<!--End Contact info map area-->
+    <div class="mapouter"><div class="gmap_canvas"><iframe width="1350" height="448" id="gmap_canvas" src="https://maps.google.com/maps?q=30.0550394%2C31.1994918&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/best-wordpress-themes/">wordpress themes</a></div><style>.mapouter{position:relative;text-align:right;height:448px;width:1350px;}.gmap_canvas {overflow:hidden;background:none!important;height:448px;width:1350px;}</style></div>
+    <!--Start Brand area-->
 @include('commonmodule::includes.swal')
-<!--End Brand area--> 
+<!--End Brand area-->
 @stop
 @push('js')
     <script>
@@ -453,17 +586,17 @@
 
                 },
                 //error: function(XMLHttpRequest, textStatus, errorThrown){
-                //    alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+                //    alert("Status: " + textStatus); alert("Error: " + errorThrown);
                 //}
             });
             $body = $("body");
 
             $(document).on({
                 ajaxStart: function() { $body.addClass("loading");    },
-                 ajaxStop: function() { $body.removeClass("loading"); }    
+                 ajaxStop: function() { $body.removeClass("loading"); }
             });
 
-            
+
         })
     </script>
 @endpush

@@ -64,7 +64,11 @@
                     <div class="breadcrumb-menu float-right">
                         <ul class="clearfix">
                             <li><a href="{{url('/')}}">@lang('frontmodule::front.home')</a></li>
-                            <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                            @if(App()->getLocale() == 'ar')
+                                <li><i class="fa fa-angle-left" aria-hidden="true"></i></li>
+                            @else
+                                <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                            @endif
                             <li class="active">@lang('frontmodule::front.services')</li>
                         </ul>    
                     </div>
@@ -81,7 +85,7 @@
             <h3>@lang('frontmodule::front.services')</h3>
             <h1>@lang('frontmodule::front.services_here')</h1>
         </div>
-        @if($services->count() == 6)
+
             <div class="row">
                 @foreach($services as $service)
                     <!--Start single solution style1-->
@@ -105,7 +109,7 @@
                     <!--End single solution style1-->
                 @endforeach    
         </div>
-        @endif
+
     </div>
 </section>
 

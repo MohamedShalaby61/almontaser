@@ -112,7 +112,7 @@
             success:function (data) {
                 swal("{{__('commonmodule::swal.good')}}", "{{__('commonmodule::swal.edited')}}", "success", { button: "{{__('commonmodule::swal.btn')}}", });
                 if (data == 0){
-                    loc.replaceWith('<button value='+data+' class="btn btn-danger FeatBtn">{{__('servicemodule::service.no')}}</button>');
+                    loc.replaceWith('<button value='+data+' class="btn btn-danger FeatBtn">{{__('servicemodule::service.no')}}</button>');  
                 }else{
                     loc.replaceWith('<button value='+data+' class="btn btn-success FeatBtn">{{__('servicemodule::service.yes')}}</button>');
                 }
