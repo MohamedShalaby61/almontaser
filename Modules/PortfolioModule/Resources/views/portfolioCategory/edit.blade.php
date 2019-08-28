@@ -26,7 +26,7 @@
     @if (count($errors) > 0)
       @foreach ($errors->all() as $item)
         <p class="alert alert-danger">{{$item}}</p>
-      @endforeach 
+      @endforeach
     @endif
     <!-- /.box-header -->
     <form class="form-horizontal" action="{{url('admin-panel/portfoliomodule/category')}}/{{$category->id}}" method="POST" enctype="multipart/form-data">
@@ -77,7 +77,19 @@
           </div>
           <!-- /.nav-tabs-custom -->
         </div>
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="img">{{__('portfoliomodule::portfolio.cover_photo')}} :</label>
+              <div class="col-sm-8">
+                  <input type="file" autocomplete="off" name="cover_photo">
+                  <br/>
+                  @if ($category->cover_photo)
+                      <img style="width: 100px;height: 100px" src="{{asset('images/project/' . $category->cover_photo)}}">
+                  @else
+                      "<strong>No Photo</strong>"
+                  @endif
 
+              </div>
+          </div>
       </div>
       <!-- /.box-body -->
       <div class="box-footer">

@@ -12,7 +12,7 @@ class Portfolio extends Model
     use Translatable;
 
     protected $table = 'portfolio';
-    protected $fillable = ['photo', 'portfolio_category_id', 'created_by'];
+    protected $fillable = ['photo','cover_photo', 'portfolio_category_id', 'created_by'];
     public $translatedAttributes = ['slug', 'title', 'description', 'meta_title', 'meta_desc', 'meta_keywords'];
     public $translationModel = PortfolioTranslation::class;
 

@@ -22,7 +22,7 @@ return array(
   'title' => 'العنوان',
   'photo' => 'الصورة',
   'operation' => 'العمليات',
-
+  'cover_photo' => 'صورة الغلاف',
   # Category
   'pagecategtitle' => 'اقسام الأعمال السابقة',
 );

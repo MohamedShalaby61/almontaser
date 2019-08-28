@@ -88,6 +88,13 @@
               </div>
             </div>
 
+              <div class="form-group">
+                  <label class="control-label col-sm-2" for="img">{{__('servicemodule::service.cover_photo')}}:</label>
+                  <div class="col-sm-8">
+                      <input type="file" autocomplete="off" name="cover_photo">
+                  </div>
+              </div>
+
             {{-- Category --}}
             <div class="form-group">
               <label class="control-label col-sm-2" for="category">{{__('servicemodule::service.categ')}} :</label>

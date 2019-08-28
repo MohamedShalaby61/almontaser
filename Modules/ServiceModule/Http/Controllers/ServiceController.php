@@ -121,6 +121,17 @@ class ServiceController extends Controller
             $service['photo'] = $imageName;
         }
 
+        if ($request->hasFile('cover_photo')) {
+            // Delete old image first.
+            $thumbnail_path = public_path() . '/images/service/' . $servicePic->cover_photo;
+            File::delete($thumbnail_path);
+
+            // Save the new one.
+            $image = $request->file('cover_photo');
+            $imageName = $this->upload($image, 'service');
+            $service['cover_photo'] = $imageName;
+        }
+
 
 
         $this->serviceRepo->update($id, $service, $dataTrans);

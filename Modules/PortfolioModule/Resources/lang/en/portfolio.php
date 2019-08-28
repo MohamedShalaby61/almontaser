@@ -22,7 +22,7 @@ return array(
   'title' => 'Title',
   'photo' => 'Photo',
   'operation' => 'Operations',
-
+  'cover_photo' => 'cover photo',
   # Category
   'pagecategtitle' => 'Portfolio Category',
 );

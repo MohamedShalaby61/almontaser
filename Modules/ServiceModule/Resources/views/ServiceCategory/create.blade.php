@@ -64,10 +64,20 @@
               </div>
               @endforeach
             </div>
-            <!-- /.tab-content -->
+
           </div>
+            <div class="form-group">
+                <label class="col-md-4">@lang('servicemodule::service.photo')</label>
+                <input class="col-md-4" type="file"  name="photo" >
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4">@lang('servicemodule::service.cover_photo')</label>
+                <input class="col-md-4" type="file"  name="cover_photo" >
+            </div>
           <!-- /.nav-tabs-custom -->
         </div>
+
 
       </div>
       <!-- /.box-body -->

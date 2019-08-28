@@ -90,6 +90,20 @@
           </div>
         </div>
 
+
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="img">{{__('servicemodule::service.cover_photo')}} :</label>
+              <div class="col-sm-8">
+                  <input type="file" autocomplete="off" name="cover_photo">
+                  <br/>
+                  @if ($service->cover_photo)
+                      <img src="{{asset('images/service/' . $service->cover_photo)}}" width="100" height="70">
+                  @else
+                      "<strong>No Photo</strong>"
+                  @endif
+              </div>
+          </div>
+
         {{-- Category --}}
         <div class="form-group">
           <label class="control-label col-sm-2" for="category">{{__('servicemodule::service.categ')}} :</label>

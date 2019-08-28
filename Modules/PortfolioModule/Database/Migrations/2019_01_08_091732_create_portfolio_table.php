@@ -16,6 +16,7 @@ class CreatePortfolioTable extends Migration
         Schema::create('portfolio', function (Blueprint $table) {
             $table->increments('id');
             $table->string('photo')->nullable();
+            $table->string('cover_photo')->nullable();
             $table->integer('portfolio_category_id')->unsigned();
             $table->foreign('portfolio_category_id')->references('id')->on('portfolio_category')->onDelete('cascade');
             $table->integer('created_by')->unsigned()->nullable();

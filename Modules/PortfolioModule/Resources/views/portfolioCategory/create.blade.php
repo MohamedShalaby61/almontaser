@@ -68,6 +68,12 @@
           </div>
           <!-- /.nav-tabs-custom -->
         </div>
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="img">{{__('portfoliomodule::portfolio.cover_photo')}} :</label>
+              <div class="col-sm-4">
+                  <input type="file" autocomplete="off" name="cover_photo">
+              </div>
+          </div>
 
       </div>
       <!-- /.box-body -->

@@ -16,7 +16,7 @@ return array(
   'desc' => 'الوصف',
   'cancel' => 'الغاء',
   'submit' => 'حفظ',
-  
+
   # Service
   'servicetitle' => 'الخدمات',
   'photo' => 'الصورة',
@@ -31,4 +31,5 @@ return array(
    'not_feature'=>'غير مميزة',
    'yes'=>'نعم',
    'no'=>'لا',
+   'cover_photo' => 'صورة الغلاف',
 );

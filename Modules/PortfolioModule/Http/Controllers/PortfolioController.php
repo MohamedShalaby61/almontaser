@@ -64,7 +64,7 @@ class PortfolioController extends Controller
             })
             ->addColumn('photo', function($row) {
                 if($row->photo){
-                    return '<img width="100" height="100" src='. asset("public/images/project/" . $row->photo).'/>';
+                    return '<img width="100" height="100" src='. asset("images/project/" . $row->photo).'/>';
                 } else {
                     return '<strong> No Photo </strong>';
                 }
@@ -99,6 +99,12 @@ class PortfolioController extends Controller
             $image = $request->file('photo');
             $imageName = $this->upload($image, 'project', true); // resize option executed.
             $projectData['photo'] = $imageName;
+        }
+
+        if ($request->hasFile('cover_photo')) {
+            $image = $request->file('cover_photo');
+            $imageName = $this->upload($image, 'project', true); // resize option executed.
+            $projectData['cover_photo'] = $imageName;
         }
 
         # Loop through project_photos_many to save photos first.
@@ -150,6 +156,17 @@ class PortfolioController extends Controller
             $image = $request->file('photo');
             $imageName = $this->upload($image, 'project', true);
             $project['photo'] = $imageName;
+        }
+
+        if ($request->hasFile('cover_photo')) {
+            // Delete old image first.
+            $thumbnail_path = public_path() . '/images/project/thumb/' . $projectPic->cover_photo;
+            File::delete($thumbnail_path);
+
+            // Save the new one.
+            $image = $request->file('cover_photo');
+            $imageName = $this->upload($image, 'project', true);
+            $project['cover_photo'] = $imageName;
         }
 
         $this->portfolioRepo->update($id, $project,$portofolio_trans);

@@ -17,6 +17,7 @@ class CreateService extends Migration
             $table->increments('id');
             $table->integer('feature');
             $table->string('photo')->nullable();
+            $table->string('cover_photo')->nullable();
             $table->integer('service_category_id')->unsigned()->nullable();
             $table->foreign('service_category_id')->references('id')->on('service_category')->onDelete('set null');
             $table->integer('created_by')->unsigned()->nullable();

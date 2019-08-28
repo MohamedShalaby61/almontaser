@@ -88,13 +88,29 @@
             <input type="file" autocomplete="off" name="photo">
             <br/>
             @if ($project->photo)
-              <img src="{{asset('public/images/project/thumb/' . $project->photo)}}">
+              <img style="width: 100;height: 100px" src="{{asset('images/project/' . $project->photo)}}">
             @else
               "<strong>No Photo</strong>"
             @endif
 
           </div>
         </div>
+
+
+
+          <div class="form-group">
+              <label class="control-label col-sm-2" for="img">{{__('portfoliomodule::portfolio.cover_photo')}} :</label>
+              <div class="col-sm-8">
+                  <input type="file" autocomplete="off" name="cover_photo">
+                  <br/>
+                  @if ($project->cover_photo)
+                      <img style="width: 100px;height: 100px" src="{{asset('images/project/' . $project->cover_photo)}}">
+                  @else
+                      "<strong>No Photo</strong>"
+                  @endif
+
+              </div>
+          </div>
 
         {{-- Category --}}
         <div class="form-group">

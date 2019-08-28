@@ -10,7 +10,7 @@ class PortfolioCategory extends Model
     use Translatable;
 
     protected $table = 'portfolio_category';
-    protected $fillable = ['created_by'];
+    protected $fillable = ['created_by','cover_photo'];
     public $translatedAttributes = ['title', 'description'];
     public $translationModel = PortfolioCategoryTranslation::class;
 
