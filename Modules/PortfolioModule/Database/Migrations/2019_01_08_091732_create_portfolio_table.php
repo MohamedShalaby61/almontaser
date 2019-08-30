@@ -27,7 +27,7 @@ class CreatePortfolioTable extends Migration
         Schema::create('portfolio_translation', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->nullable();
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->integer('portfolio_id')->unsigned();
             $table->string('meta_title')->nullable();
             $table->string('meta_desc')->nullable();

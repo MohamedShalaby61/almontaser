@@ -41,7 +41,7 @@ class CreateBlogsTable extends Migration
             $table->string('slug')->nullable();
             $table->longText('description')->nullable();
             $table->string('meta_title')->nullable();
-            $table->string('meta_desc')->nullable();
+            $table->longText('meta_desc')->nullable();
             $table->string('meta_keywords')->nullable();
             $table->string('locale')->index();
             $table->unique(['blog_id', 'locale']);
