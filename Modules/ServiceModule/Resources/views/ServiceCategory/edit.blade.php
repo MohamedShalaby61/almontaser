@@ -68,6 +68,17 @@
             </div>
             <!-- /.tab-content -->
           </div>
+            <div class="form-group">
+                <label class="col-md-6">@lang('servicemodule::service.photo')</label>
+                <input class="col-md-6" type="file"  name="photo" >
+                <img style="width: 100px;height: 100px" src="{{ url('images/service/'.$category->photo) }}">
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-6">@lang('servicemodule::service.cover_photo')</label>
+                <input class="col-md-6" type="file"  name="cover_photo" >
+                <img style="width: 100px;height: 100px" src="{{ url('images/service/'.$category->cover_photo) }}">
+            </div>
           <!-- /.nav-tabs-custom -->
         </div>
 

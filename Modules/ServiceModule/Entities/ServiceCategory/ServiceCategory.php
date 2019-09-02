@@ -10,14 +10,13 @@ class ServiceCategory extends Model
     use Translatable;
 
     protected $table = 'service_category';
-    protected $fillable = ['created_by'];
+    protected $fillable = ['created_by','photo','cover_photo'];
     public $translatedAttributes = ['title', 'description'];
     public $translationModel = ServiceCategoryTranslation::class;
 
     # Relation
-
-    public function services()
+    public function service()
     {
-        return $this->hasMany('Modules\ServiceModule\Entities\ServiceMod\Service','service_category_id','id');
+        return $this->hasMany(Service::class);
     }
 }

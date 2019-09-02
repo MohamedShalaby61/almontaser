@@ -16,9 +16,9 @@ class CreateConfigsTable extends Migration
         Schema::create('configs', function (Blueprint $table) {
             $table->increments('id');
             $table->string('var');
-            $table->string('display_name');
+            $table->integer('is_static')->default(0);
+            $table->string('static_value')->nullable();
             $table->tinyInteger('type');
-            $table->text('value')->nullable();
             $table->integer('category_id')->unsigned();
 
             $table->foreign('category_id')->references('id')->on('config_categories')->onDelete('cascade');

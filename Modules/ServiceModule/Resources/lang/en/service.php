@@ -16,7 +16,7 @@ return array(
   'desc' => 'Description',
   'cancel' => 'Cancel',
   'submit' => 'Submit',
-  
+
   # Service
   'servicetitle' =>'Service',
   'photo' => 'Photo',
@@ -31,4 +31,5 @@ return array(
   'not_feature'=>'NO',
    'yes'=>'Yes',
    'no'=>'No',
+   'cover_photo' => 'cover photo',
 );

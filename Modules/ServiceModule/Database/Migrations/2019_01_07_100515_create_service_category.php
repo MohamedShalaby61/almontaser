@@ -15,6 +15,8 @@ class CreateServiceCategory extends Migration
     {
         Schema::create('service_category', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('photo')->nullable();
+            $table->string('cover_photo')->nullable();
             $table->integer('created_by')->unsigned()->nullable();
             $table->foreign('created_by')->references('id')->on('admins')->onDelete('set null');
             $table->timestamps();

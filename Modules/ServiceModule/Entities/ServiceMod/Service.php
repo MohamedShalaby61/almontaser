@@ -11,7 +11,7 @@ class Service extends Model
     use Translatable;
 
     protected $table = 'service';
-    protected $fillable = ['feature','photo', 'service_category_id', 'created_by'];
+    protected $fillable = ['feature','photo','cover_photo', 'service_category_id', 'created_by'];
     public $translatedAttributes = ['slug', 'title', 'description', 'meta_title', 'meta_desc', 'meta_keywords'];
     public $translationModel = ServiceTranslation::class;
 
@@ -20,5 +20,4 @@ class Service extends Model
     {
         return $this->belongsTo(ServiceCategory::class);
     }
-
 }

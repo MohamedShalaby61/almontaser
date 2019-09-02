@@ -1,4 +1,4 @@
-@extends('commonmodule::layouts.master')
+    @extends('commonmodule::layouts.master')
 
 @section('title')
   {{__('servicemodule::service.categtitle')}}

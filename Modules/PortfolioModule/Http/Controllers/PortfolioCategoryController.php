@@ -5,13 +5,14 @@ namespace Modules\PortfolioModule\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\CommonModule\Helper\UploaderHelper;
 use Modules\PortfolioModule\Repository\PortfolioCategoryRepository;
 use Yajra\DataTables\DataTables;
 
 class PortfolioCategoryController extends Controller
 {
     protected $portfolioCategRepo;
-
+    use UploaderHelper;
     public function __construct(PortfolioCategoryRepository $portfolioCategRepo)
     {
         $this->portfolioCategRepo = $portfolioCategRepo;
@@ -47,7 +48,7 @@ class PortfolioCategoryController extends Controller
             })
             ->addColumn('photo', function($row) {
                 if($row->photo){
-                    return '<img width="100" height="100" src='. asset("public/images/project/" . $row->photo).'/>';
+                    return '<img width="100" height="100" src='. asset("images/project/" . $row->photo).'/>';
                 } else {
                     return '<strong> No Photo </strong>';
                 }
@@ -76,6 +77,11 @@ class PortfolioCategoryController extends Controller
     {
         $categData = $request->except('_token');
         $categData['created_by'] = auth()->user()->id;
+        if ($request->hasFile('cover_photo')) {
+            $image = $request->file('cover_photo');
+            $imageName = $this->upload($image, 'project', true); // resize option executed.
+            $categData['cover_photo'] = $imageName;
+        }
         $this->portfolioCategRepo->save($categData);
 
         return redirect('admin-panel/portfoliomodule/category')->with('success', 'success');
@@ -100,7 +106,11 @@ class PortfolioCategoryController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->except('_token', '_method');
-
+        if ($request->hasFile('cover_photo')) {
+            $image = $request->file('cover_photo');
+            $imageName = $this->upload($image, 'project', true); // resize option executed.
+            $data['cover_photo'] = $imageName;
+        }
         $activeLangCode = \LanguageHelper::getLangCode();
 
         $portofolio_trans = $request->only($activeLangCode);
