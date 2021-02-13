@@ -1,0 +1,369 @@
+/* Start Main Rules */
+*{
+    margin: 0;
+    padding: 0;
+}
+ul{
+    list-style: none;
+    display: block;
+    padding: 0;
+}
+body{
+margin: 0;
+font-family: 'Open Sans', sans-serif;
+direction: rtl;
+}
+.container{
+   width:1200px; 
+   margin: auto;  
+}
+@media (max-width: 767px) { /* Mobile & Tablet Rules */
+  .container {
+    width: 100%;
+  }
+    p,h1,h2,h3,h4,h5,h6{
+        text-align:center;
+    }
+}
+
+@media (min-width: 768px) and  (max-width: 991px){ /* Mobile & Tablet Rules */
+ .container {
+    width: 750px;
+  } 
+}
+
+@media (min-width: 992px) and  (max-width: 1199px){ /* Medium Screen Rules */
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) { /* Large Screen Rules */
+  .container {
+    width: 1170px;
+  }
+}
+.clearfix{clear: both}
+/* End Main Rules */
+
+/* start nav */
+
+nav img{
+    width: 80%;
+    padding-right: 70px;
+}
+
+nav ul {
+    float: left;
+}
+@media (min-width: 768px) and  (max-width: 991px){
+  nav ul{
+    float: left;
+    margin-left: -575px;
+    margin-top: -60px;
+    padding-top: 15px;
+}
+     nav ul li{
+    padding: 10px 5px;  
+}
+    nav img{
+    width: 200px;
+    margin-top: -45px;
+    margin-right: 260px;
+    padding-top: 15px;
+}
+    nav .language {
+    padding-top: 15px;
+    padding-left: 80%;
+}
+}
+@media (max-width: 767px){
+nav ul {
+    float: revert;
+}
+      nav ul{
+  text-align:center;     
+} 
+    nav ul li{
+     padding:15px 5px;   
+    }
+    
+    nav .img{
+        text-align: center;
+    }
+    nav img{
+    width:198px;
+        padding-right: 0;
+}
+    nav .language {
+     text-align:center;
+     padding-bottom: 30px;
+        padding-top:15;
+        padding-left:0;
+}
+}
+
+/* end nav */
+
+/* start header */
+header{
+    direction: ltr;
+}
+
+header .content {
+  float: left;
+}
+
+header .content img {
+    width: 60%;
+}
+
+header .content p {
+    color: #fff;
+    font-size: 30px;
+    padding-top: 20px;
+    text-align:center;
+}
+/* end header */
+
+/* start about */
+
+.aboutus .h2 {
+    color: #054E9F;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.aboutus .h2:before {
+     content: "";
+    position: absolute;
+    height: 4px;
+    width: 15%;
+    background: #F88022;
+    top: 41px;
+    right: 0px;
+    border-radius: 5px;
+}
+
+.aboutus p {
+    float: left;
+}
+
+.aboutus .p {
+    float: right;
+}
+@media (max-width: 767px){
+.aboutus .h2:before {
+     content: "";
+    position: absolute;
+    height: 4px;
+    width: 0;
+    background: #F88022;
+    top: 41px;
+    right: 0px;
+    border-radius: 5px;
+}
+}
+
+/* end about */
+
+/* start services */
+
+.services .h2 {
+    font-size: 35px;
+    position:relative;
+}
+
+.services .h2:before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 8%;
+    background: #F88022;
+    border-radius: 5px;
+    left: 46%;
+    bottom: -5px;
+}
+
+.services p {
+    font-size: 23px;
+}
+
+@media (max-width: 767px){
+.services .h2:before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 0;
+    background: #F88022;
+    border-radius: 5px;
+    left: 46%;
+    bottom: -5px;
+}
+.services p {
+    font-size: 17px;
+}
+    
+}
+/* end services */
+
+/* start our-services */
+
+.our-services h2:before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 23%;
+    background: #F88022;
+    left: 39%;
+    border-radius: 5px;
+    bottom: 40px;
+}
+
+@media (max-width: 767px){
+.our-services h2:before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 0;
+    background: #F88022;
+    left: 39%;
+    border-radius: 5px;
+    bottom: 40px;
+}
+}
+
+/* end our-services */
+
+/* start our-advanatage */
+ 
+.our-advantage .advantage h2 {
+    color: #fff;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    padding-right: 30px;
+    position:relative;
+}
+
+.our-advantage .advantage h2:before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 12%;
+    background: #F88022;
+    border-radius: 5px;
+}
+
+.our-advantage .advantage p {
+    color: #fff;
+    font-size: 21px;
+    padding-right: 30px;
+}
+
+.our-advantage .img {
+    margin-right: -100px;
+}
+
+.our-advantage .img img {
+    width: 55%;
+}
+
+@media (max-width: 767px){
+  .our-advantage .advantage h2:before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 0;
+    background: #F88022;
+    right: 5%;
+    top: 33%;
+    border-radius: 5px;  
+}
+    .our-advantage .advantage p{
+        font-size:17px;
+    }
+    .our-advantage .img{
+        margin-right:0;
+    }
+    .our-advantage .img img{
+        width:100%;
+    }
+}
+/* end our-advanatage */
+
+/* start car-service*/
+
+.car-service .h2 {
+    color: #054e9f;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding-top: 40px;
+    text-align: center;
+    padding-bottom: 50px;
+    padding-left: 300px;
+    position:relative;
+}
+
+.car-service .h2:before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 6%;
+    background: #F88022;
+    border-radius: 5px;
+    bottom: 45px;
+
+}
+
+.car-service #cars{
+    padding-top:100px;
+}
+@media (max-width: 767px){
+    .car-service .h2{
+        padding-left: 0;
+    }
+.car-service .h2:before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 0;
+    background: #F88022;
+    border-radius: 5px;
+    bottom: 45px;
+
+}
+}
+
+/* end car-service */
+
+
+/* start customer-service */
+
+.customer-service h2:before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 27%;
+    background: #F88022;
+    border-radius: 5px;
+    bottom: 40px;
+}
+
+@media (max-width: 767px){
+.customer-service h2:before {
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 0;
+    background: #F88022;
+    border-radius: 5px;
+    bottom: 40px;
+}
+}
+/* end customer-service */

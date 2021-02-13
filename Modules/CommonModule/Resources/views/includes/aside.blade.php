@@ -38,9 +38,9 @@
                     </a>
                     <ul class="treeview-menu">
                         <!-- Categories -->
-                        <li><a href="{{ url('admin-panel/servicemodule/category') }}"><i
+                        {{-- <li><a href="{{ url('admin-panel/servicemodule/category') }}"><i
                                         class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.servicecateg')}}</a>
-                        </li>
+                        </li> --}}
 
                         <!-- Service -->
                         <li><a href="{{ url('admin-panel/servicemodule/service') }}"><i
@@ -49,7 +49,7 @@
                 </li>
             @endif
 
-            @if(in_array('project_app',$activeApps))
+            {{-- @if(in_array('project_app',$activeApps))
                 <li class="treeview">
                     <a href="#">
                         <i class="fa fa-briefcase"></i> <span>{{__('commonmodule::sidebar.portfolio')}}</span>
@@ -68,8 +68,8 @@
                                         class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.portfolio')}}</a></li>
                     </ul>
                 </li>
-            @endif
-            @if(in_array('product_app',$activeApps))
+            @endif --}}
+            {{-- @if(in_array('product_app',$activeApps))
 
                 <li class="treeview">
                     <a href="#">
@@ -89,8 +89,8 @@
                                         class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.product')}}</a></li>
                     </ul>
                 </li>
-            @endif
-            @if(in_array('blog_app',$activeApps))
+            @endif --}}
+            {{-- @if(in_array('blog_app',$activeApps))
 
                 <li class="treeview">
                     <a href="#">
@@ -110,7 +110,7 @@
                                         class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.blog')}}</a></li>
                     </ul>
                 </li>
-            @endif
+            @endif --}}
 
             <li class="treeview">
                 <a href="#">
@@ -132,7 +132,7 @@
                     <li><a href="{{ url('admin-panel/widgets/acheive') }}"><i
                                     class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.acheive')}}</a>
                     </li>
-            @endif
+                @endif
                 @if(in_array('bookings_app',$activeApps))
 
                     <!-- Booking -->
@@ -193,7 +193,7 @@
                 </ul>
             </li>
 
-            @if(in_array('video_app',$activeApps))
+            {{-- @if(in_array('video_app',$activeApps))
 
                 <li class="treeview">
                     <a href="#">
@@ -232,7 +232,7 @@
                         </li>
                     </ul>
                 </li>
-            @endif
+            @endif --}}
 
 
             @role('admin|superadmin|owner')

@@ -12,14 +12,14 @@
 @endsection
 
 @section('content')
-  @if (empty($categs->toArray()))
+  {{-- @if (empty($categs->toArray()))
     <section class="content">
       <br/>
       <h3 class="alert alert-danger">{{__('servicemodule::service.fill')}}</h3>
       <br/>
       <a href="{{url('admin-panel/servicemodule/category/create')}}" class="btn btn-warning"><i class="fa fa-plus" aria-hidden="true"></i> {{__('servicemodule::service.createnow')}}</a>
     </section>
-  @else
+  @else --}}
     <section class="content">
       <!-- Horizontal Form -->
       <div class="box box-info">
@@ -88,15 +88,15 @@
               </div>
             </div>
 
-              <div class="form-group">
+              {{-- <div class="form-group">
                   <label class="control-label col-sm-2" for="img">{{__('servicemodule::service.cover_photo')}}:</label>
                   <div class="col-sm-8">
                       <input type="file" autocomplete="off" name="cover_photo">
                   </div>
-              </div>
+              </div> --}}
 
             {{-- Category --}}
-            <div class="form-group">
+            {{-- <div class="form-group">
               <label class="control-label col-sm-2" for="category">{{__('servicemodule::service.categ')}} :</label>
               <div class="col-sm-8">
                 <select class="form-control" name="service_category_id">
@@ -107,9 +107,8 @@
                   @endforeach
                 </select>
               </div>
-            </div>
-              <div class="form-group">
-                  {{-- Feature --}}
+            </div> --}}
+              {{-- <div class="form-group">
                   <label class="control-label col-sm-2">{{ __('servicemodule::service.is_featured') }}</label>
                   <div class="col-sm-8">
                       <select name="feature" class="form-control">
@@ -117,7 +116,7 @@
                           <option selected value="0">{{ __('servicemodule::service.not_feature') }}</option>
                       </select>
                   </div>
-              </div>
+              </div> --}}
             <div class="form-group">
               <div class="box-header">
                 <pre><h4>SEO Columns : </h4></pre>
@@ -189,7 +188,7 @@
         </form>
           </div>
     </section>
-  @endif
+  {{-- @endif --}}
 @endsection
 
 @section('javascript')

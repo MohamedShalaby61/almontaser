@@ -13,7 +13,7 @@
 
     <section class="content">
         <div class="row">
-            @if(in_array('service_app',$activeApps))
+            {{-- @if(in_array('service_app',$activeApps))
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box">
                         <span class="info-box-icon bg-aqua"><i class="fa fa-wrench"></i></span>
@@ -26,9 +26,9 @@
                     </div>
                     <!-- /.info-box -->
                 </div>
-            @endif
+            @endif --}}
         <!-- /.col -->
-            @if(in_array('product_app',$activeApps))
+            {{-- @if(in_array('product_app',$activeApps))
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box">
                         <span class="info-box-icon bg-red"><i class="fa fa-shopping-cart"></i></span>
@@ -41,10 +41,10 @@
                     </div>
                     <!-- /.info-box -->
                 </div>
-            @endif
+            @endif --}}
 
 
-            @if(in_array('project_app',$activeApps))
+            {{-- @if(in_array('project_app',$activeApps))
 
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box">
@@ -58,8 +58,8 @@
                     </div>
                     <!-- /.info-box -->
                 </div>
-            @endif
-            @if(in_array('blog_app',$activeApps))
+            @endif --}}
+            {{-- @if(in_array('blog_app',$activeApps))
 
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="info-box">
@@ -73,14 +73,14 @@
                     </div>
                     <!-- /.info-box -->
                 </div>
-        @endif
+        @endif --}}
 
         <!-- /.col -->
         </div>
 
 
         <div class="row">
-            @if(in_array('service_app',$activeApps))
+            {{-- @if(in_array('service_app',$activeApps))
                 <div class="col-md-3">
                     <!-- Widget: user widget style 1 -->
                     <div class="box box-widget widget-user-2">
@@ -97,8 +97,8 @@
                     </div>
                     <!-- /.widget-user -->
                 </div>
-            @endif
-            @if(in_array('blog_app',$activeApps))
+            @endif --}}
+            {{-- @if(in_array('blog_app',$activeApps))
 
                 <div class="col-md-3">
                     <!-- Widget: user widget style 1 -->
@@ -117,8 +117,8 @@
                     </div>
                     <!-- /.widget-user -->
                 </div>
-            @endif
-            @if(in_array('project_app',$activeApps))
+            @endif --}}
+            {{-- @if(in_array('project_app',$activeApps))
 
                 <div class="col-md-3">
                     <!-- Widget: user widget style 1 -->
@@ -138,8 +138,8 @@
                     </div>
                     <!-- /.widget-user -->
                 </div>
-            @endif
-            @if(in_array('product_app',$activeApps))
+            @endif --}}
+            {{-- @if(in_array('product_app',$activeApps))
 
                 <div class="col-md-3">
                     <!-- Widget: user widget style 1 -->
@@ -158,7 +158,7 @@
                     </div>
                     <!-- /.widget-user -->
                 </div>
-            @endif
+            @endif --}}
 
         </div>
 

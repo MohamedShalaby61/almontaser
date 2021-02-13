@@ -1,0 +1,25 @@
+{
+    "name": "nwidart/frontmodule",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Modules\\FrontModule\\Providers\\FrontModuleServiceProvider"
+            ],
+            "aliases": {
+                
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\FrontModule\\": ""
+        }
+    }
+}
