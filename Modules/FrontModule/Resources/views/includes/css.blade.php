@@ -18,3 +18,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Roboto:wght@500&display=swap" rel="stylesheet">
 
 @endif
+
+@if(App()->getLocale() == 'ar')
+    <link href="https://fonts.googleapis.com/css?family=Cairo:400,700" rel="stylesheet">
+    <style>
+        body, h1, h2, h3, h4, h5, h6, a, li, label, input, span, button th, td, p ,tr{
+            font-family: 'Cairo', sans-serif !important;
+        }
+        .edit-margin-cancel-button {
+            margin: 7px;
+        }
+    </style>
+@endif

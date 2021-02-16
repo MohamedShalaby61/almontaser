@@ -88,12 +88,12 @@ class ConfigModuleDatabaseSeeder extends Seeder
             'static_value' => '',
             'var' => 'about_index',
             'ar' => [
-                'display_name' => 'وصف مختصر للموقع',
-                'value' => 'وصف مختصر للموقع',
+                'display_name' => 'نبذه عن خدماتنا',
+                'value' => 'نبذه عن خدماتنا',
             ],
             'en' => [
-                'display_name' => 'short description',
-                'value' => 'short description',
+                'display_name' => 'short description about services',
+                'value' => 'short description about services',
             ],
             'type' => 3,
             'category_id' => 1
@@ -228,6 +228,106 @@ class ConfigModuleDatabaseSeeder extends Seeder
             'type' => 1,
             'category_id' => 4
         ]);
+
+        $config::create([
+            'var' => 'our_advantage_desc',
+            'is_static' => 0,
+            'static_value' => '',
+            'ar' => [
+                'display_name' => 'نبذه عن مميزاتنا',
+            ],
+            'en' => [
+                'display_name' => 'Intro About Advantage',
+            ],
+            'type' => 3,
+            'category_id' => 1
+        ]);
+
+        $config::create([
+            'var' => 'first_services_features',
+            'is_static' => 0,
+            'static_value' => '',
+            'ar' => [
+                'display_name' => 'خدماتنا ( الجملة الاولي )',
+            ],
+            'en' => [
+                'display_name' => 'Our Services ( First Sequence )',
+            ],
+            'type' => 1,
+            'category_id' => 1
+        ]);
+
+        $config::create([
+            'var' => 'second_services_features',
+            'is_static' => 0,
+            'static_value' => '',
+            'ar' => [
+                'display_name' => 'خدماتنا ( الجملة الثانية )',
+            ],
+            'en' => [
+                'display_name' => 'Our Services ( Second Sequence )',
+            ],
+            'type' => 1,
+            'category_id' => 1
+        ]);
+
+        $config::create([
+            'var' => 'third_services_features',
+            'is_static' => 0,
+            'static_value' => '',
+            'ar' => [
+                'display_name' => 'خدماتنا ( الجملة الثالثة )',
+            ],
+            'en' => [
+                'display_name' => 'Our Services ( Third Sequence )',
+            ],
+            'type' => 1,
+            'category_id' => 1
+        ]);
+
+        $config::create([
+            'var' => 'first_transaction_bank',
+            'is_static' => 0,
+            'static_value' => '',
+            'ar' => [
+                'display_name' => 'الحساب البنكي الاول',
+            ],
+            'en' => [
+                'display_name' => 'First Bank Account',
+            ],
+            'type' => 1,
+            'category_id' => 1
+        ]);
+
+        $config::create([
+            'var' => 'second_transaction_bank',
+            'is_static' => 0,
+            'static_value' => '',
+            'ar' => [
+                'display_name' => 'الحساب البنكي الثاني',
+            ],
+            'en' => [
+                'display_name' => 'Second Bank Account',
+            ],
+            'type' => 1,
+            'category_id' => 1
+        ]);
+
+        $config::create([
+            'var' => 'address',
+            'is_static' => 0,
+            'static_value' => '',
+            'ar' => [
+                'display_name' => 'العنوان',
+            ],
+            'en' => [
+                'display_name' => 'Address',
+            ],
+            'type' => 1,
+            'category_id' => 1
+        ]);
+
+
 
     }
 }

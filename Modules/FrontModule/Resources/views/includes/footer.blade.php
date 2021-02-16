@@ -2,10 +2,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <h2>Addresses</h2>
-          <p>- Egypt , cairo , elmaddi elgededa , st.masr , 24 flat elmaddi , st.masr , 24 flat 4</p>
-          <p>- Egypt , cairo , elmaddi elgededa , st.masr , 24 flat elmaddi , st.masr , 24 flat 4</p>
-          <p>- Egypt , cairo , elmaddi elgededa , st.masr , 24 flat elmaddi , st.masr , 24 flat 4</p>
+          <h2>@lang('main.address')</h2>
+          <p>{{ $configArr['address'] }}</p>
         </div>
         <div class="col-md-8">
           <div class="map">
@@ -18,6 +16,6 @@
     </div>
   </div>
 
-  <a class="contact" href="http://api.whatsapp.com/send?phone=+201062493734">
+  <a class="contact" href="http://api.whatsapp.com/send?phone={{ $configArr['phone'] }}">
   <img src="{{url('assets/front')}}/img/whatsapp.png">
   </a>

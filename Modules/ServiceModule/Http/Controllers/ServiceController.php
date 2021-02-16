@@ -34,7 +34,7 @@ class ServiceController extends Controller
 
 
     function  dataTables(){
-        $services = $this->serviceRepo->findAll();
+        $services = Service::all();
 
         return DataTables::of($services)
 
@@ -44,7 +44,7 @@ class ServiceController extends Controller
             })
 
             ->addColumn('service_category', function($row) {
-                return  $row->service_category->title;
+                return  'لا يوجد';
             })
             ->addColumn('feature','servicemodule::ServiceMod.btn.feature')
 

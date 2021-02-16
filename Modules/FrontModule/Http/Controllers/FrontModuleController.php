@@ -5,6 +5,9 @@ namespace Modules\FrontModule\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Modules\ConfigModule\Entities\Config;
+use Modules\ServiceModule\Entities\ServiceMod\Service;
+use Modules\WidgetsModule\Entities\Slider\Slider;
 use Modules\WidgetsModule\Repository\SliderRepository;
 
 class FrontModuleController extends Controller
@@ -21,9 +24,21 @@ class FrontModuleController extends Controller
 
     public function index()
     {
-        $sliders = $this->repository->findAll();
 
-        return view('frontmodule::index',compact('sliders'));
+        $sliders = Slider::query()->with(['translations'])->get();
+        $services = Service::query()->with(['translations'])->get();
+        $configs = Config::query()->get();
+        $configArr = [];
+        foreach ($configs as $config)
+        {
+            if ($config->is_status == 0)
+            {
+                $configArr[$config->var] = $config->value;
+            }else {
+                $configArr[$config->var] = $config->static_value;
+            }
+        }
+        return view('frontmodule::index',compact('sliders','services','configArr'));
     }
 
 

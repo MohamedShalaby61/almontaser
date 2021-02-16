@@ -120,12 +120,11 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                @if(in_array('slider_app',$activeApps))
                     <!-- Slider -->
-                        <li><a href="{{ url('admin-panel/widgets/slider') }}"><i
-                                        class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.slider')}}</a>
-                        </li>
-                @endif
+                    <li><a href="{{ url('admin-panel/widgets/slider') }}"><i
+                                    class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.slider')}}</a>
+                    </li>
+
 
                 @if(in_array('slider_app',$activeApps))
                 <!-- acheive -->
